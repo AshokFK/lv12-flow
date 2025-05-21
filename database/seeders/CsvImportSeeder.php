@@ -39,6 +39,15 @@ class CsvImportSeeder extends Seeder
                 'level' => $pro['level']
             ]);
         }
+
+        // Import data from CSV file into the qc table
+        $qc = Reader::createFromPath(database_path() . '/csv/qc.csv', 'r');
+        $qc->setHeaderOffset(0); //set the CSV header offset
+        foreach ($qc as $qcData) {
+            DB::table('qc')->insert([
+                'nama' => $qcData['nama'],
+            ]);
+        }
         
     }
 }

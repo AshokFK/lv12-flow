@@ -35,4 +35,14 @@ php artisan livewire:make proses/edit-proses
 ```
 
 - QC
+```bash
+# create model and migration
+php artisan make:model Qc -m
+
+# create livewire components
+php artisan livewire:make qc/list-qc
+php artisan livewire:make qc/create-qc
+php artisan livewire:make qc/edit-qc
+```
+
 - Lokasi
