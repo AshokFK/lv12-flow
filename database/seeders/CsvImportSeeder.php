@@ -26,5 +26,19 @@ class CsvImportSeeder extends Seeder
                 'type' => $kom['type'],
             ]);
         }
+
+        // Import data from CSV file into the proses table
+        $proses = Reader::createFromPath(database_path() . '/csv/proses.csv', 'r');
+        $proses->setHeaderOffset(0); //set the CSV header offset
+        foreach ($proses as $pro) {
+            DB::table('proses')->insert([
+                'mastercode' => $pro['mastercode'],
+                'lokasi' => $pro['lokasi'],
+                'nama' => $pro['nama'],
+                'nama_jp' => $pro['nama_jp'],
+                'level' => $pro['level']
+            ]);
+        }
+        
     }
 }

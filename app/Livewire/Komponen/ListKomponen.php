@@ -27,7 +27,7 @@ class ListKomponen extends Component
             ->when($this->sortColumn, function ($query) {
                 $query->orderBy($this->sortColumn, $this->sortDirection);
             })
-            ->paginate(10);
+            ->paginate($this->perPage);
     }
 
     public function edit($komponenId)

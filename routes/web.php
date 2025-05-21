@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Proses\ListProses;
 use App\Livewire\Settings\Profile;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Appearance;
@@ -23,6 +24,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::group(['prefix' => 'master'], function () {
         Route::get('/komponen', ListKomponen::class)->name('list.komponen');
+        Route::get('/proses', ListProses::class)->name('list.proses');
     });
 
 });

@@ -24,5 +24,15 @@ php artisan db:seed --class=CsvImportSeeder
 ```
 
 - Proses
+```bash
+# create model and migration
+php artisan make:model Proses -m
+
+# create livewire components
+php artisan livewire:make proses/list-proses
+php artisan livewire:make proses/create-proses
+php artisan livewire:make proses/edit-proses
+```
+
 - QC
 - Lokasi
