@@ -59,3 +59,17 @@ php artisan livewire:make qc/edit-qc
 tambahan: 
     - kombinasi unique dari kolom nama dan sub
     - listSub diambil dari nama lokasi yang sub lokasi nya kosong
+
+## Flowchart
+- Flow Header
+```bash
+# create model and migration
+php artisan make:model FlowHeader -m
+
+# create livewire components
+php artisan livewire:make flow/list-header
+php artisan livewire:make flow/create-header
+php artisan livewire:make flow/edit-header
+```
+
+- Flow Item

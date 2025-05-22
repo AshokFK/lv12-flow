@@ -21,6 +21,9 @@
                     <flux:navlist.item icon="puzzle-piece" :href="route('list.qc')" :current="request()->routeIs('list.qc')" wire:navigate>{{ __('QC') }}</flux:navlist.item>
                     <flux:navlist.item icon="puzzle-piece" :href="route('list.lokasi')" :current="request()->routeIs('list.lokasi')" wire:navigate>{{ __('Lokasi') }}</flux:navlist.item>
                 </flux:navlist.group>
+                <flux:navlist.group :heading="__('Flowchart')" class="grid">
+                    <flux:navlist.item icon="puzzle-piece" :href="route('list.header')" :current="request()->routeIs('list.header')" wire:navigate>{{ __('Header') }}</flux:navlist.item>
+                </flux:navlist.group>
             </flux:navlist>
 
             <flux:spacer />
