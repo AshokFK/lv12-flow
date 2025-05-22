@@ -1,0 +1,33 @@
+﻿nama,sub,deskripsi
+SJA,,Sewing Jas A
+SJB,,Sewing Jas B
+SJC,,Sewing Jas C
+SLP,,Sewing Ladies Pants
+SLS,,Sewing Ladies Skirt
+SLJ,,Sewing Ladies Jas
+SPA,,Sewing Pants A
+SPB,,Sewing Pants B
+PRS,SJA,Press sub lokasi Jas A
+PRS,SJB,Press sub lokasi Jas B
+PRS,SJC,Press sub lokasi Jas C
+PRS,SLP,Press sub lokasi Ladies Pants
+PRS,SLS,Press sub lokasi Ladies Skirt
+PRS,SLJ,Press sub lokasi Ladies Jas
+PRS,SPA,Press sub lokasi Pants A
+PRS,SPB,Press sub lokasi Pants B
+MAT,SJA,Matome sub lokasi Jas A
+MAT,SJB,Matome sub lokasi Jas B
+MAT,SJC,Matome sub lokasi Jas C
+MAT,SLP,Matome sub lokasi Ladies Pants
+MAT,SLS,Matome sub lokasi Ladies Skirt
+MAT,SLJ,Matome sub lokasi Ladies Jas
+MAT,SPA,Matome sub lokasi Pants A
+MAT,SPB,Matome sub lokasi Pants B
+QA,SJA,QA sub lokasi Jas A
+QA,SJB,QA sub lokasi Jas B
+QA,SJC,QA sub lokasi Jas C
+QA,SLP,QA sub lokasi Ladies Pants
+QA,SLS,QA sub lokasi Ladies Skirt
+QA,SLJ,QA sub lokasi Ladies Jas
+QA,SPA,QA sub lokasi Pants A
+QA,SPB,QA sub lokasi Pants B

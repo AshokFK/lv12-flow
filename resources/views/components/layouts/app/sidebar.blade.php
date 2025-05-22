@@ -19,6 +19,7 @@
                     <flux:navlist.item icon="puzzle-piece" :href="route('list.komponen')" :current="request()->routeIs('list.komponen')" wire:navigate>{{ __('Komponen') }}</flux:navlist.item>
                     <flux:navlist.item icon="puzzle-piece" :href="route('list.proses')" :current="request()->routeIs('list.proses')" wire:navigate>{{ __('Proses') }}</flux:navlist.item>
                     <flux:navlist.item icon="puzzle-piece" :href="route('list.qc')" :current="request()->routeIs('list.qc')" wire:navigate>{{ __('QC') }}</flux:navlist.item>
+                    <flux:navlist.item icon="puzzle-piece" :href="route('list.lokasi')" :current="request()->routeIs('list.lokasi')" wire:navigate>{{ __('Lokasi') }}</flux:navlist.item>
                 </flux:navlist.group>
             </flux:navlist>
 

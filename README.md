@@ -33,6 +33,7 @@ php artisan livewire:make proses/list-proses
 php artisan livewire:make proses/create-proses
 php artisan livewire:make proses/edit-proses
 ```
+tambahan: kombinasi unique dari kolom mastercode dan lokasi
 
 - QC
 ```bash
@@ -46,3 +47,15 @@ php artisan livewire:make qc/edit-qc
 ```
 
 - Lokasi
+```bash
+# create model and migration
+php artisan make:model Lokasi -m
+
+# create livewire components
+php artisan livewire:make qc/list-qc
+php artisan livewire:make qc/create-qc
+php artisan livewire:make qc/edit-qc
+```
+tambahan: 
+    - kombinasi unique dari kolom nama dan sub
+    - listSub diambil dari nama lokasi yang sub lokasi nya kosong

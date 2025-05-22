@@ -12,8 +12,8 @@
 
     {{-- heading --}}
     <div class="relative mb-4 w-full">
-        <flux:heading size="xl" level="1">Komponen</flux:heading>
-        <flux:subheading size="lg" class="mb-6">List master data Komponen</flux:subheading>
+        <flux:heading size="xl" level="1">Lokasi</flux:heading>
+        <flux:subheading size="lg" class="mb-6">List master data Lokasi</flux:subheading>
         <flux:separator variant="subtle" />
     </div>
 
@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 <div class="flex items-center ml-auto space-x-2 sm:space-x-3">
-                    <flux:modal.trigger name="create-komponen">
+                    <flux:modal.trigger name="create-lokasi">
                         <flux:button size="sm" variant="outline" icon="plus" class="bg-">Tambah</flux:button>
                     </flux:modal.trigger>
                 </div>
@@ -60,9 +60,25 @@
                                     </button>
                                 </th>
                                 <th scope="col" class="p-2 text-accent">
-                                    <button type="button" class="flex items-center justify-between w-full cursor-pointer text-sm font-semibold text-left uppercase" wire:click="sortBy('type')">
-                                        Type
-                                        @if ($sortColumn === 'type')
+                                    <button type="button" class="flex items-center justify-between w-full cursor-pointer text-sm font-semibold text-left uppercase" wire:click="sortBy('sub')">
+                                        Sub lokasi
+                                        @if ($sortColumn === 'sub')
+                                        <span class="ml-1">
+                                            @if($sortDirection === 'asc' )
+                                            <flux:icon.chevron-up variant="micro" />
+                                            @else
+                                            <flux:icon.chevron-down variant="micro" />
+                                            @endif
+                                        </span>
+                                        @else
+                                        <flux:icon.chevron-up-down variant="micro" />
+                                        @endif
+                                    </button>
+                                </th>
+                                <th scope="col" class="p-2 text-accent">
+                                    <button type="button" class="flex items-center justify-between w-full cursor-pointer text-sm font-semibold text-left uppercase" wire:click="sortBy('deskripsi')">
+                                        Deskripsi
+                                        @if ($sortColumn === 'deskripsi')">
                                         <span class="ml-1">
                                             @if($sortDirection === 'asc' )
                                             <flux:icon.chevron-up variant="micro" />
@@ -95,21 +111,22 @@
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-200">
-                            @forelse ($this->listKomponen as $komponen)
+                            @forelse ($this->listLokasi as $lokasi)
                             <tr class="">
-                                <td class="p-2 text-base font-medium whitespace-nowrap">{{ $komponen->nama }}</td>
-                                <td class="p-2 text-base font-normal whitespace-nowrap">{{ $komponen->type }}</td>
+                                <td class="p-2 text-base font-medium whitespace-nowrap">{{ $lokasi->nama }}</td>
+                                <td class="p-2 text-base font-normal whitespace-nowrap">{{ $lokasi->sub }}</td>
+                                <td class="p-2 text-base font-normal whitespace-nowrap">{{ $lokasi->deskripsi }}</td>
                                 <td class="p-2 text-base font-normal whitespace-nowrap">
-                                    @if($komponen->is_active)
+                                    @if($lokasi->is_active)
                                     <flux:icon.check-circle class="text-green-500" />
                                     @else
                                     <flux:icon.x-circle class="text-zinc-500" />
                                     @endif
                                 </td>
                                 <td class="p-2 space-x-2 whitespace-nowrap text-right">
-                                    <flux:button size="sm" icon="pencil-square" iconVariant="mini" class="bg-blue-400! hover:bg-blue-500! text-white!" x-on:click="$dispatch('edit-komponen', { 'id': {{ $komponen->id }} })">
+                                    <flux:button size="sm" icon="pencil-square" iconVariant="mini" class="bg-blue-400! hover:bg-blue-500! text-white!" x-on:click="$dispatch('edit-lokasi', { 'id': {{ $lokasi->id }} })">
                                         Edit</flux:button>
-                                    <flux:button x-on:click="$dispatch('delete-komponen', { 'id': {{ $komponen->id }} })" size="sm" variant="danger" icon="x-mark" iconVariant="mini">
+                                    <flux:button x-on:click="$dispatch('delete-lokasi', { 'id': {{ $lokasi->id }} })" size="sm" variant="danger" icon="x-mark" iconVariant="mini">
                                         Hapus</flux:button>
                                 </td>
                             </tr>
@@ -127,23 +144,23 @@
         </div>
         <!-- pagination -->
         <div class="sticky bottom-0 right-0 items-center w-full py-4 bg-white border-t border-gray-200 dark:bg-accent-foreground">
-            {{ $this->listKomponen->links() }}
+            {{ $this->listLokasi->links() }}
         </div>
     </div>
 
-    {{-- modal create komponen --}}
-    <livewire:komponen.create-komponen />
+    {{-- modal create lokasi --}}
+    <livewire:lokasi.create-lokasi />
 
-    {{-- modal edit komponen --}}
-    <livewire:komponen.edit-komponen />
+    {{-- modal edit lokasi --}}
+    <livewire:lokasi.edit-lokasi />
 
-    {{-- modal delete komponen --}}
-    <flux:modal name="delete-komponen" class="min-w-[22rem]">
+    {{-- modal delete lokasi --}}
+    <flux:modal name="delete-lokasi" class="min-w-[22rem]">
         <div class="space-y-6">
             <div>
-                <flux:heading size="lg">Delete komponen?</flux:heading>
+                <flux:heading size="lg">Delete lokasi?</flux:heading>
                 <flux:text class="mt-2">
-                    <p>Anda yakin akan menghapus komponen ini ?</p>
+                    <p>Anda yakin akan menghapus lokasi ini ?</p>
                 </flux:text>
             </div>
             <div class="flex gap-2">
@@ -151,7 +168,7 @@
                 <flux:modal.close>
                     <flux:button variant="ghost">Cancel</flux:button>
                 </flux:modal.close>
-                <flux:button wire:click="delete" variant="danger">Delete komponen</flux:button>
+                <flux:button wire:click="delete" variant="danger">Delete lokasi</flux:button>
             </div>
         </div>
     </flux:modal>

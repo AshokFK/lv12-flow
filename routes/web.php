@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Lokasi\ListLokasi;
 use App\Livewire\Proses\ListProses;
 use App\Livewire\Qc\ListQc;
 use App\Livewire\Settings\Profile;
@@ -27,6 +28,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/komponen', ListKomponen::class)->name('list.komponen');
         Route::get('/proses', ListProses::class)->name('list.proses');
         Route::get('/qc', ListQc::class)->name('list.qc');
+        Route::get('/lokasi', ListLokasi::class)->name('list.lokasi');
     });
 
 });
