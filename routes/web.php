@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Flow\ListHeader;
+use App\Livewire\Flow\ListItem;
 use App\Livewire\Lokasi\ListLokasi;
 use App\Livewire\Proses\ListProses;
 use App\Livewire\Qc\ListQc;
@@ -33,6 +34,7 @@ Route::middleware(['auth'])->group(function () {
     });
     Route::group(['prefix' => 'flow'], function () {
         Route::get('/header', ListHeader::class)->name('list.header');
+        Route::get('/item/{header}', ListItem::class)->name('list.item');
     });
 
 });

@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Support\Carbon;
 use App\Traits\CreatedUpdatedBy;
 use Illuminate\Database\Eloquent\Model;
 
@@ -20,5 +19,8 @@ class FlowHeader extends Model
         'finished_at',
     ];
 
-
+    public function items()
+    {
+        return $this->hasMany(FlowItem::class, 'header_id');
+    }
 }

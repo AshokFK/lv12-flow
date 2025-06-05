@@ -73,3 +73,30 @@ php artisan livewire:make flow/edit-header
 ```
 
 - Flow Item
+
+```bash
+# create model and migration
+php artisan make:model FlowItem -m
+
+# create livewire components
+php artisan livewire:make flow/list-item
+php artisan livewire:make flow/create-item
+```
+
+Menambahkan component `tom-select.blade.php`
+
+Menambahkan model FlowItem
+`php artisan make:model FlowItem -m`
+
+Menambahkan model Mesin
+`php artisan make:model Mesin`
+Menambahkan config database `mysql_machine`
+
+Menambahkan model Operator untuk hit request ke API Spisy
+
+Update FlowHeader model, menambahkan relasi items ke FlowItem
+
+Update list header untuk menampilkan list item flow
+
+Update AppServiceProvider, menambahkan mapping model `MorphMap` dan Macro search
+

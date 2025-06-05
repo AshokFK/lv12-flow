@@ -169,9 +169,12 @@
                                 <td class="p-2 text-base font-normal whitespace-nowrap">{{ $header->lokasi }}</td>
                                 <td class="p-2 text-base font-normal whitespace-nowrap">{{ $header->finished_at }}</td>
                                 <td class="p-2 space-x-2 whitespace-nowrap text-right">
-                                    <flux:button size="sm" icon="pencil-square" iconVariant="mini" class="bg-blue-400! hover:bg-blue-500! text-white!" x-on:click="$dispatch('edit-header', { 'id': {{ $header->id }} })">
+                                    <flux:button size="sm" icon="queue-list" iconVariant="mini" class="bg-green-400! hover:bg-green-500! text-green-900!" 
+                                        href="{{ route('list.item',  $header) }}">
+                                        Item</flux:button>
+                                    <flux:button size="sm" icon="pencil-square" iconVariant="mini" class="cursor-pointer bg-blue-400! hover:bg-blue-500! text-white!" x-on:click="$dispatch('edit-header', { 'id': {{ $header->id }} })">
                                         Edit</flux:button>
-                                    <flux:button x-on:click="$dispatch('delete-header', { 'id': {{ $header->id }} })" size="sm" variant="danger" icon="x-mark" iconVariant="mini">
+                                    <flux:button class="cursor-pointer" x-on:click="$dispatch('delete-header', { 'id': {{ $header->id }} })" size="sm" variant="danger" icon="x-mark" iconVariant="mini">
                                         Hapus</flux:button>
                                 </td>
                             </tr>

@@ -41,6 +41,26 @@ return [
             'journal_mode' => null,
             'synchronous' => null,
         ],
+        
+        'mysql_machine' => [
+            'driver' => 'mysql',
+            'url' => env('DATABASE_URL'),
+            'host' => env('DB_HOSTMYSQL_MACHINE', '127.0.0.1'),
+            'port' => env('DB_PORTMYSQL_MACHINE', '3306'),
+            'database' => env('DB_DATABASEMYSQL_MACHINE', 'forge'),
+            'username' => env('DB_USERNAMEMYSQL_MACHINE', 'forge'),
+            'password' => env('DB_PASSWORDMYSQL_MACHINE', ''),
+            'unix_socket' => env('DB_SOCKET', ''),
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'strict' => false,
+            'engine' => null,
+            'options' => extension_loaded('pdo_mysql') ? array_filter([
+                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
+        ],
 
         'mysql' => [
             'driver' => 'mysql',
