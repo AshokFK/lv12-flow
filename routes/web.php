@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Flow\ChartItem;
 use App\Livewire\Flow\ListHeader;
 use App\Livewire\Flow\ListItem;
 use App\Livewire\Lokasi\ListLokasi;
@@ -35,6 +36,7 @@ Route::middleware(['auth'])->group(function () {
     Route::group(['prefix' => 'flow'], function () {
         Route::get('/header', ListHeader::class)->name('list.header');
         Route::get('/item/{header}', ListItem::class)->name('list.item');
+        Route::get('/chart/{header}', ChartItem::class)->name('chart.item');
     });
 
 });

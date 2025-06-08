@@ -2,7 +2,9 @@
     {{-- flash message --}}
     @session('success')
         <div>
-            <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => { show = false }, 5000)" x-transition class="text-green-500 border-green-300 bg-green-50 flex items-center p-2 mb-4 border rounded-lg fixed top-5 right-5" role="alert">
+            <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => { show = false }, 5000)" x-transition
+                class="text-green-500 border-green-300 bg-green-50 flex items-center p-2 mb-4 border rounded-lg fixed top-5 right-5"
+                role="alert">
                 <flux:icon.check-circle class="w-5 h-5 text-green-500 flex-shrink-0 mr-3" />
                 <div class="mx-2">{{ $value ?? 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' }}</div>
             </div>
@@ -61,14 +63,18 @@
     <div class="pb-4 bg-accent-foreground block sm:flex items-center justify-between border-b lg:mt-1.5">
         <div class="w-full mb-1">
             <div class="sm:flex">
-                <div class="items-center hidden mb-3 sm:flex sm:divide-x sm:divide-gray-100 sm:mb-0 dark:divide-gray-700">
+                <div
+                    class="items-center hidden mb-3 sm:flex sm:divide-x sm:divide-gray-100 sm:mb-0 dark:divide-gray-700">
                     <div class="relative mt-1 lg:w-64 xl:w-96 flex items-center">
-                        <flux:input size="sm" iconLeading="magnifying-glass" clearable wire:model.live.debounce.250ms="searchTerm" placeholder="Search" class="w-sm me-2" />
+                        <flux:input size="sm" iconLeading="magnifying-glass" clearable
+                            wire:model.live.debounce.250ms="searchTerm" placeholder="Search" class="w-sm me-2" />
                     </div>
                 </div>
                 <div class="flex items-center ml-auto space-x-2 sm:space-x-3">
+                    <flux:button size="sm" icon="share" href="{{ route('chart.item', $header) }}">
+                        Flow</flux:button>
                     <flux:modal.trigger name="create-item">
-                        <flux:button size="sm" variant="outline" icon="plus" class="bg-">Tambah</flux:button>
+                        <flux:button size="sm" variant="outline" icon="plus" class="cursor-pointer">Tambah</flux:button>
                     </flux:modal.trigger>
                 </div>
             </div>
@@ -84,7 +90,9 @@
                         <thead>
                             <tr class="border-b border-t border-gray-200">
                                 <th scope="col" class="p-2 text-accent">
-                                    <button type="button" class="flex items-center justify-between w-full cursor-pointer text-sm font-semibold text-left uppercase" wire:click="sortBy('itemable_type')">
+                                    <button type="button"
+                                        class="flex items-center justify-between w-full cursor-pointer text-sm font-semibold text-left uppercase"
+                                        wire:click="sortBy('itemable_type')">
                                         {{-- Type --}}
                                         Type
                                         @if ($sortColumn === 'itemable_type')
@@ -101,7 +109,9 @@
                                     </button>
                                 </th>
                                 <th scope="col" class="p-2 text-accent">
-                                    <button type="button" class="flex items-center justify-between w-full cursor-pointer text-sm font-semibold text-left uppercase" wire:click="sortBy('nama')">
+                                    <button type="button"
+                                        class="flex items-center justify-between w-full cursor-pointer text-sm font-semibold text-left uppercase"
+                                        wire:click="sortBy('nama')">
                                         Nama item
                                         @if ($sortColumn === 'nama')
                                             <span class="ml-1">
@@ -141,7 +151,7 @@
                                     </td>
                                     <td class="p-2 text-base font-medium whitespace-nowrap">
                                         @if ($item->operator)
-                                            @foreach(App\Models\Operator::whereIn('nik', $item->operator)->get() as $operator)
+                                            @foreach (App\Models\Operator::whereIn('nik', $item->operator)->get() as $operator)
                                                 <div class="flex-col items-center gap-1 mb-1">
                                                     <flux:badge size="sm" color="blue">
                                                         {{ $operator->nik }}
@@ -201,7 +211,8 @@
                                 </tr>
                             @empty
                                 <tr class="border-b">
-                                    <td class="p-2 text-base font-medium text-center text-accent" colspan="4">Tidak ada data untuk ditampilkan</td>
+                                    <td class="p-2 text-base font-medium text-center text-accent" colspan="4">Tidak
+                                        ada data untuk ditampilkan</td>
                                 </tr>
                             @endforelse
                         </tbody>

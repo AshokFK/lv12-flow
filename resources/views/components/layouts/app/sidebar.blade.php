@@ -14,15 +14,13 @@
             <flux:navlist variant="outline">
                 <flux:navlist.group :heading="__('Platform')" class="grid">
                     <flux:navlist.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>{{ __('Dashboard') }}</flux:navlist.item>
+                    <flux:navlist.item icon="puzzle-piece" :href="route('list.header')" :current="request()->routeIs('list.header')" wire:navigate>{{ __('Flowchart') }}</flux:navlist.item>
                 </flux:navlist.group>
                 <flux:navlist.group :heading="__('Master data')" class="grid">
                     <flux:navlist.item icon="puzzle-piece" :href="route('list.komponen')" :current="request()->routeIs('list.komponen')" wire:navigate>{{ __('Komponen') }}</flux:navlist.item>
                     <flux:navlist.item icon="puzzle-piece" :href="route('list.proses')" :current="request()->routeIs('list.proses')" wire:navigate>{{ __('Proses') }}</flux:navlist.item>
                     <flux:navlist.item icon="puzzle-piece" :href="route('list.qc')" :current="request()->routeIs('list.qc')" wire:navigate>{{ __('QC') }}</flux:navlist.item>
                     <flux:navlist.item icon="puzzle-piece" :href="route('list.lokasi')" :current="request()->routeIs('list.lokasi')" wire:navigate>{{ __('Lokasi') }}</flux:navlist.item>
-                </flux:navlist.group>
-                <flux:navlist.group :heading="__('Flowchart')" class="grid">
-                    <flux:navlist.item icon="puzzle-piece" :href="route('list.header')" :current="request()->routeIs('list.header')" wire:navigate>{{ __('Header') }}</flux:navlist.item>
                 </flux:navlist.group>
             </flux:navlist>
 

@@ -120,3 +120,16 @@ Perbaikan create item
 
 create edit item component
 `php artisan livewire:make flow/edit-item`
+
+Menambahkan chart item
+- menambahkan layout flow
+- update menu flowchart sidebar
+
+
+Update flow header
+- menambahkan wrapper width dan wrapper height, untuk menyimpan lebar dan tinggi wrapper flow item
+
+Update flow item
+- menambahkan left dan top, untuk menyimpan posisi item flow
+
+Menambahkan import csv seeder header

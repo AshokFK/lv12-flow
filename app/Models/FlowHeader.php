@@ -17,6 +17,8 @@ class FlowHeader extends Model
         'lokasi',
         'tgl_berjalan',
         'finished_at',
+        'wrapper_width',
+        'wrapper_height',
     ];
 
     public function items()

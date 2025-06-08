@@ -59,6 +59,20 @@ class CsvImportSeeder extends Seeder
                 'deskripsi' => $lok['deskripsi'],
             ]);
         }
+
+        // Import data from CSV file into the flow header table
+        $flowHeaders = Reader::createFromPath(database_path() . '/csv/header.csv', 'r');
+        $flowHeaders->setHeaderOffset(0); //set the CSV header offset
+        foreach ($flowHeaders as $header) {
+            DB::table('flow_header')->insert([
+                'kontrak' => $header['kontrak'],
+                'brand' => $header['brand'],
+                'pattern' => $header['pattern'],
+                'style' => $header['style'],
+                'tgl_berjalan' => $header['tgl_berjalan'],
+                'lokasi' => $header['lokasi'],
+            ]);
+        }
         
     }
 }

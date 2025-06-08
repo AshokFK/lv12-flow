@@ -19,6 +19,8 @@ class FlowItem extends Model
         'operator',
         'mesin',
         'is_active',
+        'left',
+        'top',
     ];
     protected $casts = [
         'is_active' => 'boolean',

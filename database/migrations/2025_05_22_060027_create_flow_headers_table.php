@@ -20,6 +20,8 @@ return new class extends Migration
             $table->date('tgl_berjalan');
             $table->string('lokasi');
             $table->date('finished_at')->nullable();
+            $table->string('wrapper_width')->nullable();
+            $table->string('wrapper_height')->nullable();
 
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();

@@ -23,6 +23,9 @@ return new class extends Migration
             $table->json('mesin')->nullable();
             $table->boolean('is_active')->default(1);
 
+            $table->string('left')->nullable()->comment('posisi item di kiri');
+            $table->string('top')->nullable()->comment('posisi item di atas');
+
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->timestamps();
