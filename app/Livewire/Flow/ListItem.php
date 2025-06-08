@@ -2,11 +2,11 @@
 
 namespace App\Livewire\Flow;
 
-use App\Models\Qc;
-use App\Models\Proses;
+use App\Models\FlowItem;
+use Flux\Flux;
 use Livewire\Component;
-use App\Models\Komponen;
 use App\Models\FlowHeader;
+use Livewire\Attributes\On;
 use Livewire\WithPagination;
 use App\Traits\WithTableTools;
 use Livewire\Attributes\Computed;
@@ -35,6 +35,28 @@ class ListItem extends Component
                 $query->orderBy($this->sortColumn, $this->sortDirection);
             })
             ->paginate($this->perPage);
+    }
+
+    #[On('delete-item')]
+    public function confirmDelete($id)
+    {
+        $this->itemId = $id;
+        Flux::modal('delete-item')->show();
+    }
+
+    public function delete()
+    {
+        try {
+            $item = FlowItem::findOrFail($this->itemId);
+            $item->delete();
+            Flux::modal('delete-item')->close();
+            session()->flash('success', 'item berhasil dihapus.');
+            $this->reset('itemId');
+            $this->redirect(route('list.item', $this->header->id), navigate: true);
+            
+        } catch (\Throwable $th) {
+            throw $th;
+        }
     }
 
     public function render()

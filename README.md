@@ -100,3 +100,23 @@ Update list header untuk menampilkan list item flow
 
 Update AppServiceProvider, menambahkan mapping model `MorphMap` dan Macro search
 
+
+Perbaikan list item operator, 
+- kolom operator: mengambil data dari db lokal
+- menampilkan komponen edit item
+- perbaikan proses delete item
+
+Menambahkan OperatorHelper
+- melakukan pencarian operator dari db lokal maupun api
+- menyimpan operator yang dipilih dari api ke db lokal
+
+Update Model Operator untuk mengambil data operator dari db lokal
+Menambahkan Operator migration
+
+Perbaikan create item
+- `fetchOperator` menggunakan OperatorHelper
+- menambahkan `simpanOperator` untuk menyimpan operator terpilih menggunakan operator helper, dipanggil hanya ketika operator terpilih source nya dari remote api
+- valueField operator yg disimpan diubah menjadi nik, sebelumnya berupa json nik dan nama
+
+create edit item component
+`php artisan livewire:make flow/edit-item`

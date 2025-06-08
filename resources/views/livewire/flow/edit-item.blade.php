@@ -1,9 +1,9 @@
 <div>
-    <flux:modal name="create-item" variant="flyout" class="max-w-[22rem]">
+    <flux:modal name="edit-item" variant="flyout" class="max-w-[22rem]">
         <form wire:submit.prevent="save" method="post" class="space-y-6">
             <div>
-                <flux:heading size="lg">Tambah flow item</flux:heading>
-                <flux:text class="mt-2">Isikan data yang diperlukan untuk menambah item baru.</flux:text>
+                <flux:heading size="lg">Edit flow item</flux:heading>
+                <flux:text class="mt-2">Isikan data yang diperlukan untuk mengubah flow item.</flux:text>
             </div>
 
             <flux:radio.group wire:model.live="itemable_type" label="Item type" variant="segmented">
@@ -14,7 +14,8 @@
 
             <flux:field>
                 <flux:label>Pilih item {{ $itemable_type }}..</flux:label>
-                <x-tom-select wire:model="itemable_id" x-init="$el.itemable_id = new TomSelect($el, { 
+                <x-tom-select wire:model="itemable_id" 
+                x-init="$el.itemable_id = new TomSelect($el, { 
                     valueField: 'id',
                     labelField: 'nama',
                     searchField: 'nama',
@@ -59,19 +60,19 @@
                             </div>`
                         }
                     },
-                })" x-on:item-type-selected.window="
-                    $el.itemable_id.setValue('');
-                    $el.itemable_id.clearOptions();
-                    $el.itemable_id.clear();
+                })"
+                x-on:item-selected.window="
+                    $el.itemable_id.addOption($event.detail.item_selected);
+                    $el.itemable_id.setValue($event.detail.item_selected.id);
                 "></x-tom-select>
                 <flux:error name="itemable_id" />
             </flux:field>
 
-            {{-- operator, muncul jika item type: proses, qc --}} 
+            {{-- operator, muncul jika item type: proses, qc --}}
             @if($itemable_type == 'proses' OR $itemable_type == 'qc')
             <flux:field>
                 <flux:label>Operator</flux:label>
-                <x-tom-select wire:model="operator" class="w-full" x-init="$el.operator = new TomSelect($el, { 
+                <x-tom-select wire:model="operator" x-init="$el.operator = new TomSelect($el, { 
                     valueField: 'nik',
                     labelField: 'nama',
                     searchField: ['nik','nama'],
@@ -105,6 +106,13 @@
                             </div>`
                         }
                     },
+                    onInitialize: function() {
+                        let selectedValue = {{ App\Models\Operator::whereIn('nik', $operator)->get() }};
+                        this.clearOptions();
+                        this.clear();
+                        this.addOptions(selectedValue);
+                        this.setValue(selectedValue.map(item => item.nik));
+                    },
                     onItemAdd: (value, data) => {
                         // get labelField
                         let nama = data.querySelector('.nama').textContent;
@@ -119,12 +127,13 @@
                             });
                         }
                     },
-                })"
-                x-on:item-type-selected.window="
-                    $el.operator.setValue('');
-                    $el.operator.clearOptions();
-                    $el.operator.clear();
-                " multiple></x-tom-select>
+                })" 
+                x-on:item-selected.window="
+                    console.log('Operator item-selected event:', $event.detail.operator_selected);
+                    $el.operator.addOptions($event.detail.operator_data);
+                    $el.operator.setValue($event.detail.operator_selected);
+                "
+                multiple></x-tom-select>
                 <flux:error name="operator" />
             </flux:field>
             @endif
@@ -173,11 +182,21 @@
                             </div>`
                         }
                     },
-                })" x-on:item-type-selected.window="
-                    $el.mesin.setValue('');
-                    $el.mesin.clearOptions();
-                    $el.mesin.clear();
-                " multiple></x-tom-select>
+                    onInitialize: function() {
+                        let selectedValue = {{ App\Models\Mesin::whereIn('id', $mesin)->get() }};
+                        console.log('Initialize Selected mesin:', selectedValue);
+                        this.clearOptions();
+                        this.clear();
+                        this.addOptions(selectedValue);
+                        this.setValue(selectedValue.map(item => item.id));
+                    },
+                })"
+                x-on:item-selected.window="
+                    console.log('Mesin item-selected event:', $event.detail.mesin_selected);
+                    $el.mesin.addOptions($event.detail.mesin_data);
+                    $el.mesin.setValue($event.detail.mesin_selected);
+                "
+                multiple></x-tom-select>
                 <flux:error name="mesin" />
             </flux:field>
             @endif
@@ -242,10 +261,9 @@
                             </div>`
                         }
                     },
-                })" x-on:item-type-selected.window="
-                    $el.next_to.setValue('');
-                    $el.next_to.clearOptions();
-                    $el.next_to.clear();
+                })" x-on:item-selected.window="
+                    $el.next_to.addOptions($event.detail.next_to_selected);
+                    $el.next_to.setValue($event.detail.next_to_id);
                 " multiple></x-tom-select>
                 <flux:error name="next_to" />
             </flux:field>

@@ -1,12 +1,12 @@
 <div>
     {{-- flash message --}}
     @session('success')
-    <div>
-        <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => { show = false }, 5000)" x-transition class="text-green-500 border-green-300 bg-green-50 flex items-center p-2 mb-4 border rounded-lg fixed top-5 right-5" role="alert">
-            <flux:icon.check-circle class="w-5 h-5 text-green-500 flex-shrink-0 mr-3" />
-            <div class="mx-2">{{ $value ?? 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' }}</div>
+        <div>
+            <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => { show = false }, 5000)" x-transition class="text-green-500 border-green-300 bg-green-50 flex items-center p-2 mb-4 border rounded-lg fixed top-5 right-5" role="alert">
+                <flux:icon.check-circle class="w-5 h-5 text-green-500 flex-shrink-0 mr-3" />
+                <div class="mx-2">{{ $value ?? 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' }}</div>
+            </div>
         </div>
-    </div>
     @endsession
 
     {{-- heading --}}
@@ -44,11 +44,15 @@
             </dl>
             <dl class="flex flex-col items-center gap-4 min-w-3xs bg-gray-100 dark:bg-gray-600 p-1 rounded-lg">
                 <dt class="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">Proses standard</dt>
-                <dd class="font-medium text-accent dark:text-accent-foreground">{{ $header->items->filter(fn($item) => $item->proses_type === 'standar')->count() }}</dd>
+                <dd class="font-medium text-accent dark:text-accent-foreground">
+                    {{ $header->items->filter(fn($item) => $item->proses_type === 'standar')->count() }}
+                </dd>
             </dl>
             <dl class="flex flex-col items-center gap-4 min-w-3xs bg-gray-100 dark:bg-gray-600 p-1 rounded-lg">
                 <dt class="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">Proses custom</dt>
-                <dd class="font-medium text-accent dark:text-accent-foreground">{{ $header->items->filter(fn($item) => $item->proses_type === 'custom')->count() }}</dd>
+                <dd class="font-medium text-accent dark:text-accent-foreground">
+                    {{ $header->items->filter(fn($item) => $item->proses_type === 'custom')->count() }}
+                </dd>
             </dl>
         </div>
     </div>
@@ -84,15 +88,15 @@
                                         {{-- Type --}}
                                         Type
                                         @if ($sortColumn === 'itemable_type')
-                                        <span class="ml-1">
-                                            @if($sortDirection === 'asc' )
-                                            <flux:icon.chevron-up variant="micro" />
-                                            @else
-                                            <flux:icon.chevron-down variant="micro" />
-                                            @endif
-                                        </span>
+                                            <span class="ml-1">
+                                                @if ($sortDirection === 'asc')
+                                                    <flux:icon.chevron-up variant="micro" />
+                                                @else
+                                                    <flux:icon.chevron-down variant="micro" />
+                                                @endif
+                                            </span>
                                         @else
-                                        <flux:icon.chevron-up-down variant="micro" />
+                                            <flux:icon.chevron-up-down variant="micro" />
                                         @endif
                                     </button>
                                 </th>
@@ -100,15 +104,15 @@
                                     <button type="button" class="flex items-center justify-between w-full cursor-pointer text-sm font-semibold text-left uppercase" wire:click="sortBy('nama')">
                                         Nama item
                                         @if ($sortColumn === 'nama')
-                                        <span class="ml-1">
-                                            @if($sortDirection === 'asc' )
-                                            <flux:icon.chevron-up variant="micro" />
-                                            @else
-                                            <flux:icon.chevron-down variant="micro" />
-                                            @endif
-                                        </span>
+                                            <span class="ml-1">
+                                                @if ($sortDirection === 'asc')
+                                                    <flux:icon.chevron-up variant="micro" />
+                                                @else
+                                                    <flux:icon.chevron-down variant="micro" />
+                                                @endif
+                                            </span>
                                         @else
-                                        <flux:icon.chevron-up-down variant="micro" />
+                                            <flux:icon.chevron-up-down variant="micro" />
                                         @endif
                                     </button>
                                 </th>
@@ -120,76 +124,85 @@
                         </thead>
                         <tbody class="divide-y divide-gray-200">
                             @forelse ($this->listItem as $item)
-                            <tr class="">
-                                <td class="p-2 text-sm whitespace-nowrap">
-                                    <span class="font-bold uppercase">{{ $item->itemable_type }}</span>
-                                    @if($item->proses_type)
-                                    <flux:badge @class([ '!bg-lime-500'=> $item->proses_type === 'standar', '!bg-amber-500' => $item->proses_type === 'custom' ])
-                                        size="sm">{{ $item->proses_type }}</flux:badge>
-                                    @endif
-                                </td>
-                                <td class="p-2 text-base font-medium whitespace-nowrap">{{ $item->itemable->nama }}</td>
-                                <td class="p-2 text-base font-medium whitespace-nowrap">
-                                    @if ($item->operator)
-                                    @foreach ($item->operator as $operator)
-                                    @php
-                                    $jsonOperator = json_decode($operator);
-                                    @endphp
-                                    <div class="flex-col items-center gap-1 mb-1">
-                                        <flux:badge size="sm" color="blue">
-                                            {{ $jsonOperator->nik }}
-                                        </flux:badge>
-                                        <span class="text-sm font-semibold">
-                                            {{ $jsonOperator->nama }}
-                                        </span>
-                                    </div>
-                                    @endforeach
-                                    @else
-                                    <span class="text-gray-500">Tidak ada</span>
-                                    @endif
-                                </td>
-                                <td class="p-2 text-base font-medium whitespace-nowrap">
-                                    @if ($item->mesin)
-                                    @foreach (App\Models\Mesin::whereIn('id', $item->mesin)->get() as $mesin)
-                                    <flux:badge size="sm">
-                                        {{ $mesin->kode }}
-                                    </flux:badge>
-                                    @endforeach
-                                    @else
-                                    <span class="text-gray-500">Tidak ada</span>
-                                    @endif
-                                </td>
-                                <td class="p-2 text-base font-medium whitespace-nowrap">
-                                    @if ($item->next_to)
-                                    @foreach (App\Models\FlowItem::whereIn('id', $item->next_to)->get() as $next)
-                                    <div class="flex-col items-center gap-1 mb-1">
-                                        <flux:badge size="sm" class="!text-xs !px-1" 
-                                            @class([
-                                                '!bg-blue-500'=> $next->itemable_type === 'komponen',
-                                                '!bg-indigo-500' => $next->itemable_type === 'proses',
-                                                '!bg-rose-500' => $next->itemable_type === 'qc',
-                                            ])>
-                                            {{ $next->itemable_type }}
-                                        </flux:badge>
-                                        <span class="text-sm font-semibold">
-                                            {{ $next->itemable->nama }}
-                                        </span>
-                                    </div>
-                                    @endforeach
-                                    @else
-                                    <span class="text-gray-500">Tidak ada</span>
-                                    @endif
-                                <td class="p-2 space-x-2 whitespace-nowrap text-right">
-                                    <flux:button size="sm" icon="pencil-square" iconVariant="mini" class="bg-blue-400! hover:bg-blue-500! text-white!" x-on:click="$dispatch('edit-item', { 'id': {{ $item->id }} })">
-                                        Edit</flux:button>
-                                    <flux:button x-on:click="$dispatch('delete-item', { 'id': {{ $item->id }} })" size="sm" variant="danger" icon="x-mark" iconVariant="mini">
-                                        Hapus</flux:button>
-                                </td>
-                            </tr>
+                                <tr class="">
+                                    <td class="p-2 text-sm whitespace-nowrap">
+                                        <span class="font-bold uppercase">{{ $item->itemable_type }}</span>
+                                        @if ($item->proses_type)
+                                            <flux:badge @class([
+                                                '!bg-lime-500' => $item->proses_type === 'standar',
+                                                '!bg-amber-500' => $item->proses_type === 'custom',
+                                            ]) size="sm">
+                                                {{ $item->proses_type }}
+                                            </flux:badge>
+                                        @endif
+                                    </td>
+                                    <td class="p-2 text-base font-medium whitespace-nowrap">
+                                        {{ $item->itemable->nama }}
+                                    </td>
+                                    <td class="p-2 text-base font-medium whitespace-nowrap">
+                                        @if ($item->operator)
+                                            @foreach(App\Models\Operator::whereIn('nik', $item->operator)->get() as $operator)
+                                                <div class="flex-col items-center gap-1 mb-1">
+                                                    <flux:badge size="sm" color="blue">
+                                                        {{ $operator->nik }}
+                                                    </flux:badge>
+                                                    <span class="text-sm font-semibold">
+                                                        {{ $operator->nama }}
+                                                    </span>
+                                                </div>
+                                            @endforeach
+                                        @else
+                                            <span class="text-gray-500">Tidak ada</span>
+                                        @endif
+                                    </td>
+                                    <td class="p-2 text-base font-medium whitespace-nowrap">
+                                        @if ($item->mesin)
+                                            @foreach (App\Models\Mesin::whereIn('id', $item->mesin)->get() as $mesin)
+                                                <flux:badge size="sm">
+                                                    {{ $mesin->kode }}
+                                                </flux:badge>
+                                            @endforeach
+                                        @else
+                                            <span class="text-gray-500">Tidak ada</span>
+                                        @endif
+                                    </td>
+                                    <td class="p-2 text-base font-medium whitespace-nowrap">
+                                        @if ($item->next_to)
+                                            @foreach (App\Models\FlowItem::whereIn('id', $item->next_to)->get() as $next)
+                                                <div class="flex-col items-center gap-1 mb-1">
+                                                    <flux:badge size="sm" class="!text-xs !px-1"
+                                                        @class([
+                                                            '!bg-blue-500' => $next->itemable_type === 'komponen',
+                                                            '!bg-indigo-500' => $next->itemable_type === 'proses',
+                                                            '!bg-rose-500' => $next->itemable_type === 'qc',
+                                                        ])>
+                                                        {{ $next->itemable_type }}
+                                                    </flux:badge>
+                                                    <span class="text-sm font-semibold">
+                                                        {{ $next->itemable->nama }}
+                                                    </span>
+                                                </div>
+                                            @endforeach
+                                        @else
+                                            <span class="text-gray-500">Tidak ada</span>
+                                        @endif
+                                    <td class="p-2 space-x-2 whitespace-nowrap text-right">
+                                        <flux:button size="sm" icon="pencil-square" iconVariant="mini"
+                                            class="bg-blue-400! hover:bg-blue-500! text-white!"
+                                            x-on:click="$dispatch('edit-item', { 'id': {{ $item->id }} })">
+                                            Edit
+                                        </flux:button>
+                                        <flux:button
+                                            x-on:click="$dispatch('delete-item', { 'id': {{ $item->id }} })"
+                                            size="sm" variant="danger" icon="x-mark" iconVariant="mini">
+                                            Hapus
+                                        </flux:button>
+                                    </td>
+                                </tr>
                             @empty
-                            <tr class="border-b">
-                                <td class="p-2 text-base font-medium text-center text-accent" colspan="4">Tidak ada data untuk ditampilkan</td>
-                            </tr>
+                                <tr class="border-b">
+                                    <td class="p-2 text-base font-medium text-center text-accent" colspan="4">Tidak ada data untuk ditampilkan</td>
+                                </tr>
                             @endforelse
                         </tbody>
                     </table>
@@ -198,7 +211,8 @@
             </div>
         </div>
         <!-- pagination -->
-        <div class="sticky bottom-0 right-0 items-center w-full py-4 bg-white border-t border-gray-200 dark:bg-accent-foreground">
+        <div
+            class="sticky bottom-0 right-0 items-center w-full py-4 bg-white border-t border-gray-200 dark:bg-accent-foreground">
             {{ $this->listItem->links() }}
         </div>
     </div>
@@ -207,7 +221,7 @@
     <livewire:flow.create-item :$header />
 
     {{-- modal edit item --}}
-    {{-- <livewire:flow.edit-item /> --}}
+    <livewire:flow.edit-item :$header />
 
     {{-- modal delete item --}}
     <flux:modal name="delete-item" class="min-w-[22rem]">

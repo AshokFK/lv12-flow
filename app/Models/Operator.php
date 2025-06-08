@@ -2,20 +2,19 @@
 
 namespace App\Models;
 
-use Illuminate\Support\Facades\Http;
+use Illuminate\Database\Eloquent\Model;
 
-class Operator 
+class Operator extends Model
 {
-    public static function search($term)
-    {
-        $response = Http::withToken(env('API_TOKEN'))->get(env('API_SPISY') . "?q={$term}&type=flow&status=active");
-        return $response->json();
-    }
+    protected $table = 'operator';
+    protected $fillable = ['nik', 'nama'];
+    protected $casts = [
+        'is_active' => 'boolean',
+    ];
 
-    public static function nik($nik)
+    public function scopeActive($query)
     {
-        $response = Http::withToken(env('API_TOKEN'))->get(env('API_SPISY') . "/{$nik}");
-        return $response->json();
+        return $query->where('is_active', true);
     }
 
 }
