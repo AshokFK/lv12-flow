@@ -10,7 +10,7 @@ class Proses extends Model
 
     protected $fillable = [
         'mastercode',
-        'lokasi',
+        'lokasi_id',
         'nama',
         'nama_jp',
         'level',
@@ -20,6 +20,12 @@ class Proses extends Model
         'is_active' => 'boolean',
         'level' => 'integer',
     ];
+
+    // relasi ke lokasi
+    public function lokasi()
+    {
+        return $this->belongsTo(Lokasi::class);
+    }
 
     public function createdBy()
     {

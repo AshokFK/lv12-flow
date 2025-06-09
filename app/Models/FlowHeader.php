@@ -14,7 +14,7 @@ class FlowHeader extends Model
         'pattern',
         'style',
         'kontrak',
-        'lokasi',
+        'lokasi_id',
         'tgl_berjalan',
         'finished_at',
         'wrapper_width',
@@ -25,4 +25,11 @@ class FlowHeader extends Model
     {
         return $this->hasMany(FlowItem::class, 'header_id');
     }
+
+    // relasi header ke lokasi
+    public function lokasi()
+    {
+        return $this->belongsTo(Lokasi::class, 'lokasi_id');
+    }
+    
 }

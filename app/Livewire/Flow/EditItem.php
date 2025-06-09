@@ -48,7 +48,7 @@ class EditItem extends Component
         $this->proses_type = $item->proses_type;
         $this->mesin = $item->mesin;
 
-        $this->operator = $item->operator;
+        $this->operator = $item->operator ?? [];
 
         $next = FlowItem::where('id', $item->next_to)->get()
             ->map(function ($item) {
@@ -62,7 +62,7 @@ class EditItem extends Component
             });
 
         if ($item->itemable_type === 'proses') {
-            $operatorData = Operator::whereIn('nik', $item->operator)->active()->get() ?? [];
+            $operatorData = Operator::whereIn('nik', $this->operator)->active()->get() ?? [];
             $mesinData = Mesin::whereIn('id', $item->mesin)->get() ?? [];
         }
 
@@ -73,9 +73,9 @@ class EditItem extends Component
             next_to_selected: $next,
             next_to_id: $item->next_to,
             operator_selected: $this->operator,
-            operator_data: $operatorData ?? [],
+            operator_data: $operatorData,
             mesin_selected: $this->mesin,
-            mesin_data: $mesinData ?? [],
+            mesin_data: $mesinData,
         );
     }
 

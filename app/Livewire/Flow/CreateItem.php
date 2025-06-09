@@ -52,7 +52,10 @@ class CreateItem extends Component
 
         $model = app('App\Models\\' . ucfirst($this->itemable_type));
         $data = match ($this->itemable_type) {
-            'proses' => $model->search($columns, $query)->get(['id', 'mastercode', 'nama']),
+            // Fetch proses items yg sesuai dengan lokasi header
+            'proses' => $model->where('lokasi_id', $this->header->lokasi_id)
+                ->search($columns, $query)
+                ->get(['id', 'mastercode', 'nama']),
             'komponen' => $model->search($columns, $query)->get(['id', 'nama', 'type']),
             'qc' => $model->search($columns, $query)->get(['id', 'nama']),
         };

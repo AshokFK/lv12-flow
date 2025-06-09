@@ -1,2 +1,4 @@
-id,kontrak,brand,pattern,style,tgl_berjalan,lokasi
-1,testdata,testdata,testdata,testdata,2025-06-05,ASD
+id,kontrak,brand,pattern,style,tgl_berjalan,lokasi_id
+1,Standar SJA,Standar SJA,Standar SJA,Standar SJA,2025-06-05,1
+2,Standar SJB,Standar SJB,Standar SJB,Standar SJB,2025-06-05,2
+3,Standar SJC,Standar SJC,Standar SJC,Standar SJC,2025-06-05,3

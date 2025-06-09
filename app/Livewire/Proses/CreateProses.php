@@ -3,39 +3,55 @@
 namespace App\Livewire\Proses;
 
 use Flux\Flux;
+use App\Models\Lokasi;
 use App\Models\Proses;
 use Livewire\Component;
 use Livewire\Attributes\Validate;
 
 class CreateProses extends Component
 {
-    #[Validate('required', message: 'Mastercode harus diisi')]
-    #[Validate('size:14', message: 'Mastercode harus :size karakter')]
-    #[Validate('unique:proses,mastercode,lokasi', message: 'Kombinasi Mastercode dan Lokasi sudah ada')]
     public $mastercode;
-
-    #[Validate('required', message: 'Nama harus diisi')]
-    #[Validate('string', message: 'Nama harus berupa string')]
-    #[Validate('min:5', message: 'Nama terlalu pendek')]
-    #[Validate('max:100', message: 'Nama terlalu panjang')]
     public $nama;
-
-    #[Validate('required', message: 'Nama JP harus diisi')]
-    #[Validate('string', message: 'Nama JP harus berupa string')]
-    #[Validate('min:5', message: 'Nama JP terlalu pendek')]
-    #[Validate('max:100', message: 'Nama JP terlalu panjang')]
     public $nama_jp;
-
-    #[Validate('required', message: 'Lokasi harus diisi')]
-    #[Validate('string', message: 'Lokasi harus berupa string')]
-    #[Validate('size:3', message: 'Lokasi harus :size karakter')]
-    #[Validate('unique:proses,mastercode,lokasi', message: 'Kombinasi Mastercode dan Lokasi sudah ada')]
-    public $lokasi;
-
-    #[Validate('required', message: 'Level harus diisi')]
-    #[Validate('integer', message: 'Level harus berupa angka')]
-    #[Validate('in:1,2,3', message: 'Level harus 1, 2, atau 3')]
+    public $lokasi_id;
     public $level;
+
+    public function rules()
+    {
+        return [
+            'mastercode' => 'required|string|size:14|unique:proses,mastercode,NULL,id,lokasi_id,' . $this->lokasi_id,
+            'nama' => 'required|string|min:5|max:100',
+            'nama_jp' => 'required|string|min:5|max:100',
+            'lokasi_id' => 'required|exists:lokasi,id',
+            'level' => 'required|integer|in:1,2,3',
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'mastercode.required' => 'Mastercode harus diisi',
+            'mastercode.size' => 'Mastercode harus :size karakter',
+            'mastercode.unique' => 'Kombinasi Mastercode dan Lokasi sudah ada',
+            'nama.required' => 'Nama harus diisi',
+            'nama.string' => 'Nama harus berupa string',
+            'nama.min' => 'Nama terlalu pendek',
+            'nama.max' => 'Nama terlalu panjang',
+            'nama_jp.required' => 'Nama JP harus diisi',
+            'nama_jp.string' => 'Nama JP harus berupa string',
+            'nama_jp.min' => 'Nama JP terlalu pendek',
+            'nama_jp.max' => 'Nama JP terlalu panjang',
+            'lokasi_id.required' => 'Lokasi harus diisi',
+            'lokasi_id.exists' => 'Lokasi tidak ditemukan',
+            'level.required' => 'Level harus diisi',
+            'level.integer' => 'Level harus berupa angka',
+            'level.in' => 'Level harus 1, 2, atau 3',
+        ];
+    }
+
+    public function fetchLokasi($query = '')
+    {
+        return Lokasi::search(['nama', 'sub', 'deskripsi'], $query)->get(['id', 'nama', 'sub', 'deskripsi']);
+    }
 
     public function save()
     {
@@ -45,10 +61,10 @@ class CreateProses extends Component
             'mastercode' => $this->mastercode,
             'nama' => $this->nama,
             'nama_jp' => $this->nama_jp,
-            'lokasi' => $this->lokasi,
+            'lokasi_id' => $this->lokasi_id,
             'level' => $this->level,
         ]);
-        
+
         Flux::modal('create-proses')->close();
         session()->flash('success', 'Proses berhasil ditambahkan.');
         $this->reset();

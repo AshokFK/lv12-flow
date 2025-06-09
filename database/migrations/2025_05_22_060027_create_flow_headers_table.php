@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Lokasi;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -18,7 +19,7 @@ return new class extends Migration
             $table->string('pattern');
             $table->string('style');
             $table->date('tgl_berjalan');
-            $table->string('lokasi');
+            $table->foreignIdFor(Lokasi::class);
             $table->date('finished_at')->nullable();
             $table->string('wrapper_width')->nullable();
             $table->string('wrapper_height')->nullable();

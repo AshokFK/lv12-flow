@@ -15,7 +15,7 @@ class EditHeader extends Component
     public $pattern;
     public $style;
     public $tgl_berjalan;
-    public $lokasi;
+    public $lokasi_id;
     public $is_finished;
     public $finished_at;
 
@@ -29,20 +29,24 @@ class EditHeader extends Component
         $this->pattern = $header->pattern;
         $this->style = $header->style;
         $this->tgl_berjalan = $header->tgl_berjalan;
-        $this->lokasi = $header->lokasi;
+        $this->lokasi_id = $header->lokasi_id;
         $this->finished_at = $header->finished_at;
+
+        $lokasi_data = $header->lokasi->findOrFail($header->lokasi_id)
+            ->get(['id', 'nama', 'sub', 'deskripsi']);
         Flux::modal('edit-header')->show();
+        $this->dispatch('init-selected', lokasi_selected: $header->lokasi_id, lokasi_data: $lokasi_data);
     }
 
     public function save()
     {
-        $this->validate([ 
+        $this->validate([
             'kontrak' => 'required|string|min:5|max:100',
             'brand' => 'required|string|min:5|max:100',
             'pattern' => 'required|string|min:5|max:100',
             'style' => 'required|string|min:5|max:100',
             'tgl_berjalan' => 'required|date|date_format:Y-m-d|after_or_equal:today',
-            'lokasi' => 'required|size:3|regex:/^[A-Z]{3}$/',
+            'lokasi_id' => 'required',
         ], [
             'kontrak.required' => 'Kontrak harus diisi',
             'kontrak.string' => 'Kontrak harus berupa string',
@@ -64,9 +68,7 @@ class EditHeader extends Component
             'tgl_berjalan.date' => 'Tanggal berjalan tidak valid',
             'tgl_berjalan.date_format' => 'Format tanggal berjalan tidak valid',
             'tgl_berjalan.after_or_equal' => 'Tanggal berjalan tidak boleh sebelum hari ini',
-            'lokasi.required' => 'Lokasi harus diisi',
-            'lokasi.size' => 'Lokasi harus 3 karakter',
-            'lokasi.regex' => 'Lokasi harus terdiri dari 3 huruf kapital',
+            'lokasi_id.required' => 'Lokasi harus diisi',
         ]);
 
         $header = FlowHeader::findOrFail($this->headerId);
@@ -77,7 +79,7 @@ class EditHeader extends Component
             'pattern' => $this->pattern,
             'style' => $this->style,
             'tgl_berjalan' => $this->tgl_berjalan,
-            'lokasi' => $this->lokasi,
+            'lokasi_id' => $this->lokasi_id,
             'finished_at' => $this->is_finished ? now()->format('Y-m-d') : null,
         ]);
 
@@ -86,7 +88,7 @@ class EditHeader extends Component
         $this->reset();
         $this->redirect(route('list.header'), navigate: true);
     }
-    
+
     public function render()
     {
         return view('livewire.flow.edit-header');

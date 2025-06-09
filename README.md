@@ -133,3 +133,10 @@ Update flow item
 - menambahkan left dan top, untuk menyimpan posisi item flow
 
 Menambahkan import csv seeder header
+
+Update relasi lokasi pada header dan proses
+- update kolom lokasi create dan edit header
+- update kolom lokasi create dan edit proses
+- update migration proses dan header
+
+Create-proses update validasi unique mastercode dan lokasi

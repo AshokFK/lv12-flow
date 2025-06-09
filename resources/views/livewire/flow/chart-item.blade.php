@@ -4,7 +4,7 @@
         <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 mb-2">
             <div class="border rounded px-2 py-1">
                 <div class="">Lokasi</div>
-                <div class="">{{ $header->lokasi }}</div>
+                <div class="">{{ $header->lokasi->deskripsi }}</div>
             </div>
             <div class="border rounded px-2 py-1">
                 <div class="">Kontrak</div>

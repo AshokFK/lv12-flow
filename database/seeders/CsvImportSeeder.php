@@ -33,7 +33,7 @@ class CsvImportSeeder extends Seeder
         foreach ($proses as $pro) {
             DB::table('proses')->insert([
                 'mastercode' => $pro['mastercode'],
-                'lokasi' => $pro['lokasi'],
+                'lokasi_id' => $pro['lokasi_id'],
                 'nama' => $pro['nama'],
                 'nama_jp' => $pro['nama_jp'],
                 'level' => $pro['level']
@@ -70,7 +70,7 @@ class CsvImportSeeder extends Seeder
                 'pattern' => $header['pattern'],
                 'style' => $header['style'],
                 'tgl_berjalan' => $header['tgl_berjalan'],
-                'lokasi' => $header['lokasi'],
+                'lokasi_id' => $header['lokasi_id'],
             ]);
         }
         

@@ -3,34 +3,35 @@
 namespace App\Livewire\Flow;
 
 use Flux\Flux;
+use App\Models\Lokasi;
 use Livewire\Component;
 use App\Models\FlowHeader;
 use Livewire\Attributes\Validate;
 
 class CreateHeader extends Component
 {
-    #[Validate('required', message: 'Nama harus diisi')]
-    #[Validate('string', message: 'Nama harus berupa string')]
-    #[Validate('min:5', message: 'Nama terlalu pendek')]
-    #[Validate('max:100', message: 'Nama terlalu panjang')]
+    #[Validate('required', message: 'Kontrak harus diisi')]
+    #[Validate('string', message: 'Kontrak harus berupa string')]
+    #[Validate('min:5', message: 'Kontrak terlalu pendek')]
+    #[Validate('max:100', message: 'Kontrak terlalu panjang')]
     public $kontrak;
 
-    #[Validate('required', message: 'Nama harus diisi')]
-    #[Validate('string', message: 'Nama harus berupa string')]
-    #[Validate('min:5', message: 'Nama terlalu pendek')]
-    #[Validate('max:100', message: 'Nama terlalu panjang')]
+    #[Validate('required', message: 'Brand harus diisi')]
+    #[Validate('string', message: 'Brand harus berupa string')]
+    #[Validate('min:5', message: 'Brand terlalu pendek')]
+    #[Validate('max:100', message: 'Brand terlalu panjang')]
     public $brand;
 
-    #[Validate('required', message: 'Nama harus diisi')]
-    #[Validate('string', message: 'Nama harus berupa string')]
-    #[Validate('min:5', message: 'Nama terlalu pendek')]
-    #[Validate('max:100', message: 'Nama terlalu panjang')]
+    #[Validate('required', message: 'Pattern harus diisi')]
+    #[Validate('string', message: 'Pattern harus berupa string')]
+    #[Validate('min:5', message: 'Pattern terlalu pendek')]
+    #[Validate('max:100', message: 'Pattern terlalu panjang')]
     public $pattern;
 
-    #[Validate('required', message: 'Nama harus diisi')]
-    #[Validate('string', message: 'Nama harus berupa string')]
-    #[Validate('min:5', message: 'Nama terlalu pendek')]
-    #[Validate('max:100', message: 'Nama terlalu panjang')]
+    #[Validate('required', message: 'Style harus diisi')]
+    #[Validate('string', message: 'Style harus berupa string')]
+    #[Validate('min:5', message: 'Style terlalu pendek')]
+    #[Validate('max:100', message: 'Style terlalu panjang')]
     public $style;
 
     #[Validate('required', message: 'Tanggal berjalan harus diisi')]
@@ -40,9 +41,12 @@ class CreateHeader extends Component
     public $tgl_berjalan;
 
     #[Validate('required', message: 'Lokasi harus diisi')]
-    #[Validate('size:3', message: 'Lokasi harus 3 karakter')]
-    #[Validate('regex:/^[A-Z]{3}$/', message: 'Lokasi harus terdiri dari 3 huruf kapital')]
-    public $lokasi;
+    public $lokasi_id;
+
+    public function fetchLokasi($query = '')
+    {
+        return Lokasi::search(['nama', 'sub', 'deskripsi'], $query)->get(['id', 'nama', 'sub', 'deskripsi']);
+    }
 
     public function save()
     {
@@ -55,7 +59,7 @@ class CreateHeader extends Component
             'pattern' => $this->pattern,
             'style' => $this->style,
             'tgl_berjalan' => $this->tgl_berjalan,
-            'lokasi' => $this->lokasi,
+            'lokasi_id' => $this->lokasi_id,
         ]);
 
         Flux::modal('create-header')->close();

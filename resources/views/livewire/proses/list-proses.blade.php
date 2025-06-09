@@ -147,7 +147,7 @@
                                 <td class="p-2 text-base font-medium whitespace-nowrap">{{ $proses->mastercode }}</td>
                                 <td class="p-2 text-base font-normal whitespace-nowrap">{{ $proses->nama }}</td>
                                 <td class="p-2 text-base font-normal whitespace-nowrap">{{ $proses->nama_jp }}</td>
-                                <td class="p-2 text-base font-normal whitespace-nowrap">{{ $proses->lokasi }}</td>
+                                <td class="p-2 text-base font-normal whitespace-nowrap">{{ $proses->lokasi->deskripsi }}</td>
                                 <td class="p-2 text-base font-normal whitespace-nowrap">{{ $proses->level }}</td>
                                 <td class="p-2 text-base font-normal whitespace-nowrap">
                                     @if($proses->is_active)

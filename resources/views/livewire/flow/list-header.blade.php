@@ -184,7 +184,7 @@
                                     <td class="p-2 text-base font-normal whitespace-nowrap">{{ $header->style }}</td>
                                     <td class="p-2 text-base font-normal whitespace-nowrap">{{ $header->tgl_berjalan }}
                                     </td>
-                                    <td class="p-2 text-base font-normal whitespace-nowrap">{{ $header->lokasi }}</td>
+                                    <td class="p-2 text-base font-normal whitespace-nowrap">{{ $header->lokasi->deskripsi }}</td>
                                     <td class="p-2 text-base font-normal whitespace-nowrap">{{ $header->finished_at }}
                                     </td>
                                     <td class="p-2 space-x-2 whitespace-nowrap text-right">

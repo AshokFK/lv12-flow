@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Lokasi;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,7 +15,7 @@ return new class extends Migration
         Schema::create('proses', function (Blueprint $table) {
             $table->id();
             $table->string('mastercode');
-            $table->string('lokasi')->comment('lokasi line, misal SJA, SJB, dll');
+            $table->foreignIdFor(Lokasi::class);
             $table->string('nama');
             $table->string('nama_jp');
             $table->char('level', 1)->default(1);
@@ -24,7 +25,7 @@ return new class extends Migration
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->timestamps();
 
-            $table->unique(['mastercode','lokasi']);
+            $table->unique(['mastercode','lokasi_id']);
         });
     }
 

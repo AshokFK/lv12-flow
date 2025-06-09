@@ -42,7 +42,7 @@
             </dl>
             <dl class="flex flex-col items-center gap-4 min-w-3xs bg-gray-100 dark:bg-gray-600 p-1 rounded-lg">
                 <dt class="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">Lokasi</dt>
-                <dd class="font-medium text-accent dark:text-accent-foreground">{{ $header->lokasi }}</dd>
+                <dd class="font-medium text-accent dark:text-accent-foreground">{{ $header->lokasi->deskripsi }}</dd>
             </dl>
             <dl class="flex flex-col items-center gap-4 min-w-3xs bg-gray-100 dark:bg-gray-600 p-1 rounded-lg">
                 <dt class="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">Proses standard</dt>

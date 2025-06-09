@@ -192,7 +192,6 @@
                     },
                 })"
                 x-on:item-selected.window="
-                    console.log('Mesin item-selected event:', $event.detail.mesin_selected);
                     $el.mesin.addOptions($event.detail.mesin_data);
                     $el.mesin.setValue($event.detail.mesin_selected);
                 "

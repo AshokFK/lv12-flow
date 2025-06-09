@@ -3,6 +3,7 @@
 namespace App\Livewire\Proses;
 
 use Flux\Flux;
+use App\Models\Lokasi;
 use App\Models\Proses;
 use Livewire\Component;
 use Livewire\Attributes\On;
@@ -14,7 +15,7 @@ class EditProses extends Component
     public $mastercode;
     public $nama;
     public $nama_jp;
-    public $lokasi;
+    public $lokasi_id;
     public $level;
     public $is_active;
 
@@ -26,10 +27,20 @@ class EditProses extends Component
         $this->mastercode = $proses->mastercode;
         $this->nama = $proses->nama;
         $this->nama_jp = $proses->nama_jp;
-        $this->lokasi = $proses->lokasi;
+        $this->lokasi_id = $proses->lokasi_id;
         $this->level = $proses->level;
         $this->is_active = $proses->is_active;
+
+        $lokasi_data = $proses->lokasi->findOrFail($proses->lokasi_id)
+            ->get(['id', 'nama', 'sub', 'deskripsi']);
+            
         Flux::modal('edit-proses')->show();
+        $this->dispatch('init-selected', lokasi_selected: $proses->lokasi_id, lokasi_data: $lokasi_data);
+    }
+
+    public function fetchLokasi($query = '')
+    {
+        return Lokasi::search(['nama', 'sub', 'deskripsi'], $query)->get(['id', 'nama', 'sub', 'deskripsi']);
     }
 
     public function save()
@@ -37,15 +48,15 @@ class EditProses extends Component
         $this->validate([
             'mastercode' => [
                 'required','string','size:14',
-                Rule::unique('proses')->where(function ($query)  {
+                Rule::unique('proses')->where(function ($query) {
                     return $query->where('mastercode', $this->mastercode)
-                        ->where('lokasi', $this->lokasi)
+                        ->where('lokasi_id', $this->lokasi_id)
                         ->where('id', '!=', $this->prosesId);
                 })
             ],
             'nama' => 'required|string|min:5|max:100',
             'nama_jp' => 'required|string|min:5|max:100',
-            'lokasi' => 'required|string|size:3',
+            'lokasi_id' => 'required',
             'level' => 'required|integer|in:1,2,3',
             'is_active' => 'boolean',
         ], [
@@ -60,9 +71,7 @@ class EditProses extends Component
             'nama_jp.string' => 'Nama JP harus berupa string',
             'nama_jp.min' => 'Nama JP terlalu pendek',
             'nama_jp.max' => 'Nama JP terlalu panjang',
-            'lokasi.required' => 'Lokasi harus diisi',
-            'lokasi.size' => 'Lokasi harus :size karakter',
-            'lokasi.unique' => 'Lokasi sudah ada',
+            'lokasi_id.required' => 'Lokasi harus diisi',
             'level.required' => 'Level harus diisi',
             'level.integer' => 'Level harus berupa angka',
             'level.in' => 'Level harus 1, 2, atau 3',
@@ -73,7 +82,7 @@ class EditProses extends Component
             'mastercode' => $this->mastercode,
             'nama' => $this->nama,
             'nama_jp' => $this->nama_jp,
-            'lokasi' => $this->lokasi,
+            'lokasi_id' => $this->lokasi_id,
             'level' => $this->level,
             'is_active' => $this->is_active,
         ]);
