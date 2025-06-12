@@ -24,8 +24,8 @@ class ChartItem extends Component
         $parsedData = json_decode($data);
         // simpan header wrapper width dan height
         $this->header->update([
-            'wrapper_width' => $parsedData->wrapper_width,
-            'wrapper_height' => $parsedData->wrapper_height,
+            'wrapper_width' => $parsedData->header->wrapper_width,
+            'wrapper_height' => $parsedData->header->wrapper_height,
         ]);
         // simpan posisi setiap item
         foreach ($parsedData->positions as $item) {
@@ -54,8 +54,11 @@ class ChartItem extends Component
 
         // return positions and header wrapper dimensions
         return response()->json([
-            'wrapper_width' => $this->header->wrapper_width,
-            'wrapper_height' => $this->header->wrapper_height,
+            'header' => [
+                'id' => $this->header->id,
+                'wrapper_width' => $this->header->wrapper_width,
+                'wrapper_height' => $this->header->wrapper_height,
+            ],
             'positions' => $positions,
         ]);
     }

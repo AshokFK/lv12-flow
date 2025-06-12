@@ -86,6 +86,7 @@
                 ])>{{ $item->itemable->mastercode ?? $item->itemable->nama }}</span>
             </div>
         @endforeach
+        <div id="selectionBox"></div>
     </div>
 
     <style>
@@ -107,6 +108,15 @@
             height: 100%;
             pointer-events: none;
             z-index: -2;
+        }
+
+        #selectionBox {
+            position: absolute;
+            border: 1px dashed #007bff;
+            background-color: rgba(0,123,255,0.2);
+            display: none;
+            pointer-events: none;
+            z-index: 10;
         }
 
         .item {
@@ -219,6 +229,9 @@
             const zoomSlider = document.getElementById("zoomSlider");
             const zoomIndicator = document.getElementById("zoomIndicator");
 
+            let isSelecting = false;
+            let startX, startY;
+            const selectionBox = document.getElementById('selectionBox');
 
             let activeItems = [];
             let offsetPositions = [];
@@ -268,8 +281,11 @@
             function saveState() {
                 const state = {
                     positions: [],
-                    wrapper_width: wrapper.style.width,
-                    wrapper_height: wrapper.style.height
+                    header: {
+                        wrapper_width: wrapper.style.width,
+                        wrapper_height: wrapper.style.height,
+                        id: '{{ $header->id }}',
+                    }
                 };
                 document.querySelectorAll(".item").forEach((item) => {
                     state.positions.push({
@@ -287,8 +303,8 @@
                 if (data) {
                     const state = JSON.parse(data);
 
-                    if (state.wrapperWidth) wrapper.style.width = state.wrapper_width;
-                    if (state.wrapperHeight) wrapper.style.height = state.wrapper_height;
+                    if (state.header.wrapper_width) wrapper.style.width = state.header.wrapper_width;
+                    if (state.header.wrapper_height) wrapper.style.height = state.header.wrapper_height;
                     state.positions.forEach((pos, index) => {
                         if (pos.id) {
                             const item = document.querySelector(`#item-${pos.id}`);
@@ -452,6 +468,21 @@
                         .forEach((i) => i.classList.remove("selected"));
                     activeItems = [];
                 }
+
+                if (e.target === wrapper) {
+                    isSelecting = true;
+                    startX = e.offsetX + wrapper.scrollLeft;
+                    startY = e.offsetY + wrapper.scrollTop;
+                    selectionBox.style.left = startX + 'px';
+                    selectionBox.style.top = startY + 'px';
+                    selectionBox.style.width = '0px';
+                    selectionBox.style.height = '0px';
+                    selectionBox.style.display = 'block';
+
+                    if (!e.ctrlKey) {
+                        document.querySelectorAll('.item').forEach(item => item.classList.remove('selected'));
+                    }
+                }
             });
 
             /* Event: drag move */
@@ -476,6 +507,49 @@
                     autoScroll(e);
                     updateConnections();
                 }
+
+                if (!isSelecting) return;
+                const currentX = e.offsetX + wrapper.scrollLeft;
+                const currentY = e.offsetY + wrapper.scrollTop;
+
+                const x = Math.min(currentX, startX);
+                const y = Math.min(currentY, startY);
+                const w = Math.abs(currentX - startX);
+                const h = Math.abs(currentY - startY);
+
+                selectionBox.style.left = x + 'px';
+                selectionBox.style.top = y + 'px';
+                selectionBox.style.width = w + 'px';
+                selectionBox.style.height = h + 'px';
+
+                const selRect = {
+                    left: x,
+                    right: x + w,
+                    top: y,
+                    bottom: y + h
+                };
+
+                document.querySelectorAll('.item').forEach(item => {
+                    const rect = {
+                        left: item.offsetLeft,
+                        top: item.offsetTop,
+                        right: item.offsetLeft + item.offsetWidth,
+                        bottom: item.offsetTop + item.offsetHeight
+                    };
+
+                    const isInside = (
+                        selRect.left < rect.right &&
+                        selRect.right > rect.left &&
+                        selRect.top < rect.bottom &&
+                        selRect.bottom > rect.top
+                    );
+
+                    if (isInside) {
+                        item.classList.add('selected');
+                    } else if (!e.ctrlKey) {
+                        item.classList.remove('selected');
+                    }
+                });
             });
 
             /* Event: drag end */
@@ -501,6 +575,39 @@
                 }
                 isDragging = false;
                 activeItems.forEach((item) => item.classList.remove("dragging"));
+
+                if (isSelecting) {
+                    isSelecting = false;
+                    selectionBox.style.display = 'none';
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                const selectedItems = document.querySelectorAll('.item.selected');
+                if (!selectedItems.length) return;
+
+                const step = e.shiftKey ? 10 : 1;
+
+                let dx = 0, dy = 0;
+                if (e.key === 'ArrowLeft') dx = -step;
+                if (e.key === 'ArrowRight') dx = step;
+                if (e.key === 'ArrowUp') dy = -step;
+                if (e.key === 'ArrowDown') dy = step;
+
+                if (dx !== 0 || dy !== 0) {
+                    e.preventDefault(); // hindari scroll layar
+                    selectedItems.forEach(item => {
+                        const left = parseInt(item.style.left, 10) || 0;
+                        const top = parseInt(item.style.top, 10) || 0;
+                        item.style.left = (left + dx) + 'px';
+                        item.style.top = (top + dy) + 'px';
+                    });
+
+                    // update koneksi & simpan
+                    updateWrapperSize();
+                    updateConnections();
+                    saveState?.();
+                }
             });
 
             /* Auto scroll saat drag mendekati tepi */

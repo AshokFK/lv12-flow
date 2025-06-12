@@ -129,7 +129,6 @@
                     },
                 })" 
                 x-on:item-selected.window="
-                    console.log('Operator item-selected event:', $event.detail.operator_selected);
                     $el.operator.addOptions($event.detail.operator_data);
                     $el.operator.setValue($event.detail.operator_selected);
                 "
@@ -138,13 +137,16 @@
             </flux:field>
             @endif
 
-            {{-- muncul hanya untuk item type: proses --}}
-            @if($itemable_type == 'proses')
+            {{-- Type proses, muncul untuk item type: proses atau komponen --}}
+            @if($itemable_type == 'proses' OR $itemable_type == 'komponen')
             <flux:radio.group wire:model="proses_type" label="Type proses" variant="segmented">
                 <flux:radio label="Standar" value="standar" />
                 <flux:radio label="Custom" value="custom" />
             </flux:radio.group>
+            @endif
 
+            {{-- Mesin, muncul hanya untuk item type: proses --}}
+            @if($itemable_type == 'proses')
             <flux:field>
                 <flux:label>Mesin</flux:label>
                 <x-tom-select wire:model="mesin" class="w-full" x-init="$el.mesin = new TomSelect($el, { 
@@ -184,7 +186,6 @@
                     },
                     onInitialize: function() {
                         let selectedValue = {{ App\Models\Mesin::whereIn('id', $mesin)->get() }};
-                        console.log('Initialize Selected mesin:', selectedValue);
                         this.clearOptions();
                         this.clear();
                         this.addOptions(selectedValue);

@@ -23,8 +23,8 @@ class CreateItem extends Component
     #[Validate('nullable')]
     public $next_to;
 
-    #[Validate('requiredIf:itemable_type,proses', message: 'Proses type harus dipilih')]
-    #[Validate('exclude_unless:itemable_type,proses', message: 'Proses type harus dipilih')]
+    #[Validate('required', message: 'Proses type harus dipilih')]
+    #[Validate('exclude_if:itemable_type,qc', message: 'Proses type harus dipilih')]
     #[Validate('in:standar,custom', message: 'Proses type tidak valid')]
     public $proses_type = 'standar';
 

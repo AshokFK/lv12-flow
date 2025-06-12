@@ -37,6 +37,13 @@ class ListItem extends Component
             ->paginate($this->perPage);
     }
 
+    #[On('item-updated')]
+    public function itemUpdated()
+    {
+        session()->flash('success', 'Item berhasil diupdate.');
+        unset($this->listItem);
+    }
+
     #[On('delete-item')]
     public function confirmDelete($id)
     {

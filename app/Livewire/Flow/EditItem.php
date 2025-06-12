@@ -4,7 +4,6 @@ namespace App\Livewire\Flow;
 
 use Flux\Flux;
 use App\Models\Mesin;
-use GuzzleHttp\Psr7\Header;
 use Livewire\Component;
 use App\Models\FlowItem;
 use App\Models\Operator;
@@ -28,8 +27,8 @@ class EditItem extends Component
     #[Validate('nullable')]
     public $next_to;
 
-    #[Validate('requiredIf:itemable_type,proses', message: 'Proses type harus dipilih')]
-    #[Validate('exclude_unless:itemable_type,proses', message: 'Proses type harus dipilih')]
+    #[Validate('required', message: 'Proses type harus dipilih')]
+    #[Validate('exclude_if:itemable_type,qc', message: 'Proses type harus dipilih')]
     #[Validate('in:standar,custom', message: 'Proses type tidak valid')]
     public $proses_type;
 
@@ -62,8 +61,8 @@ class EditItem extends Component
             });
 
         if ($item->itemable_type === 'proses') {
-            $operatorData = Operator::whereIn('nik', $this->operator)->active()->get() ?? [];
-            $mesinData = Mesin::whereIn('id', $item->mesin)->get() ?? [];
+            $operatorData = Operator::whereIn('nik', $this->operator)->active()->get();
+            $mesinData = Mesin::whereIn('id', $item->mesin)->get();
         }
 
         Flux::modal('edit-item')->show();
@@ -73,9 +72,9 @@ class EditItem extends Component
             next_to_selected: $next,
             next_to_id: $item->next_to,
             operator_selected: $this->operator,
-            operator_data: $operatorData,
+            operator_data: $operatorData ?? [],
             mesin_selected: $this->mesin,
-            mesin_data: $mesinData,
+            mesin_data: $mesinData ?? [],
         );
     }
 
@@ -121,10 +120,9 @@ class EditItem extends Component
         try {
             $flowItem->update($validated);
             Flux::modal('edit-item')->close();
-            session()->flash('success', 'Item berhasil diupdate.');
             // Redirect to the list item page after successful creation
-            $this->redirect(route('list.item', $this->header), navigate: true);
-            $this->reset();
+            $this->reset(['flowItemId', 'itemable_type', 'itemable_id', 'next_to', 'proses_type', 'operator', 'mesin']);
+            $this->dispatch('item-updated', item: $flowItem)->to(ListItem::class);
         } catch (\Throwable $th) {
             throw $th;
         }

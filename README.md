@@ -140,3 +140,14 @@ Update relasi lokasi pada header dan proses
 - update migration proses dan header
 
 Create-proses update validasi unique mastercode dan lokasi
+
+Update chart item
+- perbaikan format header wrapper width dan height 
+- menambahakan selection box untuk multiple select item dan geser item menggunakan arrow
+
+Update create dan edit item 
+- menampilkan proses type (standar,custom) pada type item komponen
+- update item, ketika save berhasil, dispatch event `item-updated` untuk reset list-item tanpa reload halaman
+
+Update list item
+- menampilkan badge (tim, bahan) jika item type komponen
