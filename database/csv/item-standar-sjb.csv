@@ -1,0 +1,205 @@
+id,header_id,itemable_type,itemable_id,next_to,proses_type,operator,mesin,nama_item,left,top
+305,2,komponen,3,,standar,,,front-tim,50,50
+306,2,proses,415,,standar,1041-Sri Pujiasih,SD22,menandai kupnat + chest,50,100
+307,2,proses,417,,standar,1041-Sri Pujiasih,SD22,pasang tape interlining & heming,50,150
+308,2,proses,419,,standar,"0755-Siti Istinaroh,3178-Munir Murtadho",SD21,jahit kupnat,50,200
+309,2,proses,421,,standar,2445-Esty Ayunda Prakasih,SD20,gosok kupnat,50,250
+310,2,proses,423,,standar,"2946-Johan Priyanto,3118-Asroi",LB07,jahit panjang side,50,300
+322,2,proses,425,,standar,1209-Lia Dwi Septiani,SD18,gosok tulang side + gosok heming,50,350
+324,2,proses,427,,standar,0712-Setyowati (A),SD17,gosok tape armhole,50,400
+326,2,komponen,39,,standar,,,kain waist-bahan,50,450
+327,2,komponen,82,,standar,,,tape interlining-bahan,50,500
+329,2,proses,445,,standar,2459-Irawanti,SD16,jahit tutup kantong waist,50,550
+331,2,proses,447,,standar,1114-Dina Widiafikasari,SD15,gosok tutup kantong waist + tape,50,600
+334,2,proses,449,,standar,1026-Reniawati,SD12,bobok kantong waist,50,650
+349,2,proses,451,,standar,2830-Siti Khalimah,SD13,press bobok + memilih kantong chest + gosok waist,50,700
+351,2,komponen,22,,standar,,,kain chest-bahan,50,750
+352,2,proses,429,,standar,"0708-Anik Lestari (A),2915-Puspita Sari",SD11,buat kantong chest,50,800
+353,2,proses,431,,standar,2828-Ngadiran,SD10,lakar chest,50,850
+354,2,proses,435,,standar,"3118-Asroi,2828-Ngadiran",SD10,jahit kantong chest,50,900
+355,2,proses,433,,standar,2828-Ngadiran,SD10,jahit lapisan kantong chest,50,950
+356,2,proses,437,,standar,2828-Ngadiran,SD10,bobok manual kantong chest,50,1000
+357,2,proses,439,,standar,"0708-Anik Lestari (A),2915-Puspita Sari",SD11,gosok merapikan kantong chest,50,1050
+358,2,proses,443,,standar,2390-Nikmatul Mahfiroh,SD08,stik kantong chest dalam,50,1100
+359,2,proses,441,,standar,2390-Nikmatul Mahfiroh,SD08,stik kantong chest luar,50,1150
+360,2,proses,453,,standar,1312-Fitri Ariyanti,SD05,jahit bantu armhole + taking segitiga bibir kantong,50,1200
+361,2,proses,455,,standar,0756-Muryati,SD04,pasang kantong waist,50,1250
+362,2,komponen,27,,standar,,,kain kantong-bahan,50,1300
+363,2,proses,463,,standar,1038-Puji Sulistiyani,SD06,jahit lapisan kantong + pasang kantong koin,50,1350
+365,2,proses,457,,standar,"3178-Munir Murtadho,1094-Nur Hidayati",SD03,jahit jarum 2 kantong waist + chest,50,1400
+366,2,proses,459,,standar,1094-Nur Hidayati,SD02,bartek bibir kantong waist,50,1450
+367,2,proses,461,,standar,1114-Dina Widiafikasari,MS68,obras lapisan kantong chest,50,1500
+368,2,qc,3,,standar,1335-Sutri Wijayanti,,qc line (front),50,1550
+369,2,komponen,9,,standar,,,penggabungan kecil-tim,50,1600
+370,2,proses,583,,standar,2200-Rismawati,SI17,gosok front + gambar,50,1650
+371,2,komponen,56,,standar,,,maoxin & interlining-bahan,50,1700
+372,2,proses,585,,standar,2200-Rismawati,SI17,gosok maoxin + pasang interlining,50,1750
+373,2,proses,587,,standar,2200-Rismawati,,gabung front + maoxin,50,1800
+374,2,proses,589,,standar,"3240-Istiani,0785-Sri Suharti","SI19,SI18",jahit bantu front,50,1850
+375,2,proses,591,,standar,1091-Siti Asiyah (A),SI20,jahit bantu gelombang lapel,50,1900
+376,2,proses,593,,standar,1016-Sudarti (A),SI10,soom lapel otomatis,50,1950
+377,2,proses,595,,standar,1091-Siti Asiyah (A),SI20,jahit bantu tape dalam,50,2000
+378,2,proses,597,,standar,1024-Uswatun Hasanah,"SI26,SI28",press front + gambar armhole,50,2050
+379,2,proses,599,,standar,3285-Vindi Intan Novianis,,gambar maoxin,50,2100
+380,2,proses,601,,standar,1016-Sudarti (A),SI21,rimbas maoxin,50,2150
+381,2,proses,603,,standar,3285-Vindi Intan Novianis,SI22,soom tape dalam,50,2200
+382,2,proses,605,,standar,2936-Umi Asmana,,potong maoxin & armhole,50,2250
+383,2,proses,607,,standar,2936-Umi Asmana,SI11,gosok interlining lapel front + menyusutkan lapel,50,2300
+384,2,proses,609,,standar,0744-Tri Mulyani,,gambar lapel front,50,2350
+385,2,proses,611,,standar,0744-Tri Mulyani,SI12,taking front heming,50,2400
+386,2,komponen,2,,standar,,,facing-tim,50,2450
+387,2,proses,381,,standar,"1583-Ngasiyah,3074-Mita Budi Ariyanti",SC15,jahit kupnat + jahit panjang,50,2500
+388,2,proses,383,,standar,2746-Dina Widati Mukaromah,SC09,gosok facing + menandai bobok kantong,50,2550
+389,2,proses,385,,standar,1034-Ana Febriana,SI06,jahit kolombia facing,50,2600
+390,2,proses,387,,standar,2968-Hanifatun Amelia Widyastutie,MS23,jahit side facing,50,2650
+391,2,proses,389,,standar,2746-Dina Widati Mukaromah,SC09,gosok side facing,50,2700
+392,2,proses,391,,standar,1035-Tusi Susanti,SH40,bobok kantong facing,50,2750
+393,2,proses,393,,standar,0759-Nofita Handayani,SC02,gosok bibir kantong,50,2800
+394,2,komponen,47,,standar,,,label-bahan,50,2850
+395,2,proses,395,,standar,2201-Siti Mulyani,SC19,pasang brand label + tandai brand,50,2900
+396,2,proses,397,,standar,1402-Dwi Herni Fitriyanti,SC01,stik bibir kantong,50,2950
+397,2,komponen,35,,standar,,,kain loop-bahan,50,3000
+398,2,komponen,11,,standar,,,benang-bahan,50,3050
+399,2,proses,399,,standar,1596-Ngatirin,"SC01,SC02",jahit c-loop,50,3100
+403,2,proses,403,,standar,2871-Ninik Nuryani,SC01,pasang kantong hp + c-loop,50,3150
+404,2,proses,401,,standar,"0729-Isronah,3074-Mita Budi Ariyanti",SC03,pasang kantong kanan kiri,50,3200
+405,2,proses,405,,standar,2298-Umi Fadhilah,SC04,bartek (3 kantong),50,3250
+406,2,proses,407,,standar,0759-Nofita Handayani,SC02,gosok merapikan facing,50,3300
+407,2,proses,409,,standar,1090-Andriani (C),SE05,jahit melter,50,3350
+408,2,proses,411,,standar,1090-Andriani (C),SC06,jahit soom,50,3400
+409,2,komponen,72,,standar,,,size label-bahan,50,3450
+410,2,proses,377,,standar,0717-Lina Sepmawati,SC11,pasang size label + jahit kantong,50,3500
+411,2,proses,379,,standar,1092-Malika,SC12,jahit kantong 2 jarum (3 kantong),50,3550
+412,2,komponen,67,,standar,,,serap ketiak-bahan,50,3600
+413,2,proses,413,,standar,1596-Ngatirin,SC21,jahit serap ketiak,50,3650
+416,2,qc,2,,standar,0394-Kustiyah,,qc line (facing),50,3700
+417,2,proses,613,,standar,0744-Tri Mulyani,,menyamakan size facing & front,50,3750
+418,2,proses,615,,standar,"1134-Ribet Subekti,3005-Achmad Sarifudin","SI14,SI31",jahit bantu facing ,50,3800
+419,2,proses,579,,standar,0876-Sofiyah (B),,buang benang,50,3850
+420,2,proses,621,,standar,0876-Sofiyah (B),SI01,rimbas lapel & plaket,50,3900
+421,2,proses,617,,standar,"1882-Sri Jumiati,0197-Suryati (A)","SH01,SI15",jahit panjang front & facing,50,3950
+422,2,proses,623,,standar,3142-Siti Nur Kholifah,,potong ujung lapel & plaket,50,4000
+423,2,proses,625,,standar,2123-Umi Masruroh,SI02,soom lapel,50,4050
+424,2,proses,627,,standar,2123-Umi Masruroh,SI03,gosok tulang lapel,50,4100
+425,2,proses,629,,standar,"1141-Partiningsih,1850-Ruji Wahyuni","SI04,SI05",gosok overlape lapel & plaket,50,4150
+426,2,proses,631,,standar,"1141-Partiningsih,1850-Ruji Wahyuni",SI07,jahit bantu overlape,50,4200
+427,2,proses,633,,standar,1831-Murni Hartatik,SI13,jahit bantu lapel & jahit bantu lurus,50,4250
+428,2,proses,635,,standar,1088-Indah Kristiani,SI09,soom tape facing dalam,50,4300
+429,2,proses,637,,standar,3142-Siti Nur Kholifah,"SI23,SI25",press lapel,50,4350
+430,2,proses,639,,standar,1088-Indah Kristiani,SI09,soom facing dalam,50,4400
+431,2,qc,8,,standar,0665-Andriani (B),,qc line (penggabungan kecil),50,4450
+432,2,komponen,8,,standar,,,penggabungan besar  -tim,50,4500
+433,2,proses,535,,standar,2570-Rina Sofiana,,potong lining armhole,50,4550
+434,2,komponen,71,,standar,,,shouder pad-bahan,50,4600
+435,2,proses,537,,standar,3167-Budi Ristiyanto,SH06,pasang shoulder pad,50,4650
+436,2,komponen,1,,standar,,,back-tim,50,4700
+437,2,komponen,20,,standar,,,interlining-bahan,50,4750
+438,2,proses,353,,standar,2759-Tadkirotul Mutmainah,SB07,tempel interlining,50,4800
+439,2,proses,355,,standar,2759-Tadkirotul Mutmainah,SB08,jahit panjang centerback,50,4850
+440,2,proses,357,,standar,3140-Iin Nur Aini,SB10,soom back,50,4900
+441,2,komponen,81,,standar,,,tape cbu-bahan,50,4950
+442,2,proses,359,,standar,2676-Putri Mayangsari,SB05,gosok center back pasang tape cbu + heming,50,5000
+443,2,komponen,79,,standar,,,tape-bahan,50,5050
+444,2,proses,361,,standar,1080-Fifi Iryaning Fyas,SC17,jahit tape armhole + stik heming + pasang lingkar kerah,50,5100
+445,2,proses,363,,standar,1080-Fifi Iryaning Fyas,SC17,jahit sudut side vent,50,5150
+446,2,proses,365,,standar,2676-Putri Mayangsari,SB05,gosok sudut vent,50,5200
+447,2,komponen,53,,standar,,,lining back-bahan,50,5250
+448,2,proses,367,,standar,3233-Ulfah Zaidatus Sa'adah,SB01,jahit lining back,50,5300
+449,2,proses,369,,standar,3233-Ulfah Zaidatus Sa'adah,SB02,gosok lining back,50,5350
+450,2,proses,371,,standar,3233-Ulfah Zaidatus Sa'adah,SB01,jahit allowance 1 cm,50,5400
+451,2,proses,373,,standar,2909-Feka Indriyani,SB06,stik center vent,50,5450
+452,2,qc,1,,standar,0394-Kustiyah,,qc line (back),50,5500
+453,2,proses,539,,standar,3167-Budi Ristiyanto,,menyamakan size back & front,50,5550
+454,2,proses,541,,standar,"2517-Eka Fitriyaningsih,1515-Isnayati,3105-Wartini","MS49,SH25",jahit sideseam,50,5600
+455,2,proses,543,,standar,2669-Nurul Istikomah,SH27,gosok tulang sideseam,50,5650
+456,2,proses,545,,standar,1130-Junariyah,"SH34,SH36",press sideseam,50,5700
+457,2,proses,547,,standar,"2688-Mira Merryna,2814-Susi Lestari","SH11,SG04,SH10",jahit lining samping + taking,50,5750
+458,2,proses,549,,standar,1130-Junariyah,SH12,gosok lining side,50,5800
+459,2,proses,551,,standar,2750-Inka Christianingsih,,jahit shell pundak,50,5850
+460,2,proses,553,,standar,1040-Uswatun Chasanah (A),SH15,gosok tulang pundak,50,5900
+461,2,komponen,79,,standar,,,tape-bahan,50,5950
+462,2,proses,555,,standar,2750-Inka Christianingsih,SH16,pasang tape pundak,50,6000
+463,2,proses,557,,standar,1040-Uswatun Chasanah (A),SH17,jahit bantu pundak depan,50,6050
+464,2,proses,559,,standar,3236-Ari Wahyuni,SH18,press pundak,50,6100
+465,2,proses,561,,standar,1033-Syayyidatul Munawaroh,"SH02,SH03",jahit lining pundak + gambar lingkar kerah,50,6150
+466,2,proses,563,,standar,1021-Laili Khoiriyah,SH03,gosok lining pundak,50,6200
+467,2,komponen,4,,standar,,,kerah-tim,50,6250
+468,2,komponen,83,,standar,,,tape st-bahan,50,6300
+469,2,proses,465,,standar,2497-Liga Fifna Indraswari,SA02,pasang tape st,50,6350
+470,2,komponen,31,,standar,,,kain keras-bahan,50,6400
+471,2,proses,467,,standar,3223-Ilyn Titis Nurafni,SA04,gabung kain keras,50,6450
+472,2,komponen,52,,standar,,,lining-bahan,50,6500
+473,2,proses,469,,standar,1923-Siti Mudajaah,SB11,jahit kain keras & lining,50,6550
+474,2,proses,471,,standar,0779-Indri Yuana Agustina,SE15,soom kerah,50,6600
+475,2,komponen,69,,standar,,,shell kerah-bahan,50,6650
+476,2,komponen,84,,standar,,,tape yk-bahan,50,6700
+477,2,proses,473,,standar,2497-Liga Fifna Indraswari,SA05,pasang tape yk,50,6750
+478,2,proses,457,,standar,1868-Umi Sulistyowati,,gambar kerah,50,6800
+479,2,proses,477,,standar,3223-Ilyn Titis Nurafni,SA04,gabung kerah & kaki kerah,50,6850
+480,2,proses,479,,standar,2497-Liga Fifna Indraswari,SA03,jahit 2 jarum,50,6900
+481,2,proses,481,,standar,1923-Siti Mudajaah,SB11,join shell + kain keras,50,6950
+482,2,proses,483,,standar,0779-Indri Yuana Agustina,SA08,zig-zag kerah,50,7000
+483,2,proses,485,,standar,1923-Siti Mudajaah,SB11,jahit siku,50,7050
+484,2,proses,489,,standar,1868-Umi Sulistyowati,SA10,gosok susutan kerah,50,7100
+485,2,proses,491,,standar,3223-Ilyn Titis Nurafni,SA01,jahit bantu kerah,50,7150
+486,2,komponen,79,,standar,,,tape-bahan,50,7200
+487,2,proses,493,,standar,1868-Umi Sulistyowati,SA10,pasang tape ujung kerah,50,7250
+488,2,proses,495,,standar,0779-Indri Yuana Agustina,SA02,gosok lipat kaki kerah,50,7300
+489,2,proses,487,,standar,1868-Umi Sulistyowati,,rimbas kerah,50,7350
+490,2,qc,4,,standar,1056-Sri Bekti Sulasih,,qc line (kerah),50,7400
+491,2,proses,565,,standar,0765-Septya Ningsih,,menyamakan size kerah,50,7450
+492,2,proses,567,,standar,"0765-Septya Ningsih,0766-Kusmiyati,3073-M Benny Abdullah","TR05,SN05",pasang kerah,50,7500
+493,2,proses,569,,standar,1019-Intan Anis Yuliani,MS36,jahit bantu garis kerah,50,7550
+494,2,proses,571,,standar,2839-Ria Lestari,MH08,jahit bantu dalam kerah,50,7600
+495,2,proses,573,,standar,2839-Ria Lestari,SH23,jahit bantu maolin,50,7650
+496,2,proses,575,,standar,2600-Wida Nungki Rinjani,SG02,press kerah + gosok kaki kerah,50,7700
+497,2,proses,577,,standar,3038-Adhang Adiwiyanto,MS57,zig-zag kerah,50,7750
+498,2,proses,619,,standar,2540-Ristanti Wahyu Mariah,,buang benang,50,7800
+499,2,komponen,18,,standar,,,hanger loop-bahan,50,7850
+500,2,proses,581,,standar,2540-Ristanti Wahyu Mariah,MS47,pasang hanger loop + variasi,50,7900
+501,2,qc,7,,standar,0975-Rieska Yamasari,,qc line ( penggabungan besar ),50,7950
+502,2,komponen,6,,standar,,,pasang lengan-tim,50,8000
+503,2,proses,641,,standar,1183-Darwati (B),SG05,gosok armhole,50,8050
+504,2,komponen,5,,standar,,,lengan-tim,50,8100
+505,2,komponen,20,,standar,,,interlining-bahan,50,8150
+506,2,proses,497,,standar,2809-Lia Dea Cahyani,SE08,pasang interlining lb & lk,50,8200
+507,2,proses,499,,standar,2809-Lia Dea Cahyani,SH28,press interlining lb & lk,50,8250
+508,2,proses,501,,standar,2016-Siti Amenah,SH30,press gelombang lengan besar,50,8300
+509,2,proses,503,,standar,2016-Siti Amenah,,gambar lubang variasi lengan,50,8350
+510,2,proses,505,,standar,2016-Siti Amenah,SE07,lubang variasi lengan,50,8400
+511,2,proses,507,,standar,2906-Wakini,SE06,jahit slite + cuff lb & lk,50,8450
+512,2,proses,509,,standar,2906-Wakini,SE08,gosok slite + cuff lb & lk,50,8500
+513,2,proses,511,,standar,"2890-Ulin Nasikhah,3172-Susanti (E)",SA06,jahit panjang lengan besar,50,8550
+514,2,proses,513,,standar,2724-Ahmad Saefudin,SE03,gosok buka tulang lengan besar,50,8600
+515,2,proses,515,,standar,2724-Ahmad Saefudin,SE03,press lengan besar,50,8650
+516,2,komponen,54,,standar,,,lining lengan-bahan,50,8700
+517,2,proses,517,,standar,1653-Ana Khodriyah,SE01,jahit lining lengan,50,8750
+518,2,proses,519,,standar,1653-Ana Khodriyah,SE22,gosok lining lengan,50,8800
+519,2,proses,521,,standar,2995-Mila Rohmatun Nisa,SE21,jahit gabung shell & lining,50,8850
+520,2,komponen,41,,standar,,,kancing-bahan,50,8900
+521,2,proses,523,,standar,2487-Nur Arifa,SE20,pasang kancing,50,8950
+522,2,proses,525,,standar,"2928-Rizka Agi Dwiyani,3258-Titin Yuliyanti",MS48,jahit panjang lengan kecil,50,9000
+523,2,proses,527,,standar,2724-Ahmad Saefudin,SE18,press lengan kecil,50,9050
+524,2,proses,529,,standar,1404-Joko Purwanto,SE16,jahit cuff + cekris nat lengan kecil,50,9100
+525,2,proses,531,,standar,1358-Ruslita,SE14,jahit bantu lengan,50,9150
+526,2,proses,533,,standar,2487-Nur Arifa,SE13,gosok cuff,50,9200
+527,2,qc,5,,standar,1056-Sri Bekti Sulasih,,qc line (lengan),50,9250
+528,2,proses,643,,standar,1183-Darwati (B),,menyamakan size lengan & body,50,9300
+529,2,proses,645,,standar,"0774-Jutri Handayani,2564-Fitayantika,2662-Wahyu Wulan Rahayuningrum","SG08,SG06,JH26",pasang lengan,50,9350
+530,2,proses,647,,standar,2677-Muksodah,SG09,gosok lingkar armhole,50,9400
+532,2,proses,649,,standar,2668-Marsiyem,SG10,gosok sleeve top,50,9450
+533,2,proses,651,,standar,2668-Marsiyem,SE12,jahit bantu armhole bawah,50,9500
+534,2,proses,653,,standar,2786-Suryani,SE11,jahit bantu armhole atas,50,9550
+535,2,proses,655,,standar,2878-Fitria Irawati,SE10,jahit bantu armhole shoulder pad dalam,50,9600
+536,2,proses,657,,standar,1128-Riwayati (A),SE09,rimbas armhole,50,9650
+537,2,komponen,74,,standar,,,sleeve had-bahan,50,9700
+538,2,proses,659,,standar,1350-Jaelani,SG12,pasang sleeve had,50,9750
+539,2,proses,663,,standar,0767-Dewi Mucharomah,SG13,jahit bantu lining armhole,50,9800
+541,2,proses,661,,standar,1128-Riwayati (A),,buang benang,50,9850
+542,2,proses,665,,standar,1128-Riwayati (A),,tandai armhole,50,9900
+543,2,proses,667,,standar,"3072-Joko Triyono,3300-Yulia Yurlina Zai","SG15,LG21",jahit armhole bawah,50,9950
+544,2,proses,669,,standar,1852-Solekah,SG17,jahit armhole atas,50,10000
+545,2,proses,671,,standar,2969-Putri Intan Sakinah,SG18,jahit tutup lining lengan,50,10050
+546,2,qc,6,,standar,0749-Misgiyanti,,qc line (pasang lengan),50,10100
+1130,2,proses,375,,standar,2909-Feka Indriyani,SB06,gabung lining & shell,50,10150
+4678,2,qc,9,,standar,3219-Nurul Khanifah,,qc sleeve had,50,10200

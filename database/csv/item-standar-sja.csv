@@ -1,0 +1,196 @@
+header_id,itemable_type,itemable_id,next_to,proses_type,operator,mesin,nama_item,left,top
+1,komponen,3,,standar,,,tim-front,50,50
+1,proses,415,,standar,"[""0223""]",,menandai kupnat + chest,50,100
+1,komponen,82,,standar,,,bahan-tape interlining,50,150
+1,proses,417,,standar,"[""0223""]",JD02,pasang tape interlining & heming,50,200
+1,komponen,22,,standar,,,bahan-kain chest,50,250
+1,proses,431,,standar,"[""1716""]",JD07,lakar chest,50,300
+1,proses,429,,standar,"[""1921"",""3107""]",JD08,buat kantong chest,50,350
+1,proses,433,,standar,"[""1716""]",JD07,jahit lapisan kantong chest,50,400
+1,proses,427,,standar,"[""0105""]",JD06,gosok tape armhole,50,450
+1,proses,419,,standar,"[""0387"",""3107""]",JD17,jahit kupnat,50,500
+1,proses,421,,standar,"[""2334""]",JD04,gosok kupnat,50,550
+1,proses,423,,standar,"[""3107"",""2808""]",JE17,jahit panjang side,50,600
+1,proses,425,,standar,"[""2627""]",JD05,gosok tulang side + gosok heming,50,650
+1,proses,435,,standar,"[""1716""]",JD07,jahit kantong chest,50,700
+1,komponen,39,,standar,,,bahan-kain waist,50,750
+1,komponen,27,,standar,,,bahan-kain kantong,50,800
+1,qc,3,,,"[""2508""]",,qc front,50,850
+1,proses,451,,standar,"[""0533""]",JD11,press bobok + memilih kantong chest + gosok waist,50,900
+1,proses,439,,standar,"[""1921""]",JD08,gosok merapikan kantong chest,50,950
+1,proses,453,,standar,"[""2177""]",JD16,jahit bantu armhole + taking segitiga bibir kantong,50,1000
+1,proses,447,,standar,"[""2794""]",JD14,gosok tutup kantong waist + tape,50,1050
+1,proses,445,,standar,"[""1377""]",JD13,jahit tutup kantong waist,50,1100
+1,proses,437,,standar,"[""1716""]",,bobok manual kantong chest,50,1150
+1,proses,441,,standar,"[""2091""]",JD09,stik kantong chest luar,50,1200
+1,proses,443,,standar,"[""2091""]",JD09,stik kantong chest dalam,50,1250
+1,proses,449,,standar,"[""1715""]",JD12,bobok kantong waist,50,1300
+1,proses,455,,standar,"[""0897""]",JD18,pasang kantong waist,50,1350
+1,proses,459,,standar,"[""1381""]",JD20,bartek bibir kantong waist,50,1400
+1,proses,461,,standar,"[""2794""]",JD01,obras lapisan kantong chest,50,1450
+1,proses,457,,standar,"[""1381""]",JD19,jahit jarum 2 kantong waist + chest,50,1500
+1,proses,463,,standar,"[""3232""]",JD21,jahit lapisan kantong + pasang kantong koin,50,1550
+1,komponen,2,,standar,,,tim-facing,50,1600
+1,komponen,47,,standar,,,bahan-label,50,1650
+1,komponen,35,,standar,,,bahan-kain loop,50,1700
+1,komponen,11,,standar,,,bahan-benang,50,1750
+1,komponen,67,,standar,,,bahan-serap ketiak,50,1800
+1,qc,2,,,"[""2753""]",,qc facing,50,1850
+1,proses,409,,standar,"[""0442""]",JC18,jahit melter,50,1900
+1,proses,405,,standar,"[""0057""]",JC15,bartek (3 kantong),50,1950
+1,proses,385,,standar,"[""2845""]",JC19,jahit kolombia facing,50,2000
+1,proses,397,,standar,"[""3123""]",JC12,stik bibir kantong,50,2050
+1,komponen,9,,standar,,,tim-penggabungan kecil,50,2100
+1,komponen,8,,standar,,,tim-penggabungan besar,50,2150
+1,komponen,4,,standar,,,tim-kerah,50,2200
+1,komponen,5,,standar,,,tim-lengan,50,2250
+1,komponen,6,,standar,,,tim-pasang lengan,50,2300
+1,komponen,1,,standar,,,tim-back,50,2350
+1,proses,381,,standar,"[""0757"",""3077""]",JB26,jahit kupnat + jahit panjang,50,2400
+1,proses,383,,standar,"[""0553""]",JC08,gosok facing + menandai bobok kantong,50,2450
+1,proses,387,,standar,"[""0544""]",JC07,jahit side facing,50,2500
+1,proses,389,,standar,"[""0553""]",JC08,gosok side facing,50,2550
+1,proses,391,,standar,"[""0048""]",LG30,bobok kantong facing,50,2600
+1,proses,393,,standar,"[""1939""]",JC16,gosok bibir kantong,50,2650
+1,proses,395,,standar,"[""0929""]",JC05,pasang brand label + tandai brand,50,2700
+1,proses,403,,standar,"[""2793""]",JE23,pasang kantong hp + c-loop,50,2750
+1,proses,407,,standar,"[""1939""]",JC16,gosok merapikan facing,50,2800
+1,proses,411,,standar,"[""0442""]",JE02,jahit soom,50,2850
+1,proses,377,,standar,"[""0060""]",JC01,pasang size label + jahit kantong,50,2900
+1,proses,379,,standar,"[""1650""]",JC02,jahit kantong 2 jarum (3 kantong),50,2950
+1,proses,399,,standar,"[""2735""]",JC16,jahit c-loop,50,3000
+1,proses,413,,standar,"[""3017""]",JC06,jahit serap ketiak,50,3050
+1,proses,583,,standar,"[""2007""]",JI01,gosok front + gambar,50,3100
+1,komponen,56,,standar,,,bahan-maoxin & interlining,50,3150
+1,proses,585,,standar,"[""2007""]",J101,gosok maoxin + pasang interlining,50,3200
+1,proses,587,,standar,"[""2007""]",,gabung front + maoxin,50,3250
+1,proses,589,,standar,"[""2876"",""3076""]","JI02,JI31",jahit bantu front,50,3300
+1,proses,591,,standar,"[""0621""]",JI05,jahit bantu gelombang lapel,50,3350
+1,proses,593,,standar,"[""1652""]",,soom lapel otomatis,50,3400
+1,proses,595,,standar,"[""0621""]",JI05,jahit bantu tape dalam,50,3450
+1,proses,597,,standar,"[""1839""]","JH27,JH29",press front + gambar armhole,50,3500
+1,proses,599,,standar,"[""1794""]",,gambar maoxin,50,3550
+1,proses,601,,standar,"[""1794""]",JI06,rimbas maoxin,50,3600
+1,proses,603,,standar,"[""1652""]",JI07,soom tape dalam,50,3650
+1,proses,605,,standar,"[""2619""]",,potong maoxin & armhole,50,3700
+1,proses,607,,standar,"[""2619""]",JI09,gosok interlining lapel front + susut lapel,50,3750
+1,proses,609,,standar,"[""0620""]",,gambar lapel front,50,3800
+1,proses,611,,standar,"[""0620""]",MS33,taking front heming,50,3850
+1,proses,613,,standar,"[""0620""]",,menyamakan size facing & front,50,3900
+1,proses,615,,standar,"[""0054"",""3149"",""3070""]","JI21,JI13",jahit bantu facing,50,3950
+1,proses,617,,standar,"[""3070"",""0700"",""1684""]","JI12,JI14",jahit panjang front & facing,50,4000
+1,proses,579,,standar,"[""2732""]",,buang benang,50,4050
+1,proses,621,,standar,"[""2732""]",JI15,rimbas lapel & plaket,50,4100
+1,proses,623,,standar,"[""3124""]",,potong ujung lapel & plaket,50,4150
+1,proses,625,,standar,"[""0104""]",JI16,soom lapel,50,4200
+1,proses,627,,standar,"[""0104""]",JI17,gosok tulang lapel,50,4250
+1,proses,629,,standar,"[""0234"",""2822""]","JI18,JI19",gosok overlape lapel & plaket,50,4300
+1,proses,631,,standar,"[""0234"",""2822""]",JI20,jahit bantu overlape,50,4350
+1,proses,633,,standar,"[""2738""]",JI03,jahit bantu lapel & jahit bantu lurus,50,4400
+1,proses,635,,standar,"[""0437""]",JI22,soom tape facing dalam,50,4450
+1,proses,637,,standar,"[""3124""]",,press lapel,50,4500
+1,proses,639,,standar,"[""0437""]",JI22,soom facing dalam,50,4550
+1,qc,8,,,"[""0791""]",,qc penggabungan kecil,50,4600
+1,proses,535,,standar,"[""3176""]",,potong lining armhole,50,4650
+1,proses,537,,standar,"[""0332""]",JH06,pasang shoulder pad,50,4700
+1,proses,539,,standar,"[""0332""]",,menyamakan size back & front,50,4750
+1,proses,541,,standar,"[""0061"",""0904"",""3322""]","JH03,JH04",jahit sideseam,50,4800
+1,proses,543,,standar,"[""0121""]",JH02,gosok tulang sideseam,50,4850
+1,proses,545,,standar,"[""2887""]","JH33,JH34",press sideseam,50,4900
+1,proses,547,,standar,"[""1493"",""2367""]","JH16,JH01",jahit lining samping + taking,50,4950
+1,proses,549,,standar,"[""2887""]",JH14,gosok lining side,50,5000
+1,proses,551,,standar,"[""1994""]",JH13,jahit shell pundak,50,5050
+1,proses,553,,standar,"[""0120""]",JH12,gosok tulang pundak,50,5100
+1,komponen,79,,standar,,,bahan-tape,50,5150
+1,proses,555,,standar,"[""1994""]",JH10,pasang tape pundak,50,5200
+1,proses,557,,standar,"[""0120""]",JH09,jahit bantu pundak depan,50,5250
+1,proses,559,,standar,"[""2350""]",JH08,press pundak,50,5300
+1,proses,561,,standar,"[""0622""]",JH18,jahit lining pundak + gambar lingkar kerah,50,5350
+1,proses,563,,standar,"[""3075""]",JH19,gosok lining pundak,50,5400
+1,proses,565,,standar,"[""3075""]",,menyamakan size kerah,50,5450
+1,proses,567,,standar,"[""3322"",""0067"",""1917""]","JH22,JH21",pasang kerah,50,5500
+1,proses,569,,standar,"[""0551""]",JH23,jahit bantu garis kerah,50,5550
+1,proses,571,,standar,"[""0076""]",JH25,jahit bantu dalam kerah,50,5600
+1,proses,573,,standar,"[""0113""]",JH20,jahit bantu maolin,50,5650
+1,proses,575,,standar,"[""0351""]",JG10,press kerah + gosok kaki kerah,50,5700
+1,proses,483,,standar,"[""0113""]",JG12,zig-zag kerah,50,5750
+1,proses,619,,standar,"[""2075""]",,buang benang,50,5800
+1,proses,581,,standar,"[""2075""]",MS32,pasang hanger loop + variasi,50,5850
+1,qc,7,,,"[""2541""]",,qc penggabungan besar,50,5900
+1,proses,353,,standar,"[""0094""]",JB11,tempel interlining,50,5950
+1,proses,355,,standar,"[""0094""]",JB10,jahit panjang centerback,50,6000
+1,proses,357,,standar,"[""0795""]",JB13,soom back,50,6050
+1,proses,359,,standar,"[""2927""]",JB07,gosok center back + pasang tape cbu & heming,50,6100
+1,proses,361,,standar,"[""3269""]",JB01,jahit tape armhole + stik heming + pasang lingkar kerah,50,6150
+1,proses,363,,standar,"[""0094""]",JB10,jahit sudut side vent,50,6200
+1,proses,365,,standar,"[""2918""]",JB05,gosok sudut vent,50,6250
+1,komponen,53,,standar,,,bahan-lining back,50,6300
+1,proses,373,,standar,"[""2918""]",HB08,stik center vent,50,6350
+1,qc,1,,,"[""2753""]",,qc back,50,6400
+1,proses,367,,standar,"[""0225""]",SH39,jahit lining back,50,6450
+1,proses,369,,standar,"[""0225""]",JB05,gosok lining back,50,6500
+1,proses,371,,standar,"[""0225""]",SH39,jahit allowance 1 cm,50,6550
+1,proses,465,,standar,"[""3015""]",JA01,pasang tape st,50,6600
+1,komponen,31,,standar,,,bahan-kain keras,50,6650
+1,proses,471,,standar,"[""0252""]",JC17,soom kerah,50,6700
+1,komponen,69,,standar,,,bahan-shell kerah,50,6750
+1,proses,477,,standar,"[""0051""]",JA09,gabung kerah & kaki kerah,50,6800
+1,proses,479,,standar,"[""0542""]",JA07,jahit 2 jarum,50,6850
+1,proses,481,,standar,"[""3274""]",JA02,join shell + kain keras,50,6900
+1,proses,577,,standar,"[""0252""]",JA03,zig-zag kerah,50,6950
+1,proses,485,,standar,"[""3274""]",,jahit siku,50,7000
+1,proses,489,,standar,"[""3015""]",JA01,gosok susutan kerah,50,7050
+1,proses,491,,standar,"[""0051""]",JA09,jahit bantu kerah,50,7100
+1,proses,493,,standar,"[""3015""]",JA01,pasang tape ujung kerah,50,7150
+1,proses,495,,standar,"[""0542""]",JA08,gosok lipat kaki kerah,50,7200
+1,proses,487,,standar,"[""3015""]",,rimbas kerah,50,7250
+1,qc,4,,,"[""2238""]",,qc kerah,50,7300
+1,proses,473,,standar,"[""0252""]",JA04,pasang tape yk,50,7350
+1,proses,475,,standar,"[""0542""]",,gambar kerah,50,7400
+1,proses,467,,standar,"[""0051""]",JA09,gabung kain keras,50,7450
+1,proses,469,,standar,"[""3274""]",JA02,jahit kain keras & lining,50,7500
+1,proses,497,,standar,"[""3161""]",JE13,pasang interlining lb & lk,50,7550
+1,proses,499,,standar,"[""3161""]",,press interlining lb & lk,50,7600
+1,proses,501,,standar,"[""0682""]",JH38,press gelombang lengan besar,50,7650
+1,proses,503,,standar,"[""0682""]",,gambar lubang variasi lengan,50,7700
+1,proses,505,,standar,"[""0682""]",JE15,lubang variasi lengan,50,7750
+1,proses,507,,standar,"[""0227""]",JE16,jahit slite + cuff lb & lk,50,7800
+1,proses,509,,standar,"[""0227""]",JE13,gosok slite + cuff lb & lk,50,7850
+1,proses,511,,standar,"[""3046"",""3062""]",MS31,jahit panjang lengan besar,50,7900
+1,proses,513,,standar,"[""1748""]",JE20,gosok buka tulang lengan besar,50,7950
+1,proses,515,,standar,"[""1748""]",JE20,press lengan besar,50,8000
+1,komponen,54,,standar,,,bahan-lining lengan,50,8050
+1,proses,521,,standar,"[""1978""]",JE01,jahit gabung shell & lining,50,8100
+1,proses,523,,standar,"[""0236""]",JE03,pasang kancing,50,8150
+1,proses,527,,standar,"[""1748""]",JE06,press lengan kecil,50,8200
+1,proses,529,,standar,"[""0816""]",JE07,jahit cuff + cekris nat lengan kecil,50,8250
+1,proses,531,,standar,"[""2359""]",JE08,jahit bantu lengan,50,8300
+1,proses,533,,standar,"[""0236""]",JE09,gosok cuff,50,8350
+1,qc,5,,,"[""2238""]",,qc lengan,50,8400
+1,proses,517,,standar,"[""2561""]",JE18,jahit lining lengan,50,8450
+1,proses,519,,standar,"[""2561""]",JE21,gosok lining lengan,50,8500
+1,proses,525,,standar,"[""3062"",""1826""]",MS30,jahit panjang lengan kecil,50,8550
+1,proses,641,,standar,"[""2560""]",JG14,gosok armhole,50,8600
+1,proses,643,,standar,"[""2560""]",,menyamakan size lengan & body,50,8650
+1,proses,645,,standar,"[""2171"",""0800"",""0302""]","SG07,JG16,JG17",pasang lengan,50,8700
+1,proses,647,,standar,"[""2312""]",JG18,gosok lingkar armhole,50,8750
+1,proses,649,,standar,"[""1198""]",JG19,gosok sleeve top,50,8800
+1,proses,651,,standar,"[""1198""]",JE10,jahit bantu armhole bawah,50,8850
+1,proses,653,,standar,"[""3000""]",JE11,jahit bantu armhole atas,50,8900
+1,proses,655,,standar,"[""2453""]",JE24,jahit bantu armhole shoulder pad dalam,50,8950
+1,proses,657,,standar,"[""0069"",""3071""]",JG01,rimbas armhole,50,9000
+1,komponen,74,,standar,,,bahan-sleeve had,50,9050
+1,proses,659,,standar,"[""2731""]",JG03,pasang sleeve had,50,9100
+1,proses,661,,standar,"[""0069""]",,buang benang,50,9150
+1,proses,663,,standar,"[""3071"",""1955""]",JG04,jahit bantu lining armhole,50,9200
+1,qc,9,,,"[""2865""]",,qc sleeve had,50,9250
+1,proses,665,,standar,"[""2661""]",,tandai armhole,50,9300
+1,proses,667,,standar,"[""3071"",""1941"",""2432""]","LG06,SG14",jahit armhole bawah,50,9350
+1,proses,669,,standar,"[""2065""]",JG07,jahit armhole atas,50,9400
+1,proses,671,,standar,"[""2661""]",JG09,jahit tutup lining lengan,50,9450
+1,qc,6,,,"[""2121""]",,qc pasang lengan,50,9500
+1,proses,401,,standar,"[""0550""]",JC14,pasang kantong kanan kiri,50,9550
+1,proses,375,,standar,"[""3269""]",JB01,gabung lining & shell,50,9600
+1,komponen,72,,standar,,,bahan-size label,50,9650
+1,komponen,52,,standar,,,bahan-lining,50,9700
+1,komponen,84,,standar,,,bahan-tape yk,50,9750

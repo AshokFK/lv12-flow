@@ -1,4 +1,9 @@
-id,kontrak,brand,pattern,style,tgl_berjalan,lokasi_id
-1,Standar SJA,Standar SJA,Standar SJA,Standar SJA,2025-06-05,1
-2,Standar SJB,Standar SJB,Standar SJB,Standar SJB,2025-06-05,2
-3,Standar SJC,Standar SJC,Standar SJC,Standar SJC,2025-06-05,3
+id,kontrak,brand,pattern,style,tgl_berjalan,lokasi_id,wrapper_width,wrapper_height
+1,Standar SJA,Standar SJA,Standar SJA,Standar SJA,2025-06-05,1,,
+2,Standar SJB,Standar SJB,Standar SJB,Standar SJB,2025-06-05,2,,
+3,Standar SJC,Standar SJC,Standar SJC,Standar SJC,2025-06-05,3,,
+4,Standar SLP,Standar SLP,Standar SLP,Standar SLP,2025-06-05,4,,
+5,Standar SLS,Standar SLS,Standar SLS,Standar SLS,2025-06-05,5,,
+6,Standar SLJ,Standar SLJ,Standar SLJ,Standar SLJ,2025-06-05,6,,
+7,Standar SPA,Standar SPA,Standar SPA,Standar SPA,2025-06-05,7,,
+8,Standar SPB,Standar SPB,Standar SPB,Standar SPB,2025-06-05,8,,

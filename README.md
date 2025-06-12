@@ -151,3 +151,6 @@ Update create dan edit item
 
 Update list item
 - menampilkan badge (tim, bahan) jika item type komponen
+
+Update database seeder
+- seeder import csv dipisahkan sesuai masing masing model/table
