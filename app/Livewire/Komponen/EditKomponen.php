@@ -7,7 +7,6 @@ use Illuminate\Validation\Rule;
 use Livewire\Component;
 use App\Models\Komponen;
 use Livewire\Attributes\On;
-use Livewire\Attributes\Validate;
 
 class EditKomponen extends Component
 {
@@ -45,16 +44,24 @@ class EditKomponen extends Component
         ]);
 
         $komponen = Komponen::findOrFail($this->komponenId);
-        $komponen->update([
-            'nama' => $this->nama,
-            'type' => $this->type,
-            'is_active' => $this->is_active,
-        ]);
-
+        
+        try {
+            // Update the komponen with validated data
+            $komponen->update([
+                'nama' => $this->nama,
+                'type' => $this->type,
+                'is_active' => $this->is_active,
+            ]);
+            $this->reset();
+            $this->dispatch('swal-toast', icon: 'success', title: 'Berhasil', text: 'Komponen berhasil diperbarui.');
+            $this->dispatch('refresh-list-komponen');
+            
+        } catch (\Throwable $th) {
+            //throw $th;
+            $this->dispatch('swal-toast', icon: 'error', title: 'Gagal', text: 'Komponen gagal diperbarui.');
+        }
+        
         Flux::modal('edit-komponen')->close();
-        session()->flash('success', 'Komponen berhasil diperbarui.');
-        $this->reset();
-        $this->redirect(route('list.komponen'), navigate: true);
     }
 
     public function render()
