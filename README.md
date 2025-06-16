@@ -154,3 +154,9 @@ Update list item
 
 Update database seeder
 - seeder import csv dipisahkan sesuai masing masing model/table
+
+Update flow item seeder
+- menambahkan data item standar sjc, slj, slp, sls, spa dan spb
+
+Update seeder komponen, proses dan qc
+- menambahkan truncate sebelum seeding

@@ -45,13 +45,13 @@
             <dl class="flex flex-col items-center gap-4 min-w-3xs bg-gray-100 dark:bg-gray-600 p-1 rounded-lg">
                 <dt class="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">Proses standard</dt>
                 <dd class="font-medium text-accent dark:text-accent-foreground">
-                    {{ $header->items->filter(fn($item) => $item->proses_type === 'standar')->count() }}
+                    {{ $header->items->filter(fn($item) => $item->proses_type === 'standar' && $item->itemable_type === 'proses')->count() }}
                 </dd>
             </dl>
             <dl class="flex flex-col items-center gap-4 min-w-3xs bg-gray-100 dark:bg-gray-600 p-1 rounded-lg">
                 <dt class="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">Proses custom</dt>
                 <dd class="font-medium text-accent dark:text-accent-foreground">
-                    {{ $header->items->filter(fn($item) => $item->proses_type === 'custom')->count() }}
+                    {{ $header->items->filter(fn($item) => $item->proses_type === 'custom' && $item->itemable_type === 'proses')->count() }}
                 </dd>
             </dl>
         </div>
@@ -129,9 +129,10 @@
                             <tr class="">
                                 <td class="p-2 text-sm whitespace-nowrap">
                                     <span class="font-medium capitalize">{{ $item->itemable_type }}</span>
-                                    @if ($item->proses_type)
-                                    <flux:badge @class([ '!bg-lime-500'=> $item->proses_type === 'standar',
-                                        '!bg-amber-500' => $item->proses_type === 'custom',
+                                    @if ($item->itemable_type === 'proses' || $item->itemable_type === 'komponen')
+                                    {{-- jika itemable adalah proses, tampilkan badge proses type --}}
+                                    <flux:badge @class([ '!bg-lime-300'=> $item->proses_type === 'standar',
+                                        '!bg-amber-300' => $item->proses_type === 'custom',
                                         ]) size="sm">
                                         {{ $item->proses_type }}
                                     </flux:badge>

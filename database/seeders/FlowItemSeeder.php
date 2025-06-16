@@ -60,5 +60,131 @@ class FlowItemSeeder extends Seeder
                 ]);
             }
         });
+
+        // import standar item SJC
+        $flowItems = Reader::createFromPath(database_path() . '/csv/item-standar-sjc.csv', 'r');
+        $flowItems->setHeaderOffset(0); //set the CSV header offset
+
+        $this->command->outputComponents()->task('item-standar-sjc.csv', function () use ($flowItems) {
+            // Insert each item into the flow_item table
+            foreach ($flowItems as $item) {
+                DB::table('flow_item')->insert([
+                    'header_id' => trim($item['header_id']),
+                    'itemable_type' => trim($item['itemable_type']),
+                    'itemable_id' => trim($item['itemable_id']),
+                    'next_to' => trim($item['next_to']),
+                    'proses_type' => trim($item['proses_type']),
+                    'operator' => trim($item['operator']),
+                    'mesin' => trim($item['mesin']),
+                    'left' => trim($item['left']) . "px",
+                    'top' => trim($item['top']) . "px",
+                ]);
+            }
+        });
+
+        // import standar item SLP
+        $flowItems = Reader::createFromPath(database_path() . '/csv/item-standar-slp.csv', 'r');
+        $flowItems->setHeaderOffset(0); //set the CSV header offset
+
+        $this->command->outputComponents()->task('item-standar-slp.csv', function () use ($flowItems) {
+            // Insert each item into the flow_item table
+            foreach ($flowItems as $item) {
+                DB::table('flow_item')->insert([
+                    'header_id' => trim($item['header_id']),
+                    'itemable_type' => trim($item['itemable_type']),
+                    'itemable_id' => trim($item['itemable_id']),
+                    'next_to' => trim($item['next_to']),
+                    'proses_type' => trim($item['proses_type']),
+                    'operator' => trim($item['operator']),
+                    'mesin' => trim($item['mesin']),
+                    'left' => trim($item['left']) . "px",
+                    'top' => trim($item['top']) . "px",
+                ]);
+            }
+        });
+
+        // import standar item SLS
+        $flowItems = Reader::createFromPath(database_path() . '/csv/item-standar-sls.csv', 'r');
+        $flowItems->setHeaderOffset(0); //set the CSV header offset
+
+        $this->command->outputComponents()->task('item-standar-sls.csv', function () use ($flowItems) {
+            // Insert each item into the flow_item table
+            foreach ($flowItems as $item) {
+                DB::table('flow_item')->insert([
+                    'header_id' => trim($item['header_id']),
+                    'itemable_type' => trim($item['itemable_type']),
+                    'itemable_id' => trim($item['itemable_id']),
+                    'next_to' => trim($item['next_to']),
+                    'proses_type' => trim($item['proses_type']),
+                    'operator' => trim($item['operator']),
+                    'mesin' => trim($item['mesin']),
+                    'left' => trim($item['left']) . "px",
+                    'top' => trim($item['top']) . "px",
+                ]);
+            }
+        });
+
+        // import standar item SLJ
+        $flowItems = Reader::createFromPath(database_path() . '/csv/item-standar-slj.csv', 'r');
+        $flowItems->setHeaderOffset(0); //set the CSV header offset
+
+        $this->command->outputComponents()->task('item-standar-slj.csv', function () use ($flowItems) {
+            // Insert each item into the flow_item table
+            foreach ($flowItems as $item) {
+                DB::table('flow_item')->insert([
+                    'header_id' => trim($item['header_id']),
+                    'itemable_type' => trim($item['itemable_type']),
+                    'itemable_id' => trim($item['itemable_id']),
+                    'next_to' => trim($item['next_to']),
+                    'proses_type' => trim($item['proses_type']),
+                    'operator' => trim($item['operator']),
+                    'mesin' => trim($item['mesin']),
+                    'left' => trim($item['left']) . "px",
+                    'top' => trim($item['top']) . "px",
+                ]);
+            }
+        });
+
+        // import standar item SPA
+        $flowItems = Reader::createFromPath(database_path() . '/csv/item-standar-spa.csv', 'r');
+        $flowItems->setHeaderOffset(0); //set the CSV header offset
+
+        $this->command->outputComponents()->task('item-standar-spa.csv', function () use ($flowItems) {
+            // Insert each item into the flow_item table
+            foreach ($flowItems as $item) {
+                DB::table('flow_item')->insert([
+                    'header_id' => trim($item['header_id']),
+                    'itemable_type' => trim($item['itemable_type']),
+                    'itemable_id' => trim($item['itemable_id']),
+                    'next_to' => trim($item['next_to']),
+                    'proses_type' => trim($item['proses_type']),
+                    'operator' => trim($item['operator']),
+                    'mesin' => trim($item['mesin']),
+                    'left' => trim($item['left']) . "px",
+                    'top' => trim($item['top']) . "px",
+                ]);
+            }
+        });
+
+        // import standar item SPB
+        $flowItems = Reader::createFromPath(database_path() . '/csv/item-standar-spb.csv', 'r');
+        $flowItems->setHeaderOffset(0); //set the CSV header offset
+
+        $this->command->outputComponents()->task('item-standar-spb.csv', function () use ($flowItems) {
+            // Insert each item into the flow_item table
+            foreach ($flowItems as $item) {
+                DB::table('flow_item')->insert([
+                    'header_id' => trim($item['header_id']),
+                    'itemable_type' => trim($item['itemable_type']),
+                    'itemable_id' => trim($item['itemable_id']),
+                    'next_to' => trim($item['next_to']),
+                    'proses_type' => trim($item['proses_type']),
+                    'operator' => trim($item['operator']),
+                    'mesin' => trim($item['mesin']),
+                    'left' => trim($item['left']) . "px",
+                    'top' => trim($item['top']) . "px",
+                ]);
+            }
+        });
     }
 }

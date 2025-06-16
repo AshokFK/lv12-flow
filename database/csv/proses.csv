@@ -55,7 +55,7 @@ L.JKT.FA.00003,見返しサイドとアロワンスをアイロンする・ブ�
 L.JKT.FA.00004,見返しポケットの玉縁,Bobok kantong facing,2,6
 L.JKT.FA.00005,見返しポケット口のアイロン作業・ルイスの印する,Gosok bibir kantong dalam facing dan tandai soom,1,6
 L.JKT.FA.00006,ブランドネーム付け,Pasang brand label,1,6
-L.JKT.FA.00007,向こう布の縫い・証紙付け,Jahit lapisan kantong+pasang size label ,1,6
+L.JKT.FA.00007,向こう布の縫い・証紙付け,Jahit lapisan kantong + pasang size label ,1,6
 L.JKT.FA.00008,袋地の付け,Pasang kantong facing,2,6
 L.JKT.FA.00009,袋地のステッチ・見返しの袋地のタキング,Stik kain kantong dalam + taking kantong facing  ,1,6
 L.JKT.FA.00010,見返しのカン止め,Bartek facing,2,6
@@ -81,7 +81,7 @@ L.JKT.FR.00019,「裏側」胸ポケットのステッチ,Stik kantong chest dal
 L.JKT.FR.00020,「表側」胸ポケットのステッチ,Stik kantong chest luar,2,6
 L.JKT.FR.00021,胸ポケットの袋地を回り縫い・タキング,Melingkari kantong chest + taking ,1,6
 L.JKT.FR.00022,腰ポケットフラップの縫い,Jahit tutup kantong waist ,2,6
-L.JKT.FR.00023,フラップのアイロン作業・接着芯貼り,Gosok tutup kantong+ Tape,1,6
+L.JKT.FR.00023,フラップのアイロン作業・接着芯貼り,Gosok tutup kantong + Tape,1,6
 L.JKT.FR.00024,前身の玉縁・腰ポケットのノッチ切り,Bobok front + potong lapisan kantong waist ,2,6
 L.JKT.FR.00025,腰ポケットのプレス作業,Press bibir kantong waist,2,6
 L.JKT.FR.00026,アームホールのしつけ・玉縁の虫止め,Jahit bantu armhole + taking segitiga bibir kantong ,1,6
@@ -170,10 +170,10 @@ L.PNT.BK.00009,ダーツの縫い,Jahit kupnat,1,4
 L.PNT.BK.00010,ダーツのアイロン・玉縁の接着芯貼り,Gosok kupnat + Tempel interlining kupnat,1,4
 L.PNT.BK.00011,玉縁,Bobok,2,4
 L.PNT.BK.00012,ピスポケット口のプレス・上側玉縁の向こう布をアイロンする,Press bibir kantong + gosok lapisan bibir atas,2,4
-L.PNT.BK.00013,向こう布縫い・証紙付け・ケアラベル縫い,Jahit lapisan & pasang size label+ jahit care label ,2,4
+L.PNT.BK.00013,向こう布縫い・証紙付け・ケアラベル縫い,Jahit lapisan & pasang size label + jahit care label ,2,4
 L.PNT.BK.00014,袋地の断ち切り・ピスポケットの袋地をひっくり返しする,Potong kain kantong + balik kantong back ,2,4
 L.PNT.BK.00015,左右ポケット袋地のステッチ,Stik bibir bobok atas + merapikan kantong ,1,4
-L.PNT.BK.00016,しつけ,Jahit bantu,1,4
+L.PNT.BK.00016,しつけ,Jahit bantu back,1,4
 L.PNT.BK.00017,カン止め,Bartek,2,4
 L.PNT.FR.00001,後身の接着芯貼り,Tempel interlining front,1,4
 L.PNT.FR.00002,天狗裏をアイロンする,Tempel interlining golby luar dalam,1,4
@@ -186,7 +186,7 @@ L.PNT.FR.00008,脇ポケットの向こう布付け,Jahit lapisan kantong front 
 L.PNT.FR.00009,ポケットの毛抜きをアイロンする,Gosok overlape kantong,1,4
 L.PNT.FR.00010,脇ポケットのステッチ,Stik kantong front ,1,4
 L.PNT.FR.00011,脇ポケットの袋地を付ける,Pasang kantong,1,4
-L.PNT.FR.00012,袋地の回り縫い,jahit lingkar lining kantong,1,4
+L.PNT.FR.00012,袋地の回り縫い,Jahit lingkar lining kantong,1,4
 L.PNT.FR.00013,カン止め,Bartek,1,4
 L.PNT.FR.00014,脇ポケットのオーバーロック,Obras kantong front,1,4
 L.PNT.FR.00015,前身のオーバーロック,Obras front ,2,4
@@ -202,24 +202,24 @@ L.PNT.PB.00008,天狗裏のステッチ,Stik golby dalam ,1,4
 L.PNT.PB.00009,天狗表のステッチ,Stik golby luar,2,4
 L.PNT.PB.00010,尻ぐりの縫い,Jahit backrise,3,4
 L.PNT.PB.00011,尻ぐりの縫い代割をアイロンする,Gosok backrise,1,4
-L.PNT.PB.00012,ボディーとマベルトのサイズを合わせる,Menyamakan size body waistban ,1,4
+L.PNT.PB.00012,ボディーとマベルトのサイズを合わせる,Menyamakan size body waistband ,1,4
 L.PNT.PB.00013,マベルトを付ける,Pasang waistband,2,4
 L.PNT.PB.00014,ブランドネームと吊れテープを付けるとしつけ,Jahit bantu & pasang pita + jahit brand label ,1,4
 L.PNT.PB.00015,小股とマベルトをステッチする,Stik waistband + Stik crotch ,2,4
-L.PNT.PB.00016,持ち出しの穴篝,Lubang kancing ujung waistban ,2,4
-L.PNT.PB.00017,穴篝と天狗をカン止めする,Bartek golby+ bartek lubang kancing,2,4
-L.PNT.PK.00001,マベルトにベルト芯の貼り,Tempel kain keras waistban ,1,4
+L.PNT.PB.00016,持ち出しの穴篝,Lubang kancing ujung waistband ,2,4
+L.PNT.PB.00017,穴篝と天狗をカン止めする,Bartek golby + bartek lubang kancing,2,4
+L.PNT.PK.00001,マベルトにベルト芯の貼り,Tempel kain keras waistband ,1,4
 L.PNT.PK.00002,ウェストフルのテープ貼り,Tempel tape waist full ,1,4
-L.PNT.PK.00003,マベルトのプレス,Press waistban ,1,4
+L.PNT.PK.00003,マベルトのプレス,Press waistband ,1,4
 L.PNT.PK.00004,前身と後身のマベルトを合わせる,Gabung waist band front & back,2,4
-L.PNT.PK.00005,マベルトの縫い代割をアイロンする・断ち切り,Gosok buka tulang waistban +rimbas ,1,4
-L.PNT.PK.00006,「表裏」ウェストの合わせる,Join waistban luar & dalam ,2,4
-L.PNT.PK.00007,マベルトのステッチ,Stik waistban dalam,1,4
-L.PNT.PK.00008,マベルト中心の縫い,Jahit backrise waistban,1,4
+L.PNT.PK.00005,マベルトの縫い代割をアイロンする・断ち切り,Gosok buka tulang waistband +rimbas ,1,4
+L.PNT.PK.00006,「表裏」ウェストの合わせる,Join waistband luar & dalam ,2,4
+L.PNT.PK.00007,マベルトのステッチ,Stik waistband dalam,1,4
+L.PNT.PK.00008,マベルト中心の縫い,Jahit backrise waistband,1,4
 L.PNT.PK.00009,マベルトの毛抜きをアイロンする,Gosok overlape waist,1,4
 L.PNT.PK.00010,持ち出しの毛抜きをアイロンする,Gosok overlape ujung waist,1,4
-L.PNT.PK.00011,表側のマベルトをアイロンする,Gosok waistban luar,1,4
-L.PNT.PK.00012,マベルト裏をアイロンする,Gosok lipat waistban dalam ,1,4
+L.PNT.PK.00011,表側のマベルトをアイロンする,Gosok waistband luar,1,4
+L.PNT.PK.00012,マベルト裏をアイロンする,Gosok lipat waistband dalam ,1,4
 L.PNT.PK.00013,ブランドネム付け,Jahit brand label ,1,4
 L.PNT.PK.00014,ウェストのルップ位置を印する,Gambar posisi loop waist,1,4
 L.PNT.PK.00015,ルップの縫い,Jahit loop,2,4
@@ -319,7 +319,7 @@ M.CSL.PB.00010,衿とボディーのサイズを合わせる,Menyamakan size ker
 M.CSL.PB.00011,衿付け,Pasang kerah ,3,3
 M.CSL.PB.00012,衿の縫い代割をアイロンする・断ち切り,Potong + gosok buka tulang kerah ,2,3
 M.CSL.PB.00013,衿にテープを付け,Pasang tape kerah ,2,3
-M.CSL.PB.00014,Maolinのしつけ,Jahit bantu moulin ,2,3
+M.CSL.PB.00014,Maolinのしつけ,Jahit bantu maolin ,2,3
 M.CSL.PB.00015,衿千鳥縫い,Zig-zag kerah ,2,3
 M.CSL.PB.00016,衿を綺麗にアイロンする,Gosok merapikan kerah ,1,3
 M.CSL.PB.00017,衿のステッチ,Stik kerah ,2,3
@@ -343,9 +343,9 @@ M.CSL.PK.00016,肩パット付け,Pasang shoulderpad ,2,3
 M.CSL.PL.00001,袖とボディーのサイズを合わせる,Menyamakan size lengan ,1,3
 M.CSL.PL.00002,袖付け,Pasang lengan ,3,3
 M.CSL.PL.00003,アームホールをアイロンする,Gosok armhole ,2,3
-M.CSL.PL.00004,タレ綿付け,Pasang slevehad ,2,3
-M.CSL.PL.00005,袖山のアイロン,Gosok sleevetop ,2,3
-M.CSL.PL.00006,肩パットのしつけ,Jahit bantu soulderpad + maoxin,2,3
+M.CSL.PL.00004,タレ綿付け,Pasang sleevehead ,2,3
+M.CSL.PL.00005,袖山のアイロン,Gosok sleeve top ,2,3
+M.CSL.PL.00006,肩パットのしつけ,Jahit bantu shoulderpad + maoxin,2,3
 M.CSL.PL.00007,アームホール裏のしつけ,Jahit bantu lining armhole ,2,3
 M.CSL.PL.00008,アームホールとボディーを印する,Tandai body & armhole ,1,3
 M.CSL.PL.00009,下アームホールの縫い,Jahit armhole bawah ,2,3
@@ -487,8 +487,8 @@ M.JKT.KR.00011,衿キザミの縫い,Jahit siku,1,1
 M.JKT.KR.00011,衿キザミの縫い,Jahit siku,1,2
 M.JKT.KR.00012,段差カット,Rimbas kerah,1,1
 M.JKT.KR.00012,段差カット,Rimbas kerah,1,2
-M.JKT.KR.00013,アイロンで衿を知締めにする,gosok susutan kerah ,2,1
-M.JKT.KR.00013,アイロンで衿を知締めにする,gosok susutan kerah ,2,2
+M.JKT.KR.00013,アイロンで衿を知締めにする,Gosok susutan kerah ,2,1
+M.JKT.KR.00013,アイロンで衿を知締めにする,Gosok susutan kerah ,2,2
 M.JKT.KR.00014,衿のしつけ,Jahit bantu kerah,2,1
 M.JKT.KR.00014,衿のしつけ,Jahit bantu kerah,2,2
 M.JKT.KR.00015,衿止まりにテープを付け,Pasang tape ujung kerah,1,1
@@ -519,8 +519,8 @@ M.JKT.LG.00011,袖裏の縫い,Jahit lining lengan ,1,1
 M.JKT.LG.00011,袖裏の縫い,Jahit lining lengan ,1,2
 M.JKT.LG.00012,袖裏のアイロン,Gosok lining lengan ,1,1
 M.JKT.LG.00012,袖裏のアイロン,Gosok lining lengan ,1,2
-M.JKT.LG.00013,表裏袖の縫い合わせ,jahit Gabung shell lining,2,1
-M.JKT.LG.00013,表裏袖の縫い合わせ,jahit Gabung shell lining,2,2
+M.JKT.LG.00013,表裏袖の縫い合わせ,Jahit Gabung shell lining,2,1
+M.JKT.LG.00013,表裏袖の縫い合わせ,Jahit Gabung shell lining,2,2
 M.JKT.LG.00014,袖の釦付け,Pasang kancing,1,1
 M.JKT.LG.00014,袖の釦付け,Pasang kancing,1,2
 M.JKT.LG.00015,内袖の縫い 「長い」,Jahit panjang lengan kecil,2,1
@@ -731,14 +731,14 @@ M.PNT.FR.00005,忍びポケットを作成する,Jahit kantong koin,1,7
 M.PNT.FR.00005,忍びポケットを作成する,Jahit kantong koin,1,8
 M.PNT.FR.00006,袋地に忍びポケットを付ける,pasang kain kantong koin,1,7
 M.PNT.FR.00006,袋地に忍びポケットを付ける,pasang kain kantong koin,1,8
-M.PNT.FR.00007,袋地の縫い回り,jahit melingkari kain kantong,2,7
-M.PNT.FR.00007,袋地の縫い回り,jahit melingkari kain kantong,2,8
+M.PNT.FR.00007,袋地の縫い回り,Jahit melingkari kain kantong,2,7
+M.PNT.FR.00007,袋地の縫い回り,Jahit melingkari kain kantong,2,8
 M.PNT.FR.00008,袋地のひっくり返し,Membalik kain kantong ,1,7
 M.PNT.FR.00008,袋地のひっくり返し,Membalik kain kantong ,1,8
-M.PNT.FR.00009,袋地のアイロン作業,gosok kain kantong ,1,7
-M.PNT.FR.00009,袋地のアイロン作業,gosok kain kantong ,1,8
-M.PNT.FR.00010,玉縁のアイロン作業,gosok nat bibir kantong,2,7
-M.PNT.FR.00010,玉縁のアイロン作業,gosok nat bibir kantong,2,8
+M.PNT.FR.00009,袋地のアイロン作業,Gosok kain kantong ,1,7
+M.PNT.FR.00009,袋地のアイロン作業,Gosok kain kantong ,1,8
+M.PNT.FR.00010,玉縁のアイロン作業,Gosok nat bibir kantong,2,7
+M.PNT.FR.00010,玉縁のアイロン作業,Gosok nat bibir kantong,2,8
 M.PNT.FR.00011,脇ポエットステッチ・袋地の向こう布縫い,Stik bibir kantong & jahit lipatan kantong,1,7
 M.PNT.FR.00011,脇ポエットステッチ・袋地の向こう布縫い,Stik bibir kantong & jahit lipatan kantong,1,8
 M.PNT.FR.00012,前身のしつけ,Jahit bantu front,1,7
@@ -747,18 +747,18 @@ M.PNT.PB.00001,天狗とマベルトのサイズをあわせる・ハンガー�
 M.PNT.PB.00001,天狗とマベルトのサイズをあわせる・ハンガーロールにパンツをかける,Menjepit celana + Menyamakan size golby & waistband,1,8
 M.PNT.PB.00002,天狗の付ける,Pasang golby,2,7
 M.PNT.PB.00002,天狗の付ける,Pasang golby,2,8
-M.PNT.PB.00003,マベルトの縫い合わせる・天狗の毛抜きをステッチする,Jahit menyamakan pinggang wb & stik overlap golby ,1,7
-M.PNT.PB.00003,マベルトの縫い合わせる・天狗の毛抜きをステッチする,Jahit menyamakan pinggang wb & stik overlap golby ,1,8
+M.PNT.PB.00003,マベルトの縫い合わせる・天狗の毛抜きをステッチする,Jahit menyamakan pinggang waistband & stik overlap golby ,1,7
+M.PNT.PB.00003,マベルトの縫い合わせる・天狗の毛抜きをステッチする,Jahit menyamakan pinggang waistband & stik overlap golby ,1,8
 M.PNT.PB.00004,マベルトの付け,Pasang waistband,2,7
 M.PNT.PB.00004,マベルトの付け,Pasang waistband,2,8
-M.PNT.PB.00005,左側の持ち出しの縫い,Jahit ujung waistban kiri ,2,7
-M.PNT.PB.00005,左側の持ち出しの縫い,Jahit ujung waistban kiri ,2,8
+M.PNT.PB.00005,左側の持ち出しの縫い,Jahit ujung waistband kiri ,2,7
+M.PNT.PB.00005,左側の持ち出しの縫い,Jahit ujung waistband kiri ,2,8
 M.PNT.PB.00006,右側の持ち出し縫い,Jahit ujung wiastband kanan ,2,7
 M.PNT.PB.00006,右側の持ち出し縫い,Jahit ujung wiastband kanan ,2,8
 M.PNT.PB.00007,左側のマベルトにトリミングをかける,Triming waistband kiri ,1,7
 M.PNT.PB.00007,左側のマベルトにトリミングをかける,Triming waistband kiri ,1,8
-M.PNT.PB.00008,持ち出しの落とし．持ち出しひっくり返し,Rimbas ujung + waistban & membalikan ,1,7
-M.PNT.PB.00008,持ち出しの落とし．持ち出しひっくり返し,Rimbas ujung + waistban & membalikan ,1,8
+M.PNT.PB.00008,持ち出しの落とし．持ち出しひっくり返し,Rimbas ujung + waistband & membalikan ,1,7
+M.PNT.PB.00008,持ち出しの落とし．持ち出しひっくり返し,Rimbas ujung + waistband & membalikan ,1,8
 M.PNT.PB.00009,マベルトのアイロンする・マベルトの断ち切り落とし,Gosok waistband & rimbas waistband ,1,7
 M.PNT.PB.00009,マベルトのアイロンする・マベルトの断ち切り落とし,Gosok waistband & rimbas waistband ,1,8
 M.PNT.PB.00010,前カン付け,Pasang hook & eye,2,7
@@ -783,8 +783,8 @@ M.PNT.PB.00019,小股のしつけ,Jahit bantu crotch,1,7
 M.PNT.PB.00019,小股のしつけ,Jahit bantu crotch,1,8
 M.PNT.PB.00020,小股の三角シックをステッチする,Stik kain crotch ,1,7
 M.PNT.PB.00020,小股の三角シックをステッチする,Stik kain crotch ,1,8
-M.PNT.PB.00021,マベルトのルイス・マベルトのステッチ,Soom waistband / Stik waistban ,2,7
-M.PNT.PB.00021,マベルトのルイス・マベルトのステッチ,Soom waistband / Stik waistban ,2,8
+M.PNT.PB.00021,マベルトのルイス・マベルトのステッチ,Soom waistband / Stik waistband ,2,7
+M.PNT.PB.00021,マベルトのルイス・マベルトのステッチ,Soom waistband / Stik waistband ,2,8
 M.PNT.PB.00022,下側のルップをカン止めする,Bartek loop bawah,2,7
 M.PNT.PB.00022,下側のルップをカン止めする,Bartek loop bawah,2,8
 M.PNT.PB.00023,天狗と脇ポケットのカン止めする,Bartek kantong depan + Golby,2,7
@@ -793,8 +793,8 @@ M.PNT.PB.00024,穴篝縫い・糸取,Jahit Lubang kancing + buang benang,2,7
 M.PNT.PB.00024,穴篝縫い・糸取,Jahit Lubang kancing + buang benang,2,8
 M.PNT.PB.00025,釦付けの所に印をかける,Menandai pasang kancing,1,7
 M.PNT.PB.00025,釦付けの所に印をかける,Menandai pasang kancing,1,8
-M.PNT.PB.00026,釦穴のカン止め・釦穴の残糸切,Bartek lubang kancing + ptong sisa benang ,1,7
-M.PNT.PB.00026,釦穴のカン止め・釦穴の残糸切,Bartek lubang kancing + ptong sisa benang ,1,8
+M.PNT.PB.00026,釦穴のカン止め・釦穴の残糸切,Bartek lubang kancing + potong sisa benang ,1,7
+M.PNT.PB.00026,釦穴のカン止め・釦穴の残糸切,Bartek lubang kancing + potong sisa benang ,1,8
 M.PNT.PB.00027,マベルトのタキング,Taking waistband,2,7
 M.PNT.PB.00027,マベルトのタキング,Taking waistband,2,8
 M.PNT.PB.00028,釦付け,Pasang kancing,1,7
@@ -912,3 +912,45 @@ Q.PNT.PB.00001,パンツの検査,Pengecekan Pants Men B,1,32
 Q.PNT.PB.00002,アウトルック検査,Outlook Pants B,1,32
 Q.PNT.PL.00001,レディースPT検査,Pengecekan Pants Ladies ,1,28
 Q.SKT.SK.00001,スカート検査,Pengecekan Skirt,1,29
+L.SKT.BK.00001,ファスナの接着芯貼り,Tempel interlining zipper ,1,5
+L.SKT.BK.00002,後身のダーツの印,Menandai kupnat back,1,5
+L.SKT.BK.00003,後身のオーバーロック,Obras back ,1,5
+L.SKT.BK.00004,後身のダーツを縫い,Jahit kupnat  back ,1,5
+L.SKT.BK.00005,センターベントの縫い,Jahit centervent ,2,5
+L.SKT.BK.00006,裾とセンターベントのアイロンする,Gosok centervent + heming back ,2,5
+L.SKT.BK.00007,ベンツの縫い,Jahit ujung vent,1,5
+L.SKT.BK.00008,後身裾を綺麗にアイロンする,Gosok merapikan heming back ,1,5
+L.SKT.FR.00001,前身ダーツの印,Menandai kupnat front ,1,5
+L.SKT.FR.00002,前身のオーバーロック,Obras front ,1,5
+L.SKT.FR.00003,前身ダーツの縫い,Jahit kupnat front ,1,5
+L.SKT.FR.00004,前身裾とダーツのアイロンする,Gosok kupnat front + heming front ,1,5
+L.SKT.PK.00001,ベンツとファスナの裏地に接着芯をアイロンする,Tempel interlining lining zipper + vent ,1,5
+L.SKT.PK.00002,後身の裏地縫い,Jahit lining centerback ,1,5
+L.SKT.PK.00003,脇裏の縫い・ケアラベル付け,Jahit lining side + pasang size label ,2,5
+L.SKT.PK.00004,後身の裏地のオーバーロック,Obras lining back + front,1,5
+L.SKT.PK.00005,後身裏地のキセをアイロンする,Gosok allowance lining ,1,5
+L.SKT.PK.00006,クサリ縫い・裾裏縫い,Jahit heming lining + tali rantai ,3,5
+L.SKT.PK.00007,マベルトのテープ付け,Tempel tape waistband,1,5
+L.SKT.PK.00008,マベルトの印・マベルトにベルト芯貼り,Tempel kain keras waistband + Press waistband,1,5
+L.SKT.PK.00009,ブランドネーム付け,Jahit brand label ,1,5
+L.SKT.PK.00010,マベルト表の縫い合わせる,Jahit tulang waistband luar ,1,5
+L.SKT.PK.00011,マベルトの吊れテープ付け,Pasang hangerloop ,1,5
+L.SKT.PK.00012,マベルト裏の縫い合わせる,Jahit tulang waistband dalam ,1,5
+L.SKT.PK.00013,「表裏」マベルトの縫い代割をアイロンする,Gosok buka tulang waistband luar & dalam + potong lining waistband luar & dalam ,1,5
+L.SKT.PK.00014,マベルト裏地の縫い合わせ,Join lining waistband,2,5
+L.SKT.PK.00015,マベルト裏地のオーバーロック,Obras lining waistband,1,5
+L.SKT.PK.00016,アウトシムの縫い,Jahit outseam ,2,5
+L.SKT.PK.00017,アウトシムの縫い代割のアイロンする,Gosok tulang outseam ,1,5
+L.SKT.PK.00018,マベルトの付け,Pasang waistband,2,5
+L.SKT.PK.00019,マベルトの下側にアロワンスをアイロンする,Gosok allowance waistband bawah ,2,5
+L.SKT.PK.00020,ファスナのアイロンする,Gosok zipper ,1,5
+L.SKT.PK.00021,ファスナの付け,pasang zipper ,2,5
+L.SKT.PB.00001,ファスナーと裏地の縫い合わせる,Gabung lining & zipper ,2,5
+L.SKT.PB.00002,ファスナーの裏地ステッチ,Setik lining zipper ,2,5
+L.SKT.PB.00003,上マベルトの縫い合わせる,gabung waistband atas,1,5
+L.SKT.PB.00004,上マベルトのステッチとタキング,Setik waistband atas + taking ,2,5
+L.SKT.PB.00005,マベルトの上側にアロワンスをアイロンする,Gosok allowance waistband atas ,2,5
+L.SKT.PB.00006,ファスナーを綺麗にアイロンする,Gosok merapikan zipper ,1,5
+L.SKT.PB.00007,ベンツの縫い,Jahit vent ,3,5
+L.SKT.PB.00008,裾のルイス,Soom heming ,1,5
+L.SKT.PB.00009,ファスナー止まり,Kunci stopper,1,5

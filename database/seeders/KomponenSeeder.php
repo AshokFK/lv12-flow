@@ -17,6 +17,11 @@ class KomponenSeeder extends Seeder
         // Import data from CSV file into the komponen table
         // Make sure to adjust the path to your CSV file
         // and the column names in the CSV file to match your database schema
+
+        // Truncate the komponen table to start fresh
+        DB::table('komponen')->truncate();
+        
+        // Import komponen data from CSV file
         $komponen = Reader::createFromPath(database_path() . '/csv/komponen.csv', 'r');
         $komponen->setHeaderOffset(0); //set the CSV header offset
 

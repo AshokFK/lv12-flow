@@ -1,0 +1,58 @@
+id,header_id,proses_type,operator,mesin,itemable_type,itemable_id,nama_item,next_to,left,top
+1049,5,standar,,,komponen,1,back-tim,,50,50
+1050,5,standar,,,komponen,20,interlining-bahan,,50,100
+1051,5,standar,0565-Devi Ristiyani,LS04,proses,914,tempel interlining zipper,,50,150
+1052,5,standar,0931-Suryati (C),,proses,915,menandai kupnat back,,50,200
+1053,5,standar,0931-Suryati (C),LS14,proses,916,obras back,,50,250
+1054,5,standar,0932-Wahyu Setiowati,LS11,proses,917,jahit kupnat back,,50,300
+1055,5,standar,1501-Dwi Hanifah,LS33,proses,918,jahit center vent,,50,350
+1056,5,standar,0565-Devi Ristiyani,LS04,proses,919,gosok centervent + heming back,,50,400
+1057,5,standar,1501-Dwi Hanifah,LS33,proses,920,jahit ujung vent,,50,450
+1058,5,standar,0565-Devi Ristiyani,LS04,proses,921,gosok merapikan heming back,,50,500
+1060,5,standar,,,komponen,3,front-tim,,50,550
+1061,5,standar,2889-Tri Purwanti,,proses,922,menandai kupnat front,,50,600
+1063,5,standar,2478-Eni Susanti,LS06,proses,924,jahit kupnat front,,50,650
+1064,5,standar,0573-Ika Anggina Wati,LS08,proses,925,gosok kupnat front + heming front,,50,700
+1065,5,standar,2441-Teresa Astuty,LS38,proses,941,jahit outseam,,50,750
+1066,5,standar,1003-Rina Kuswanti,LS29,proses,942,gosok tulang outseam,,50,800
+1067,5,standar,0581-Aeni Khoirul Nikmah,LS27,proses,943,pasang waistband,,50,850
+1068,5,standar,1267-Sofiyatun,LS19,proses,944,gosok allowance waistband bawah,,50,900
+1069,5,standar,0573-Ika Anggina Wati,LS08,proses,945,gosok zipper,,50,950
+1070,5,standar,2958-Nazilah,LS16,proses,946,pasang zipper,,50,1000
+1071,5,standar,,,komponen,8,penggabungan besar  -tim,,50,1050
+1073,5,standar,0584-Anik Nurkhasanah,LS12,proses,932,tempel tape waistband,,50,1100
+1074,5,standar,,,komponen,32,kain keras waistband-bahan,,50,1150
+1075,5,standar,0584-Anik Nurkhasanah,"LS12,LS32",proses,933,tempel kain keras waistband,,50,1200
+1078,5,standar,,,komponen,12,brand label-bahan,,50,1250
+1079,5,standar,Sri Rahayu,DDL8700,proses,934,jahit brand label,,50,1300
+1080,5,standar,1053-Veni Isrowanti,LS18,proses,935,jahit tulang waistband luar,,50,1350
+1083,5,standar,1053-Veni Isrowanti,LS18,proses,937,jahit tulang waistband dalam,,50,1400
+1085,5,standar,,,komponen,52,lining-bahan,,50,1450
+1086,5,standar,,,komponen,20,interlining-bahan,,50,1500
+1087,5,standar,0565-Devi Ristiyani,LS04,proses,926,tempel interlining lining zipper + vent,,50,1550
+1088,5,standar,2478-Eni Susanti,LS20,proses,927,jahit lining center back,,50,1600
+1089,5,standar,,,komponen,72,size label-bahan,,50,1650
+1090,5,standar,1935-Roma Dwiningsih,SB04,proses,928,jahit lining side + pasang size label,,50,1700
+1091,5,standar,0568-Siti Nurkayati,LS07,proses,929,obras lining back - front,,50,1750
+1092,5,standar,0573-Ika Anggina Wati,LS08,proses,930,gosok allowance lining,,50,1800
+1093,5,standar,,,komponen,78,tali rantai-bahan,,50,1850
+1094,5,standar,1506-Yulia Fatma Sari,"MS26,LS13",proses,931,jahit heming lining + tali rantai,,50,1900
+1095,5,standar,1420-Hendrik Kurniawan,LS10,proses,939,join lining waistband,,50,1950
+1096,5,standar,0568-Siti Nurkayati,LS07,proses,940,obras lining waistband,,50,2000
+1097,5,standar,1450-Fitriawati Muhastuti,LS21,proses,947,gabung lining & zipper,,50,2050
+1098,5,standar,1791-Lina Setiani,LS05,proses,948,stik lining zipper,,50,2100
+1099,5,standar,2118-Ngatimah,LG23,proses,949,gabung waistband atas,,50,2150
+1100,5,standar,1517-Nur Azizah (A),LS24,proses,950,setik waistband atas + taking,,50,2200
+1101,5,standar,1267-Sofiyatun,LS19,proses,951,gosok allowance waistband atas,,50,2250
+1102,5,standar,1267-Sofiyatun,LS19,proses,952,gosok merapikan zipper,,50,2300
+1103,5,standar,2154-Erly Marlina,LS26,proses,953,jahit vent,,50,2350
+1104,5,standar,2913-Astrid Marlina,LS35,proses,954,soom heming,,50,2400
+1105,5,standar,1593-Ikha Styaningsih,,proses,955,kunci stoper,,50,2450
+1121,5,standar,,,komponen,91,penggabungan kecil (waistband luar)-tim,,50,2500
+1122,5,standar,,,komponen,90,penggabungan kecil (waistband dalam)-tim,,50,2550
+1124,5,standar,1593-Ikha Styaningsih,LS17,proses,938,gosok buka tulang waistband dalam,,50,2600
+1125,5,standar,,,komponen,12,brand label-bahan,,50,2650
+1126,5,standar,2527-Sri Rahayu (C),LS15,proses,934,jahit brand label,,50,2700
+1127,5,standar,,,komponen,18,hanger loop-bahan,,50,2750
+1128,5,standar,1053-Veni Isrowanti,LS18,proses,936,pasang hanger loop,,50,2800
+4679,5,standar,0103-Nurul Lestari,,qc,11,qc line,,50,2850

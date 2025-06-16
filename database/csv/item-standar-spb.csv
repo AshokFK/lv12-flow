@@ -1,0 +1,105 @@
+id,header_id,proses_type,operator,mesin,itemable_type,itemable_id,nama_item,next_to,left,top
+712,8,standar,,,komponen,1,back-tim,,50,50
+713,8,standar,,,komponen,76,stiker-bahan,,50,100
+714,8,standar,2832-Uswatun Khasanah,,proses,674,jahit stiker,,50,150
+715,8,standar,1568-Anita Purnawati,,proses,676,tandai kupnat + menandai kantong back,,50,200
+716,8,standar,,,komponen,49,lapisan kantong-bahan,,50,250
+717,8,standar,1568-Anita Purnawati,KD15,proses,678,obras lapisan + memisahkan lapisan kantong,,50,300
+719,8,standar,1568-Anita Purnawati,KD38,proses,680,gosok interlining lapisan bobok,,50,350
+720,8,standar,1568-Anita Purnawati,KD38,proses,682,gosok segitiga crocth,,50,400
+721,8,standar,"1429-Ismanto,0923-Irmawati",PB02,proses,684,press patang,,50,450
+722,8,standar,"1429-Ismanto,0923-Irmawati,3298-Tata Dwi Rahmawati","KD16,KD17",proses,686,obras back,,50,500
+723,8,standar,1558-Rida Fajariyah,KD18,proses,688,jahit kupnat,,50,550
+724,8,standar,,,komponen,20,interlining-bahan,,50,600
+725,8,standar,2832-Uswatun Khasanah,KD19,proses,690,gosok kupnat + tempel interlining bobok,,50,650
+726,8,standar,2983-Saiful Amar,LC01,proses,692,bobok + potong sisa benang,,50,700
+727,8,standar,1883-Tami,KD21,proses,694,press bibir kantong + gosok lapisan bibir atas & menandai lubang kancing,,50,750
+728,8,standar,,,komponen,14,care label & size label-bahan,,50,800
+728,8,standar,,,komponen,72,care label & size label-bahan,,50,850
+729,8,standar,"3143-Siti Patlia,3316-Nurhamidah",KD22,proses,696,jahit lapisan &pasang size label + jahit care label + jahit bantu lubang kancing,,50,900
+730,8,standar,1567-Anik Dwi Sutanti,KD24,proses,698,potong kain kantong,,50,950
+731,8,standar,2606-Titin Septina,,proses,700,membalik kain kantong,,50,1000
+732,8,standar,2606-Titin Septina,KD25,proses,702,stik bibir atas,,50,1050
+733,8,standar,2719-Sofiyati,PB17,proses,704,merapikan kantong,,50,1100
+734,8,standar,"3143-Siti Patlia,3290-Eva Nurlaili",LE10,proses,706,jahit bantu kantong back,,50,1150
+735,8,standar,3290-Eva Nurlaili,KD37,proses,708,bartek d,,50,1200
+736,8,standar,,,komponen,3,front-tim,,50,1250
+737,8,standar,,,komponen,58,numbering-bahan,,50,1300
+738,8,standar,3008-Armatossa Oktaviandri,,proses,722,jahit numbering,,50,1350
+740,8,standar,,,komponen,49,lapisan kantong-bahan,,50,1400
+741,8,standar,3231-Sri Rejeki,KD10,proses,726,gosok lapisan kantong,,50,1450
+742,8,standar,,,komponen,20,interlining-bahan,,50,1500
+743,8,standar,2710-Atichotul Yulfa,KD08,proses,728,pasang lapisan kantong + interlining kantong,,50,1550
+744,8,standar,,,komponen,28,kain kantong koin-bahan,,50,1600
+745,8,standar,3116-Agus Prehati Aswara,KD05,proses,730,jahit kantong koin,,50,1650
+746,8,standar,3116-Agus Prehati Aswara,KD05,proses,732,pasang kain kantong koin,,50,1700
+747,8,standar,3116-Agus Prehati Aswara,KD05,proses,734,jahit melingkari kain kantong,,50,1750
+748,8,standar,3231-Sri Rejeki,,proses,736,membalik kain kantong,,50,1800
+749,8,standar,3231-Sri Rejeki,KD10,proses,738,gosok kain kantong,,50,1850
+750,8,standar,3008-Armatossa Oktaviandri,KD11,proses,740,gosok nat bibir kantong,,50,1900
+751,8,standar,3111-Khomsatun,KD13,proses,742,stik bibir kantong & jahit lipatan kantong,,50,1950
+752,8,standar,2064-Susmiyati,,proses,744,jahit bantu front,,50,2000
+753,8,standar,"2473-Asngat,2872-Rovi Marwanti,3009-Dyah Agustiya Ningsih",,proses,710,menyamakan size front & back,,50,2050
+754,8,standar,"2473-Asngat,2872-Rovi Marwanti,3009-Dyah Agustiya Ningsih","MS08,MS52,KH37",proses,712,jahit outseam,,50,2100
+755,8,standar,"1512-Hapsari,1534-Eva Wijayanti","KH40,KH39",proses,714,jahit inseam,,50,2150
+756,8,standar,1706-Pariyem (B),KD26,proses,716,jahit bantu outseam & buang stiker,,50,2200
+757,8,standar,1706-Pariyem (B),KH35,proses,718,gosok buka tulang outseam,,50,2250
+758,8,standar,3293-Nur Ikmasari,KD07,proses,720,stik kain kantong depan,,50,2300
+759,8,standar,2599-Faridah,,qc,1,qc line (back),,50,2350
+760,8,standar,,,komponen,8,penggabungan besar  -tim,,50,2400
+761,8,standar,,,komponen,9,penggabungan kecil-tim,,50,2450
+762,8,standar,3083-Ayu Stiyana,,proses,802,potong kain keras waistbelt,,50,2500
+763,8,standar,"1606-Ari Haryanti,2721-Yuyun Fitaloka","KI08,KI02",proses,804,tempel kain keras waistband,,50,2550
+764,8,standar,"1606-Ari Haryanti,2721-Yuyun Fitaloka",PH01,proses,806,press waistband,,50,2600
+765,8,standar,3083-Ayu Stiyana,KI03,proses,808,buat nat + gambar ujung waistband & waistback,,50,2650
+766,8,standar,,,komponen,55,lining waist-bahan,,50,2700
+767,8,standar,1498-Erni Fatimah,,proses,810,melepas roll lining waist,,50,2750
+768,8,standar,1498-Erni Fatimah,KI07,proses,812,join waist lining,,50,2800
+769,8,standar,1498-Erni Fatimah,,proses,814,potong waist lining,,50,2850
+770,8,standar,,,komponen,35,kain loop-bahan,,50,2900
+771,8,standar,3086-Hartati (B),,proses,816,sambung tali loop,,50,2950
+772,8,standar,3086-Hartati (B),PH01,proses,818,soom tali loop,,50,3000
+773,8,standar,3086-Hartati (B),,proses,820,press tali loop,,50,3050
+774,8,standar,3086-Hartati (B),,proses,822,potong tali loop,,50,3100
+775,8,standar,"3136-Bayu Adi Wiyanto,1614-Musyapaah","KI05,KI06",proses,836,bartek loop,,50,3150
+776,8,standar,,,komponen,25,kain golby-bahan,,50,3200
+777,8,standar,,,komponen,20,interlining-bahan,,50,3250
+778,8,standar,2578-Anastasia Oktiariani,KI12,proses,824,gosok interlining golby + variasi,,50,3300
+779,8,standar,3264-Dewi Wulan Ningsih,KI13,proses,826,obras fly,,50,3350
+780,8,standar,,,komponen,89,zipper-bahan,,50,3400
+781,8,standar,3264-Dewi Wulan Ningsih,KI10,proses,828,jahit zipper,,50,3450
+782,8,standar,3102-Rosida Setianti,KI09,proses,830,jahit golby dalam,,50,3500
+783,8,standar,2578-Anastasia Oktiariani,KI12,proses,832,gosok golby,,50,3550
+784,8,standar,3102-Rosida Setianti,KI09,proses,834,gabung golby,,50,3600
+785,8,standar,1990-Wahyu Idia Wati,,proses,746,menjepit celana + menyamakan golby & waistband,,50,3650
+786,8,standar,1990-Wahyu Idia Wati,MS18,proses,748,pasang golby,,50,3700
+787,8,standar,1551-Dian Saraswati,KH31,proses,750,jahit menyamakan pinggang waistband & stik overlap golby,,50,3750
+788,8,standar,"1625-Tri Puji Lestari,1535-Wahyu Puji Astutik (A),3055-Ulin Nakiroh","KH29,KH32,KH30",proses,752,pasang waistband,,50,3800
+789,8,standar,1933-Lestariningsih,KH28,proses,754,jahit ujung waistband kiri,,50,3850
+790,8,standar,2974-Nia Ernanti,KH26,proses,756,jahit ujung waistband kanan,,50,3900
+791,8,standar,2904-Agus Prasetyo,,proses,760,rimbas ujung + waistband & membalikan,,50,3950
+792,8,standar,"2707-Alin Septiana,2463-Mei Liyawati,3028-Rowanda Ninggar","KH24,KH22,KH23",proses,762,gosok waistband & rimbas waistband,,50,4000
+793,8,standar,,,komponen,19,hook & eye-bahan,,50,4050
+794,8,standar,0981-Khoiriyah,KH21,proses,764,pasang hook & eye,,50,4100
+795,8,standar,0981-Khoiriyah,KH20,proses,766,triming waistband kanan,,50,4150
+796,8,standar,3295-Retno Istiarningsih,KH19,proses,768,stik golby,,50,4200
+797,8,standar,1577-Winda Zuslikhasari,KH18,proses,770,jahit crotch,,50,4250
+798,8,standar,2244-Muslikhatun,KH17,proses,772,stik golby dalam,,50,4300
+799,8,standar,"2450-Nawan Ismono,1617-Mahanani,2905-Della Dianti Rahmadani",,proses,774,gambar backrise,,50,4350
+800,8,standar,"2450-Nawan Ismono,1617-Mahanani,2905-Della Dianti Rahmadani","KH15,KH16",proses,776,jahit backrise,,50,4400
+801,8,standar,1622-Duwi Mariana,KH14,proses,778,jahit kuncian backrise,,50,4450
+802,8,standar,1622-Duwi Mariana,KH13,proses,780,gosok backrise,,50,4500
+803,8,standar,1622-Duwi Mariana,KH12,proses,782,jahit bantu crocth,,50,4550
+804,8,standar,1514-Titi Handayani,KD16,proses,784,stik kain crocth,,50,4600
+805,8,standar,2464-Nurul Azizah,"KH27,PH99",proses,786,soom waistband/stik waistband,,50,4650
+806,8,standar,3243-Rizky Diantika,KH07,proses,788,bartek loop bawah,,50,4700
+807,8,standar,1550-Wiwin Yuliasih,KH06,proses,790,bartek kantong depan + golby,,50,4750
+808,8,standar,1670-Murtiani,PH45,proses,792,jahit lubang kancing + buang benang,,50,4800
+809,8,standar,3110-Hari Setyobudi,,proses,794,menandai pasang kancing,,50,4850
+810,8,standar,3110-Hari Setyobudi,KH04,proses,796,bartek lubang kancing + potong sisa benang,,50,4900
+811,8,standar,1636-Arief Novan Dwi Jatmiko,"KH02,KH03",proses,798,taking waistband,,50,4950
+812,8,standar,,,komponen,41,kancing-bahan,,50,5000
+813,8,standar,3019-Sugiyarto,KH01,proses,800,pasang kancing,,50,5050
+814,8,standar,"0512-Puji Lestari (B),3026-Qonita Az Zahra",,qc,7,qc line ( penggabungan besar ),,50,5100
+816,8,standar,,,komponen,20,interlining-bahan,,50,5150
+1108,8,standar,2904-Agus Prasetyo,PD19,proses,758,triming waistband kiri,,50,5200
