@@ -23,15 +23,20 @@ class CreateKomponen extends Component
     public function save()
     {
         $this->validate();
-        
-        Komponen::create([
-            'nama' => $this->nama,
-            'type' => $this->type,
-        ]);
+
+        try {
+            Komponen::create([
+                'nama' => $this->nama,
+                'type' => $this->type,
+            ]);
+            $this->reset();
+            $this->dispatch('swal-toast', icon: 'success', title: 'Berhasil', text: 'Komponen berhasil ditambahkan.');
+            $this->dispatch('refresh-list-komponen');
+        } catch (\Throwable $th) {
+            //throw $th;
+            $this->dispatch('swal-toast', icon: 'error', title: 'Gagal', text: 'Komponen gagal ditambahkan.');
+        }
         Flux::modal('create-komponen')->close();
-        session()->flash('success', 'Komponen berhasil ditambahkan.');
-        $this->reset();
-        $this->redirect(route('list.komponen'), navigate: true);
     }
 
     public function render()

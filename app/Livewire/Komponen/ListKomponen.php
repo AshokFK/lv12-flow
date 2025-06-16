@@ -30,6 +30,12 @@ class ListKomponen extends Component
             ->paginate($this->perPage);
     }
 
+    #[On('refresh-list-komponen')]
+    public function refreshList()
+    {
+        unset($this->listKomponen);
+    }
+
     public function edit($komponenId)
     {
         $this->dispatch('edit-komponen', $komponenId);
@@ -46,13 +52,16 @@ class ListKomponen extends Component
     {
         $komponen = Komponen::findOrFail($this->komponenId);
 
-        if ($komponen) {
+        try {
             $komponen->delete();
-            Flux::modal('delete-komponen')->close();
-            session()->flash('success', 'Komponen berhasil dihapus.');
             $this->reset('komponenId');
-            $this->redirect(route('list.komponen'), navigate: true);
-        } 
+            $this->dispatch('swal-toast', icon: 'success', title: 'Berhasil', text: 'Komponen berhasil dihapus.');
+            $this->dispatch('refresh-list-komponen');
+        } catch (\Throwable $th) {
+            //throw $th;
+            $this->dispatch('swal-toast', icon: 'error', title: 'Gagal', text: 'Komponen gagal dihapus.');
+        }
+        Flux::modal('delete-komponen')->close();
     }
 
     public function render()
