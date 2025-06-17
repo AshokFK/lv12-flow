@@ -32,6 +32,12 @@ class ListHeader extends Component
             ->paginate($this->perPage);
     }
 
+    #[On('refresh-list-header')]
+    public function refreshList()
+    {
+        unset($this->listHeader);
+    }
+
     public function edit($headerId)
     {
         $this->dispatch('edit-header', $headerId);
@@ -48,13 +54,16 @@ class ListHeader extends Component
     {
         $header = FlowHeader::findOrFail($this->headerId);
 
-        if ($header) {
+        try {
             $header->delete();
-            Flux::modal('delete-header')->close();
-            session()->flash('success', 'Data Flow Header berhasil dihapus.');
             $this->reset('headerId');
-            $this->redirect(route('list.header'), navigate: true);
-        } 
+            $this->dispatch('swal-toast', icon: 'success', title: 'Berhasil', text: 'Header berhasil dihapus.');
+            $this->dispatch('refresh-list-header');            
+        } catch (\Throwable $th) {
+            //throw $th;
+            $this->dispatch('swal-toast', icon: 'error', title: 'Gagal', text: 'Header gagal dihapus.');
+        }
+        Flux::modal('delete-header')->close();
     }
     
     public function render()

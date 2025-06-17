@@ -30,6 +30,12 @@ class ListProses extends Component
             ->paginate($this->perPage);
     }
 
+    #[On('refresh-list-proses')]
+    public function refreshList()
+    {
+        unset($this->listProses);
+    }
+
     public function edit($prosesId)
     {
         $this->dispatch('edit-proses', $prosesId);
@@ -46,13 +52,16 @@ class ListProses extends Component
     {
         $proses = Proses::findOrFail($this->prosesId);
 
-        if ($proses) {
+        try {
             $proses->delete();
-            Flux::modal('delete-proses')->close();
-            session()->flash('success', 'Proses berhasil dihapus.');
             $this->reset('prosesId');
-            $this->redirect(route('list.proses'), navigate: true);
-        } 
+            $this->dispatch('swal-toast', icon: 'success', title: 'Berhasil', text: 'Proses berhasil dihapus.');
+            $this->dispatch('refresh-list-proses');
+        } catch (\Throwable $th) {
+            //throw $th;
+            $this->dispatch('swal-toast', icon: 'error', title: 'Gagal', text: 'Proses gagal dihapus.');
+        }
+        Flux::modal('delete-proses')->close();
     }
     
     public function render()

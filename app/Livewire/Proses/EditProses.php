@@ -55,7 +55,7 @@ class EditProses extends Component
                 })
             ],
             'nama' => 'required|string|min:5|max:100',
-            'nama_jp' => 'required|string|min:5|max:100',
+            'nama_jp' => 'required|string|min:3|max:100',
             'lokasi_id' => 'required',
             'level' => 'required|integer|in:1,2,3',
             'is_active' => 'boolean',
@@ -78,19 +78,23 @@ class EditProses extends Component
         ]);
 
         $proses = Proses::findOrFail($this->prosesId);
-        $proses->update([
-            'mastercode' => $this->mastercode,
-            'nama' => $this->nama,
-            'nama_jp' => $this->nama_jp,
-            'lokasi_id' => $this->lokasi_id,
-            'level' => $this->level,
-            'is_active' => $this->is_active,
-        ]);
-
+        try {
+            $proses->update([
+                'mastercode' => $this->mastercode,
+                'nama' => $this->nama,
+                'nama_jp' => $this->nama_jp,
+                'lokasi_id' => $this->lokasi_id,
+                'level' => $this->level,
+                'is_active' => $this->is_active,
+            ]);
+            $this->reset();
+            $this->dispatch('swal-toast', icon: 'success', title: 'Berhasil', text: 'Proses berhasil diperbarui.');
+            $this->dispatch('refresh-list-proses');
+        } catch (\Throwable $th) {
+            //throw $th;
+            $this->dispatch('swal-toast', icon: 'error', title: 'Gagal', text: 'Proses gagal diperbarui.');
+        }
         Flux::modal('edit-proses')->close();
-        session()->flash('success', 'Proses berhasil diperbarui.');
-        $this->reset();
-        $this->redirect(route('list.proses'), navigate: true);
     }
 
     public function render()

@@ -19,14 +19,18 @@ class CreateQc extends Component
     public function save()
     {
         $this->validate();
-        
-        Qc::create([
-            'nama' => $this->nama,
-        ]);
+        try {
+            Qc::create([
+                'nama' => $this->nama,
+            ]);
+            $this->reset();
+            $this->dispatch('swal-toast', icon: 'success', title: 'Berhasil', text: 'QC berhasil ditambahkan.');
+            $this->dispatch('refresh-list-qc');            
+        } catch (\Throwable $th) {
+            //throw $th;
+            $this->dispatch('swal-toast', icon: 'error', title: 'Gagal', text: 'QC gagal ditambahkan.');
+        }
         Flux::modal('create-qc')->close();
-        session()->flash('success', 'QC berhasil ditambahkan.');
-        $this->reset();
-        $this->redirect(route('list.qc'), navigate: true);
     }
     
     public function render()

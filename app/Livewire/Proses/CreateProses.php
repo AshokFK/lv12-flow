@@ -57,20 +57,24 @@ class CreateProses extends Component
     {
         $this->validate();
 
-        Proses::create([
-            'mastercode' => $this->mastercode,
-            'nama' => $this->nama,
-            'nama_jp' => $this->nama_jp,
-            'lokasi_id' => $this->lokasi_id,
-            'level' => $this->level,
-        ]);
-
+        try {
+            Proses::create([
+                'mastercode' => $this->mastercode,
+                'nama' => $this->nama,
+                'nama_jp' => $this->nama_jp,
+                'lokasi_id' => $this->lokasi_id,
+                'level' => $this->level,
+            ]);
+            $this->reset();
+            $this->dispatch('swal-toast', icon: 'success', title: 'Berhasil', text: 'Proses berhasil ditambahkan.');
+            $this->dispatch('refresh-list-proses');
+        } catch (\Throwable $th) {
+            //throw $th;
+            $this->dispatch('swal-toast', icon: 'error', title: 'Gagal', text: 'Proses gagal ditambahkan.');
+        }
         Flux::modal('create-proses')->close();
-        session()->flash('success', 'Proses berhasil ditambahkan.');
-        $this->reset();
-        $this->redirect(route('list.proses'), navigate: true);
-
     }
+
     public function render()
     {
         return view('livewire.proses.create-proses');

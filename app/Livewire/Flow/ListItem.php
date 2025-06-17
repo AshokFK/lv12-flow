@@ -37,10 +37,9 @@ class ListItem extends Component
             ->paginate($this->perPage);
     }
 
-    #[On('item-updated')]
-    public function itemUpdated()
+    #[On('refresh-list-item')]
+    public function refreshList()
     {
-        session()->flash('success', 'Item berhasil diupdate.');
         unset($this->listItem);
     }
 
@@ -53,17 +52,17 @@ class ListItem extends Component
 
     public function delete()
     {
+        $item = FlowItem::findOrFail($this->itemId);
         try {
-            $item = FlowItem::findOrFail($this->itemId);
             $item->delete();
-            Flux::modal('delete-item')->close();
-            session()->flash('success', 'item berhasil dihapus.');
             $this->reset('itemId');
-            $this->redirect(route('list.item', $this->header->id), navigate: true);
-            
+            $this->dispatch('swal-toast', icon: 'success', title: 'Berhasil', text: 'Item berhasil dihapus.');
+            $this->dispatch('refresh-list-item');            
         } catch (\Throwable $th) {
-            throw $th;
+            // throw $th;
+            $this->dispatch('swal-toast', icon: 'error', title: 'Gagal', text: 'Item gagal dihapus.');
         }
+        Flux::modal('delete-item')->close();
     }
 
     public function render()

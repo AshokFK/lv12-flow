@@ -29,6 +29,12 @@ class ListQc extends Component
             ->paginate($this->perPage);
     }
 
+    #[On('refresh-list-qc')]
+    public function refreshList()
+    {
+        unset($this->listQc);
+    }
+
     public function edit($qcId)
     {
         $this->dispatch('edit-qc', $qcId);
@@ -44,14 +50,16 @@ class ListQc extends Component
     public function delete()
     {
         $qc = Qc::findOrFail($this->qcId);
-
-        if ($qc) {
+        try {
             $qc->delete();
-            Flux::modal('delete-qc')->close();
-            session()->flash('success', 'Qc berhasil dihapus.');
             $this->reset('qcId');
-            $this->redirect(route('list.qc'), navigate: true);
-        } 
+            $this->dispatch('swal-toast', icon: 'success', title: 'Berhasil', text: 'QC berhasil dihapus.');
+            $this->dispatch('refresh-list-qc');
+        } catch (\Throwable $th) {
+            //throw $th;
+            $this->dispatch('swal-toast', icon: 'error', title: 'Gagal', text: 'QC gagal dihapus.');
+        }
+        Flux::modal('delete-qc')->close();
     }
     
     public function render()

@@ -31,6 +31,12 @@ class ListLokasi extends Component
             ->paginate($this->perPage);
     }
 
+    #[On('refresh-list-lokasi')]
+    public function refreshList()
+    {
+        unset($this->listLokasi);
+    }
+
     public function edit($lokasiId)
     {
         $this->dispatch('edit-lokasi', $lokasiId);
@@ -47,13 +53,16 @@ class ListLokasi extends Component
     {
         $lokasi = Lokasi::findOrFail($this->lokasiId);
 
-        if ($lokasi) {
+        try {
             $lokasi->delete();
-            Flux::modal('delete-lokasi')->close();
-            session()->flash('success', 'Lokasi berhasil dihapus.');
             $this->reset('lokasiId');
-            $this->redirect(route('list.lokasi'), navigate: true);
-        } 
+            $this->dispatch('swal-toast', icon: 'success', title: 'Berhasil', text: 'Lokasi berhasil dihapus.');
+            $this->dispatch('refresh-list-lokasi');
+        } catch (\Throwable $th) {
+            //throw $th;
+            $this->dispatch('swal-toast', icon: 'error', title: 'Gagal', text: 'Lokasi gagal dihapus.');
+        }
+        Flux::modal('delete-lokasi')->close();
     }
     
     public function render()

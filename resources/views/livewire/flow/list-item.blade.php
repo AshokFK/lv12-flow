@@ -1,14 +1,4 @@
 <div>
-    {{-- flash message --}}
-    @session('success')
-    <div>
-        <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => { show = false }, 5000)" x-transition class="text-green-500 border-green-300 bg-green-50 flex items-center p-2 mb-4 border rounded-lg fixed top-5 right-5" role="alert">
-            <flux:icon.check-circle class="w-5 h-5 text-green-500 flex-shrink-0 mr-3" />
-            <div class="mx-2">{{ $value ?? 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' }}</div>
-        </div>
-    </div>
-    @endsession
-
     {{-- heading --}}
     <div class="relative mb-4 w-full">
         <flux:heading size="xl" level="1">Flow Item</flux:heading>

@@ -160,3 +160,6 @@ Update flow item seeder
 
 Update seeder komponen, proses dan qc
 - menambahkan truncate sebelum seeding
+
+Refactor toast notif
+- ganti menggunakan sweetalert2

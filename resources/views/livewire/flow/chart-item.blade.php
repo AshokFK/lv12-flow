@@ -79,11 +79,11 @@
                     <flux:icon.bolt />
                 </div>
                 <span @class([
-                    'komponen-tim' => $item->itemable->type == 'tim',
-                    'komponen-bahan' => $item->itemable->type == 'bahan',
+                    'komponen-tim' => $item->itemable?->type == 'tim',
+                    'komponen-bahan' => $item->itemable?->type == 'bahan',
                     'proses-qc' => $item->itemable_type == 'qc',
                     'nama-item',
-                ])>{{ $item->itemable->mastercode ?? $item->itemable->nama }}</span>
+                ])>{{ $item->itemable?->mastercode ?? $item->itemable?->nama }}</span>
             </div>
         @endforeach
         <div id="selectionBox"></div>

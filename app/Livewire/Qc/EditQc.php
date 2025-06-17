@@ -39,15 +39,19 @@ class EditQc extends Component
         ]);
 
         $qc = Qc::findOrFail($this->qcId);
-        $qc->update([
-            'nama' => $this->nama,
-            'is_active' => $this->is_active,
-        ]);
-
+        try {
+            $qc->update([
+                'nama' => $this->nama,
+                'is_active' => $this->is_active,
+            ]);
+            $this->reset();
+            $this->dispatch('swal-toast', icon: 'success', title: 'Berhasil', text: 'QC berhasil diperbarui.');
+            $this->dispatch('refresh-list-qc');
+        } catch (\Throwable $th) {
+            //throw $th;
+            $this->dispatch('swal-toast', icon: 'error', title: 'Gagal', text: 'QC gagal diperbarui.');
+        }
         Flux::modal('edit-qc')->close();
-        session()->flash('success', 'Qc berhasil diperbarui.');
-        $this->reset();
-        $this->redirect(route('list.qc'), navigate: true);
     }
 
     public function render()

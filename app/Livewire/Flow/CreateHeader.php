@@ -52,20 +52,24 @@ class CreateHeader extends Component
     {
         $this->validate();
 
-        // Save the header data to the database
-        FlowHeader::create([
-            'kontrak' => $this->kontrak,
-            'brand' => $this->brand,
-            'pattern' => $this->pattern,
-            'style' => $this->style,
-            'tgl_berjalan' => $this->tgl_berjalan,
-            'lokasi_id' => $this->lokasi_id,
-        ]);
-
+        try {
+            // Save the header data to the database
+            FlowHeader::create([
+                'kontrak' => $this->kontrak,
+                'brand' => $this->brand,
+                'pattern' => $this->pattern,
+                'style' => $this->style,
+                'tgl_berjalan' => $this->tgl_berjalan,
+                'lokasi_id' => $this->lokasi_id,
+            ]);
+            $this->reset();
+            $this->dispatch('swal-toast', icon: 'success', title: 'Berhasil', text: 'Header berhasil ditambahkan.');
+            $this->dispatch('refresh-list-header');
+        } catch (\Throwable $th) {
+            //throw $th;
+            $this->dispatch('swal-toast', icon: 'error', title: 'Gagal', text: 'Header gagal ditambahkan.');
+        }
         Flux::modal('create-header')->close();
-        session()->flash('success', 'Data header berhasil ditambahkan.');
-        $this->reset();
-        $this->redirect(route('list.header'), navigate: true);
     }
     
     public function render()

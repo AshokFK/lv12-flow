@@ -17,7 +17,7 @@ class CreateLokasi extends Component
     public $nama;
 
     #[Validate('nullable|size:3', message: 'Sub lokasi harus :size karakter')]
-    public $sub;
+    public $sub = "";
 
     #[Validate('required', message: 'Deskripsi harus diisi')]
     #[Validate('string', message: 'Deskripsi harus berupa string')]
@@ -47,15 +47,20 @@ class CreateLokasi extends Component
         // Validasi data
         $this->validate();
 
-        Lokasi::create([
-            'nama' => $this->nama,
-            'sub' => $this->sub,
-            'deskripsi' => $this->deskripsi,
-        ]);
+        try {
+            Lokasi::create([
+                'nama' => $this->nama,
+                'sub' => $this->sub,
+                'deskripsi' => $this->deskripsi,
+            ]);
+            $this->reset();
+            $this->dispatch('swal-toast', icon: 'success', title: 'Berhasil', text: 'Lokasi berhasil ditambahkan.');
+            $this->dispatch('refresh-list-lokasi');
+        } catch (\Throwable $th) {
+            //throw $th;
+            $this->dispatch('swal-toast', icon: 'error', title: 'Gagal', text: 'Lokasi gagal ditambahkan.');
+        }
         Flux::modal('create-lokasi')->close();
-        session()->flash('success', 'Lokasi berhasil ditambahkan.');
-        $this->reset();
-        $this->redirect(route('list.lokasi'), navigate: true);
     }
 
     public function render()

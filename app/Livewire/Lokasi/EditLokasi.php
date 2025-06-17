@@ -13,7 +13,7 @@ class EditLokasi extends Component
 {
     public $lokasiId;
     public $nama;
-    public $sub;
+    public $sub = "";
     public $deskripsi;
     public $is_active;
 
@@ -66,18 +66,24 @@ class EditLokasi extends Component
         ]);
 
         $lokasi = Lokasi::findOrFail($this->lokasiId);
-        $lokasi->update([
-            'nama' => $this->nama,
-            'sub' => $this->sub,
-            'deskripsi' => $this->deskripsi,
-            'is_active' => $this->is_active,
-        ]);
 
+        try {
+            $lokasi->update([
+                'nama' => $this->nama,
+                'sub' => $this->sub,
+                'deskripsi' => $this->deskripsi,
+                'is_active' => $this->is_active,
+            ]);
+            $this->reset();
+            $this->dispatch('swal-toast', icon: 'success', title: 'Berhasil', text: 'Lokasi berhasil diperbarui.');
+            $this->dispatch('refresh-list-lokasi');
+        } catch (\Throwable $th) {
+            //throw $th;
+            $this->dispatch('swal-toast', icon: 'error', title: 'Gagal', text: 'Lokasi gagal diperbarui.');
+        }
         Flux::modal('edit-lokasi')->close();
-        session()->flash('success', 'Lokasi berhasil diperbarui.');
-        $this->reset();
-        $this->redirect(route('list.lokasi'), navigate: true);
     }
+
     public function render()
     {
         return view('livewire.lokasi.edit-lokasi');

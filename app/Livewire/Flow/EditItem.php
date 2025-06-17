@@ -119,13 +119,15 @@ class EditItem extends Component
         
         try {
             $flowItem->update($validated);
-            Flux::modal('edit-item')->close();
-            // Redirect to the list item page after successful creation
+            // reset properti, kecuali header
             $this->reset(['flowItemId', 'itemable_type', 'itemable_id', 'next_to', 'proses_type', 'operator', 'mesin']);
-            $this->dispatch('item-updated', item: $flowItem)->to(ListItem::class);
+            $this->dispatch('swal-toast', icon: 'success', title: 'Berhasil', text: 'Item berhasil diperbarui.');
+            $this->dispatch('refresh-list-item');
         } catch (\Throwable $th) {
-            throw $th;
+            // throw $th;
+            $this->dispatch('swal-toast', icon: 'error', title: 'Gagal', text: 'Item gagal diperbarui.');
         }
+        Flux::modal('edit-item')->close();
     }
 
     public function render()

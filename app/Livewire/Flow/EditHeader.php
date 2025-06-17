@@ -45,7 +45,7 @@ class EditHeader extends Component
             'brand' => 'required|string|min:5|max:100',
             'pattern' => 'required|string|min:5|max:100',
             'style' => 'required|string|min:5|max:100',
-            'tgl_berjalan' => 'required|date|date_format:Y-m-d|after_or_equal:today',
+            'tgl_berjalan' => 'required|date|date_format:Y-m-d',
             'lokasi_id' => 'required',
         ], [
             'kontrak.required' => 'Kontrak harus diisi',
@@ -73,20 +73,24 @@ class EditHeader extends Component
 
         $header = FlowHeader::findOrFail($this->headerId);
 
-        $header->update([
-            'kontrak' => $this->kontrak,
-            'brand' => $this->brand,
-            'pattern' => $this->pattern,
-            'style' => $this->style,
-            'tgl_berjalan' => $this->tgl_berjalan,
-            'lokasi_id' => $this->lokasi_id,
-            'finished_at' => $this->is_finished ? now()->format('Y-m-d') : null,
-        ]);
-
+        try {
+            $header->update([
+                'kontrak' => $this->kontrak,
+                'brand' => $this->brand,
+                'pattern' => $this->pattern,
+                'style' => $this->style,
+                'tgl_berjalan' => $this->tgl_berjalan,
+                'lokasi_id' => $this->lokasi_id,
+                'finished_at' => $this->is_finished ? now()->format('Y-m-d') : null,
+            ]);
+            $this->reset();
+            $this->dispatch('swal-toast', icon: 'success', title: 'Berhasil', text: 'Header berhasil diperbarui.');
+            $this->dispatch('refresh-list-header');
+        } catch (\Throwable $th) {
+            //throw $th;
+            $this->dispatch('swal-toast', icon: 'error', title: 'Gagal', text: 'Header gagal diperbarui.');
+        }
         Flux::modal('edit-header')->close();
-        session()->flash('success', 'Data header berhasil diperbarui.');
-        $this->reset();
-        $this->redirect(route('list.header'), navigate: true);
     }
 
     public function render()

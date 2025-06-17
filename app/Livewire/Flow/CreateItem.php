@@ -104,14 +104,14 @@ class CreateItem extends Component
         
         try {
             FlowItem::create($validated);
-            Flux::modal('create-item')->close();
-            session()->flash('success', 'Item berhasil ditambahkan.');
-            // Redirect to the list item page after successful creation
-            $this->redirect(route('list.item', $this->header), navigate: true);
             $this->reset();
+            $this->dispatch('swal-toast', icon: 'success', title: 'Berhasil', text: 'Item berhasil ditambahkan.');
+            $this->dispatch('refresh-list-item');
         } catch (\Throwable $th) {
-            throw $th;
+            // throw $th;
+            $this->dispatch('swal-toast', icon: 'error', title: 'Gagal', text: 'Item gagal ditambahkan.');
         }
+        Flux::modal('create-item')->close();
     }
 
     public function render()
