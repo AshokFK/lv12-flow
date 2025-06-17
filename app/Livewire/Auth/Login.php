@@ -2,21 +2,23 @@
 
 namespace App\Livewire\Auth;
 
-use Illuminate\Auth\Events\Lockout;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\RateLimiter;
-use Illuminate\Support\Facades\Session;
+use Livewire\Component;
+use App\Models\LoginUser;
 use Illuminate\Support\Str;
-use Illuminate\Validation\ValidationException;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Validate;
-use Livewire\Component;
+use Illuminate\Auth\Events\Lockout;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Validation\ValidationException;
 
 #[Layout('components.layouts.auth')]
 class Login extends Component
 {
-    #[Validate('required|string|email')]
-    public string $email = '';
+    #[Validate('required|string')]
+    public string $identifier = '';
 
     #[Validate('required|string')]
     public string $password = '';
@@ -32,13 +34,28 @@ class Login extends Component
 
         $this->ensureIsNotRateLimited();
 
-        if (! Auth::attempt(['email' => $this->email, 'password' => $this->password], $this->remember)) {
-            RateLimiter::hit($this->throttleKey());
+        // Cari user dari koneksi external
+        $user = LoginUser::where('nik', $this->identifier)
+            ->orWhere('username', $this->identifier)
+            ->orWhere('email', $this->identifier)
+            ->first();
 
+        if (!$user || !Hash::check($this->password, $user->password)) {
             throw ValidationException::withMessages([
-                'email' => __('auth.failed'),
+                'identifier' => __('Login gagal. Periksa kembali data Anda.'),
             ]);
         }
+
+        // Login pakai guard login
+        Auth::guard('login')->login($user, $this->remember);
+
+        // if (! Auth::attempt(['email' => $this->email, 'password' => $this->password], $this->remember)) {
+        //     RateLimiter::hit($this->throttleKey());
+
+        //     throw ValidationException::withMessages([
+        //         'email' => __('auth.failed'),
+        //     ]);
+        // }
 
         RateLimiter::clear($this->throttleKey());
         Session::regenerate();
@@ -51,7 +68,7 @@ class Login extends Component
      */
     protected function ensureIsNotRateLimited(): void
     {
-        if (! RateLimiter::tooManyAttempts($this->throttleKey(), 5)) {
+        if (!RateLimiter::tooManyAttempts($this->throttleKey(), 5)) {
             return;
         }
 
@@ -72,6 +89,6 @@ class Login extends Component
      */
     protected function throttleKey(): string
     {
-        return Str::transliterate(Str::lower($this->email).'|'.request()->ip());
+        return Str::transliterate(Str::lower($this->identifier) . '|' . request()->ip());
     }
 }

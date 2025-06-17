@@ -41,7 +41,21 @@ return [
             'journal_mode' => null,
             'synchronous' => null,
         ],
-        
+
+        'login' => [
+            'driver' => 'mysql',
+            'host' => env('DB_LOGIN_HOST', '127.0.0.1'),
+            'port' => env('DB_LOGIN_PORT', '3306'),
+            'database' => env('DB_LOGIN_DATABASE', 'forge'),
+            'username' => env('DB_LOGIN_USERNAME', 'forge'),
+            'password' => env('DB_LOGIN_PASSWORD', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'strict' => true,
+            'engine' => null,
+        ],
+
         'mysql_machine' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
@@ -167,7 +181,7 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
-            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
+            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_database_'),
             'persistent' => env('REDIS_PERSISTENT', false),
         ],
 

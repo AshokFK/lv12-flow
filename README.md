@@ -163,3 +163,9 @@ Update seeder komponen, proses dan qc
 
 Refactor toast notif
 - ganti menggunakan sweetalert2
+
+Custom login eksternal user
+- menambahkan model auth LoginUser
+- membuat guard `login`
+- menambahkan db config eksternal user
+- perbaikan form login user
