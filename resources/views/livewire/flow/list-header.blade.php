@@ -165,8 +165,10 @@
                         </thead>
                         <tbody class="divide-y divide-gray-200">
                             @forelse ($this->listHeader as $header)
-                                <tr class="">
-                                    <td class="p-2 text-base font-medium whitespace-nowrap">{{ $header->kontrak }}</td>
+                                <tr class="hover:bg-gray-200">
+                                    <td class="p-2 text-base font-medium whitespace-nowrap cursor-pointer hover:bg-gray-300" 
+                                    x-on:click="window.location.href = '{{ route('list.item', $header->id) }}'"
+                                    >{{ $header->kontrak }}</td>
                                     <td class="p-2 text-base font-normal whitespace-nowrap">{{ $header->brand }}</td>
                                     <td class="p-2 text-base font-normal whitespace-nowrap">{{ $header->pattern }}</td>
                                     <td class="p-2 text-base font-normal whitespace-nowrap">{{ $header->style }}</td>
@@ -176,21 +178,20 @@
                                     <td class="p-2 text-base font-normal whitespace-nowrap">{{ $header->finished_at }}
                                     </td>
                                     <td class="p-2 space-x-2 whitespace-nowrap text-right">
-                                        <flux:button size="sm" icon="share"
-                                            href="{{ route('chart.item', $header) }}">
-                                            Flow</flux:button>
-                                        <flux:button size="sm" icon="queue-list"
-                                            class="bg-green-400! hover:bg-green-500! text-green-900!"
-                                            href="{{ route('list.item', $header) }}">
-                                            Item</flux:button>
-                                        <flux:button size="sm" icon="pencil-square"
-                                            class="cursor-pointer bg-blue-400! hover:bg-blue-500! text-white!"
-                                            x-on:click="$dispatch('edit-header', { 'id': {{ $header->id }} })">
-                                            Edit</flux:button>
-                                        <flux:button class="cursor-pointer"
-                                            x-on:click="$dispatch('delete-header', { 'id': {{ $header->id }} })"
-                                            size="sm" variant="danger" icon="x-mark">
-                                            Hapus</flux:button>
+                                    <flux:dropdown>
+                                        <flux:button size="sm" icon="ellipsis-vertical" class="cursor-pointer" />
+                                        <flux:navmenu>
+                                            <flux:navmenu.item href="{{ route('chart.item', $header) }}" icon="share">Lihat Flow</flux:navmenu.item>
+                                            <flux:navmenu.item href="{{ route('list.item', $header) }}" icon="queue-list">List item</flux:navmenu.item>
+                                            <flux:menu.separator />
+                                            <flux:navmenu.item href="#" x-on:click="$dispatch('edit-header', { 'id': {{ $header->id }} })"
+                                                icon="pencil-square">Edit</flux:navmenu.item>
+                                            <flux:navmenu.item href="#" x-on:click="$dispatch('delete-header', { 'id': {{ $header->id }} })"
+                                                icon="trash" variant="danger">Delete</flux:navmenu.item>
+                                        </flux:navmenu>
+
+                                    </flux:dropdown>
+
                                     </td>
                                 </tr>
                             @empty
