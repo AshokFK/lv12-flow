@@ -1,42 +1,42 @@
 ﻿mastercode,nama_jp,nama,level,lokasi_id
-E.JKT.JC.00001,釦穴印,Tandai Lubang Kancing,1,19
-E.JKT.JC.00002,釦穴篝しつけ,Jahit Bantu Lubang Kancing,1,19
-E.JKT.JC.00003,フロント釦穴縫い,Jahit Lubang Front,1,19
-E.JKT.JC.00004,ネムリ縫い,Jahit Lubang Variasi,1,19
-E.JKT.JC.00005,カン止め,Bartek,1,19
-E.JKT.JC.00006,マトメ１,Matome 1,1,19
-E.JKT.JC.00007,糸取り,Potong Benang,1,19
-E.JKT.JC.00008,ボディーAMFステッチ,AMF Body,1,19
-E.JKT.JC.00009,糸入れ,Masuk Benang,1,19
-E.JKT.JC.00010,釦付け印,Tandai Pasang Kancing,1,19
-E.JKT.JC.00011,ハンガーかける,Pasang Hanger,1,19
-E.JKT.JC.00012,釦付け印,Pasang Kancing,1,19
-E.JKT.JC.00013,釦付け糸残切,Buang Benang Kancing,1,19
-E.JKT.JL.00001,釦穴印,Tandai Lubang Kancing,1,22
-E.JKT.JL.00002,フロント釦穴縫い,Jahit Lubang Front,1,22
-E.JKT.JL.00003,ネムリ縫い,Jahit Lubang Variasi,1,22
-E.JKT.JL.00004,カン止め,Bartek,1,22
-E.JKT.JL.00005,マトメ,Matome,1,22
-E.JKT.JL.00006,糸取り,Potong Benang,1,22
-E.JKT.JL.00007,ボディーAMFステッチ,AMF Body,1,22
-E.JKT.JL.00008,糸入れ,Masuk Benang,1,22
-E.JKT.JL.00009,釦付け印,Tandai Pasang Kancing,1,22
-E.JKT.JL.00010,ハンガーかける,Pasang Hanger,1,22
-E.JKT.JL.00011,釦付け印,Pasang Kancing,1,22
-E.JKT.JL.00012,釦付け糸残切,Buang Benang Kancing,1,22
-E.PNT.PA.00001,マトメ,Matome,1,23
-E.PNT.PA.00002,糸取り,Potong Benang,1,23
-E.PNT.PA.00003,釦付け印,Pasang Kancing,1,23
-E.PNT.PA.00004,クロス縫い,Jahit Silang,1,23
-E.PNT.PB.00001,マトメ,Matome,1,24
-E.PNT.PB.00002,糸取り,Potong Benang,1,24
-E.PNT.PB.00003,釦付け印,Pasang Kancing,1,24
-E.PNT.PB.00004,クロス縫い,Jahit Silang,1,24
-E.PNT.PL.00001,前カン付け,Matome Hook & Eye,1,20
-E.PNT.PL.00002,糸切,Potong Benang,1,20
-E.PNT.PL.00003,釦付け,Pasang Kancing,1,20
-E.SKT.SK.00001,マトメ,Matome,1,21
-E.SKT.SK.00002,糸切,Potong Benang,1,21
+E.JKT.JC.00001,釦穴印,Tandai Lubang Kancing,1,11
+E.JKT.JC.00002,釦穴篝しつけ,Jahit Bantu Lubang Kancing,1,11
+E.JKT.JC.00003,フロント釦穴縫い,Jahit Lubang Front,1,11
+E.JKT.JC.00004,ネムリ縫い,Jahit Lubang Variasi,1,11
+E.JKT.JC.00005,カン止め,Bartek,1,11
+E.JKT.JC.00006,マトメ１,Matome 1,1,11
+E.JKT.JC.00007,糸取り,Potong Benang,1,11
+E.JKT.JC.00008,ボディーAMFステッチ,AMF Body,1,11
+E.JKT.JC.00009,糸入れ,Masuk Benang,1,11
+E.JKT.JC.00010,釦付け印,Tandai Pasang Kancing,1,11
+E.JKT.JC.00011,ハンガーかける,Pasang Hanger,1,11
+E.JKT.JC.00012,釦付け印,Pasang Kancing,1,11
+E.JKT.JC.00013,釦付け糸残切,Buang Benang Kancing,1,11
+E.JKT.JL.00001,釦穴印,Tandai Lubang Kancing,1,14
+E.JKT.JL.00002,フロント釦穴縫い,Jahit Lubang Front,1,14
+E.JKT.JL.00003,ネムリ縫い,Jahit Lubang Variasi,1,14
+E.JKT.JL.00004,カン止め,Bartek,1,14
+E.JKT.JL.00005,マトメ,Matome,1,14
+E.JKT.JL.00006,糸取り,Potong Benang,1,14
+E.JKT.JL.00007,ボディーAMFステッチ,AMF Body,1,14
+E.JKT.JL.00008,糸入れ,Masuk Benang,1,14
+E.JKT.JL.00009,釦付け印,Tandai Pasang Kancing,1,14
+E.JKT.JL.00010,ハンガーかける,Pasang Hanger,1,14
+E.JKT.JL.00011,釦付け印,Pasang Kancing,1,14
+E.JKT.JL.00012,釦付け糸残切,Buang Benang Kancing,1,14
+E.PNT.PA.00001,マトメ,Matome,1,15
+E.PNT.PA.00002,糸取り,Potong Benang,1,15
+E.PNT.PA.00003,釦付け印,Pasang Kancing,1,15
+E.PNT.PA.00004,クロス縫い,Jahit Silang,1,15
+E.PNT.PB.00001,マトメ,Matome,1,16
+E.PNT.PB.00002,糸取り,Potong Benang,1,16
+E.PNT.PB.00003,釦付け印,Pasang Kancing,1,16
+E.PNT.PB.00004,クロス縫い,Jahit Silang,1,16
+E.PNT.PL.00001,前カン付け,Matome Hook & Eye,1,12
+E.PNT.PL.00002,糸切,Potong Benang,1,12
+E.PNT.PL.00003,釦付け,Pasang Kancing,1,12
+E.SKT.SK.00001,マトメ,Matome,1,13
+E.SKT.SK.00002,糸切,Potong Benang,1,13
 L.JKT.BK.00001,センターベンツの印,Menandai vent,1,6
 L.JKT.BK.00002,背のルイス,Soom back,2,6
 L.JKT.BK.00003,背中心の縫い,Jahit panjang center back,2,6
@@ -835,63 +835,63 @@ M.PNT.PK.00017,天狗の合わせる,Gabung golby,1,7
 M.PNT.PK.00017,天狗の合わせる,Gabung golby,1,8
 M.PNT.PK.00018,ルップのカン止め,Bartek loop,2,7
 M.PNT.PK.00018,ルップのカン止め,Bartek loop,2,8
-P.JKT.JA.00001,前端と内袖のプレス,Press overlape + press lengan kecil,1,9
-P.JKT.JA.00002,外袖プレス,Press lengan besar,1,9
-P.JKT.JA.00003,背プレス,Press back,1,9
-P.JKT.JA.00004,前身プレス,Press front,1,9
-P.JKT.JA.00005,ラペル衿プレス,Press kerah lapel,1,9
-P.JKT.JA.00006,肩と衿回りプレス,Press pundak + press lingkar kerah,1,9
-P.JKT.JA.00007,アームホールと袖のプレス,Press armhole + press lengan,1,9
-P.JKT.JA.00008,内裏地アイロン,Gosok lining dalam,1,9
-P.JKT.JA.00009,前身アイロン,Gosok front,1,9
-P.JKT.JA.00010,上側裏地アイロン,Gosok lining atas,1,9
-P.JKT.JA.00011,袖アイロン,Gosok lengan,1,9
-P.JKT.JA.00012,ラペルプレス,Press lapel,1,9
-P.JKT.JA.00013,遣り直しアイロン作業,Gosok permak,1,9
-P.JKT.JB.00001,前端と内袖のプレス,Press overlape + press lengan kecil,1,10
-P.JKT.JB.00002,外袖プレス,Press lengan besar,1,10
-P.JKT.JB.00003,背プレス,Press back,1,10
-P.JKT.JB.00004,前身プレス,Press front,1,10
-P.JKT.JB.00005,ラペル衿プレス,Press kerah lapel,1,10
-P.JKT.JB.00006,肩と衿回りプレス,Press pundak + press lingkar kerah,1,10
-P.JKT.JB.00007,アームホールと袖のプレス,Press armhole + press lengan,1,10
-P.JKT.JB.00008,内裏地アイロン,Gosok lining dalam,1,10
-P.JKT.JB.00009,前身アイロン,Gosok front,1,10
-P.JKT.JB.00010,上側裏地アイロン,Gosok lining atas,1,10
-P.JKT.JB.00011,袖アイロン,Gosok lengan,1,10
-P.JKT.JB.00012,ラペルプレス,Press lapel,1,10
-P.JKT.JB.00013,遣り直しアイロン作業,Gosok permak,1,10
-P.JKT.JC.00001,前端と内袖のプレス,Press overlape + press lengan kecil,1,11
-P.JKT.JC.00002,外袖プレス,Press lengan besar,1,11
-P.JKT.JC.00003,背プレス,Press back,1,11
-P.JKT.JC.00004,前身プレス,Press front,1,11
-P.JKT.JC.00005,ラペル衿プレス,Press kerah lapel,1,11
-P.JKT.JC.00006,肩と衿回りプレス,Press pundak + press lingkar kerah,1,11
-P.JKT.JC.00007,アームホールと袖のプレス,Press armhole + press lengan,1,11
-P.JKT.JC.00008,内裏地アイロン,Gosok lining dalam,1,11
-P.JKT.JC.00009,前身アイロン,Gosok front,1,11
-P.JKT.JC.00010,上側裏地アイロン,Gosok lining atas,1,11
-P.JKT.JC.00011,袖アイロン,Gosok lengan,1,11
-P.JKT.JC.00012,ラペルプレス,Press lapel,1,11
-P.JKT.JC.00013,遣り直しアイロン作業,Gosok permak,1,11
-P.PNT.PA.00001,縫い代割プレス,Press buka tulang,1,15
-P.PNT.PA.00002,ネーム付けと小股のプレス,Press crocth & Pasang label,1,15
-P.PNT.PA.00003,お尻繰り縫い目プレス,Press Garis Tengah,1,15
-P.PNT.PA.00004,形状記憶,Semprot Obat,1,15
-P.PNT.PA.00005,形状記憶かけた後、プレス作業する,Press Garis Tengah Setelah Semprot Obat,1,15
-P.PNT.PA.00006,縫い代割アイロン,Gosok Tulang,1,15
-P.PNT.PA.00007,ウェストアイロン,Gosok waist,1,15
-P.PNT.PA.00008,お尻繰り縫い目アイロン,Gosok Hip/Garis Belakang,1,15
-P.PNT.PA.00009,遣り直しアイロン作業,Gosok Permak,1,15
-P.PNT.PB.00001,縫い代割プレス,Press buka tulang,1,16
-P.PNT.PB.00002,ネーム付けと小股のプレス,Press croath & Pasang label,1,16
-P.PNT.PB.00003,お尻繰り縫い目プレス,Press Garis Tengah,1,16
-P.PNT.PB.00004,形状記憶,Semprot Obat,1,16
-P.PNT.PB.00005,形状記憶かけた後、プレス作業する,Press Garis Tengah Setelah Semprot Obat,1,16
-P.PNT.PB.00006,縫い代割アイロン,Gosok Tulang,1,16
-P.PNT.PB.00007,ウェストアイロン,Gosok waist,1,16
-P.PNT.PB.00008,お尻繰り縫い目アイロン,Gosok Hip/Garis Belakang,1,16
-P.PNT.PB.00009,遣り直しアイロン作業,Gosok Permak,1,16
+P.JKT.JA.00001,前端と内袖のプレス,Press overlape + press lengan kecil,1,17
+P.JKT.JA.00002,外袖プレス,Press lengan besar,1,17
+P.JKT.JA.00003,背プレス,Press back,1,17
+P.JKT.JA.00004,前身プレス,Press front,1,17
+P.JKT.JA.00005,ラペル衿プレス,Press kerah lapel,1,17
+P.JKT.JA.00006,肩と衿回りプレス,Press pundak + press lingkar kerah,1,17
+P.JKT.JA.00007,アームホールと袖のプレス,Press armhole + press lengan,1,17
+P.JKT.JA.00008,内裏地アイロン,Gosok lining dalam,1,17
+P.JKT.JA.00009,前身アイロン,Gosok front,1,17
+P.JKT.JA.00010,上側裏地アイロン,Gosok lining atas,1,17
+P.JKT.JA.00011,袖アイロン,Gosok lengan,1,17
+P.JKT.JA.00012,ラペルプレス,Press lapel,1,17
+P.JKT.JA.00013,遣り直しアイロン作業,Gosok permak,1,17
+P.JKT.JB.00001,前端と内袖のプレス,Press overlape + press lengan kecil,1,18
+P.JKT.JB.00002,外袖プレス,Press lengan besar,1,18
+P.JKT.JB.00003,背プレス,Press back,1,18
+P.JKT.JB.00004,前身プレス,Press front,1,18
+P.JKT.JB.00005,ラペル衿プレス,Press kerah lapel,1,18
+P.JKT.JB.00006,肩と衿回りプレス,Press pundak + press lingkar kerah,1,18
+P.JKT.JB.00007,アームホールと袖のプレス,Press armhole + press lengan,1,18
+P.JKT.JB.00008,内裏地アイロン,Gosok lining dalam,1,18
+P.JKT.JB.00009,前身アイロン,Gosok front,1,18
+P.JKT.JB.00010,上側裏地アイロン,Gosok lining atas,1,18
+P.JKT.JB.00011,袖アイロン,Gosok lengan,1,18
+P.JKT.JB.00012,ラペルプレス,Press lapel,1,18
+P.JKT.JB.00013,遣り直しアイロン作業,Gosok permak,1,18
+P.JKT.JC.00001,前端と内袖のプレス,Press overlape + press lengan kecil,1,19
+P.JKT.JC.00002,外袖プレス,Press lengan besar,1,19
+P.JKT.JC.00003,背プレス,Press back,1,19
+P.JKT.JC.00004,前身プレス,Press front,1,19
+P.JKT.JC.00005,ラペル衿プレス,Press kerah lapel,1,19
+P.JKT.JC.00006,肩と衿回りプレス,Press pundak + press lingkar kerah,1,19
+P.JKT.JC.00007,アームホールと袖のプレス,Press armhole + press lengan,1,19
+P.JKT.JC.00008,内裏地アイロン,Gosok lining dalam,1,19
+P.JKT.JC.00009,前身アイロン,Gosok front,1,19
+P.JKT.JC.00010,上側裏地アイロン,Gosok lining atas,1,19
+P.JKT.JC.00011,袖アイロン,Gosok lengan,1,19
+P.JKT.JC.00012,ラペルプレス,Press lapel,1,19
+P.JKT.JC.00013,遣り直しアイロン作業,Gosok permak,1,19
+P.PNT.PA.00001,縫い代割プレス,Press buka tulang,1,23
+P.PNT.PA.00002,ネーム付けと小股のプレス,Press crocth & Pasang label,1,23
+P.PNT.PA.00003,お尻繰り縫い目プレス,Press Garis Tengah,1,23
+P.PNT.PA.00004,形状記憶,Semprot Obat,1,23
+P.PNT.PA.00005,形状記憶かけた後、プレス作業する,Press Garis Tengah Setelah Semprot Obat,1,23
+P.PNT.PA.00006,縫い代割アイロン,Gosok Tulang,1,23
+P.PNT.PA.00007,ウェストアイロン,Gosok waist,1,23
+P.PNT.PA.00008,お尻繰り縫い目アイロン,Gosok Hip/Garis Belakang,1,23
+P.PNT.PA.00009,遣り直しアイロン作業,Gosok Permak,1,23
+P.PNT.PB.00001,縫い代割プレス,Press buka tulang,1,24
+P.PNT.PB.00002,ネーム付けと小股のプレス,Press croath & Pasang label,1,24
+P.PNT.PB.00003,お尻繰り縫い目プレス,Press Garis Tengah,1,24
+P.PNT.PB.00004,形状記憶,Semprot Obat,1,24
+P.PNT.PB.00005,形状記憶かけた後、プレス作業する,Press Garis Tengah Setelah Semprot Obat,1,24
+P.PNT.PB.00006,縫い代割アイロン,Gosok Tulang,1,24
+P.PNT.PB.00007,ウェストアイロン,Gosok waist,1,24
+P.PNT.PB.00008,お尻繰り縫い目アイロン,Gosok Hip/Garis Belakang,1,24
+P.PNT.PB.00009,遣り直しアイロン作業,Gosok Permak,1,24
 Q.JKT.JA.00001,前身頃検査作業,Pengecekan Front Jas A,1,25
 Q.JKT.JA.00002,背と袖検査作業,Pengecekan Back & Lengan Jas A,1,25
 Q.JKT.JA.00003,裏地検査作業,Pengecekan Lining Jas A,1,25
@@ -954,3 +954,34 @@ L.SKT.PB.00006,ファスナーを綺麗にアイロンする,Gosok merapikan zip
 L.SKT.PB.00007,ベンツの縫い,Jahit vent ,3,5
 L.SKT.PB.00008,裾のルイス,Soom heming ,1,5
 L.SKT.PB.00009,ファスナー止まり,Kunci stopper,1,5
+E.JKT.JA.00001,釦穴印,Tandai Lubang kancing ,1,9
+E.JKT.JA.00002,釦穴篝しつけ,Jahit bantu lubang kancing ,1,9
+E.JKT.JA.00003,フロント釦穴縫い,Jahit lubang front,1,9
+E.JKT.JA.00004,ネムリ縫い,Jahit lubang variasi ,1,9
+E.JKT.JA.00005,カン止め,Bartek ,1,9
+E.JKT.JA.00006,マトメ１,Matome 1,1,9
+E.JKT.JA.00007,マトメ２,Matome 2,1,9
+E.JKT.JA.00008,マトメ３,Matome 3 ,1,9
+E.JKT.JA.00009,糸取り,Buang benang ,1,9
+E.JKT.JA.00010,糸切,Potong benang,1,9
+E.JKT.JA.00011,ボディーAMFステッチ,AMF body  ,1,9
+E.JKT.JA.00012,糸入れ,Masuk benang ,1,9
+E.JKT.JA.00013,釦付け印,Tandai Pasang kancing,1,9
+E.JKT.JA.00014,ハンガーかける,Pasang hanger,1,9
+E.JKT.JA.00015,釦付け印,Pasang kancing,1,9
+E.JKT.JA.00016,釦付け糸残切,Potong Benang Kancing,1,9
+E.JKT.JB.00001,釦穴印,Tandai Lubang kancing ,1,10
+E.JKT.JB.00002,釦穴篝しつけ,Jahit bantu lubang kancing ,1,10
+E.JKT.JB.00003,フロント釦穴縫い,Jahit lubang Front,1,10
+E.JKT.JB.00004,ネムリ縫い,Jahit lubang variasi ,1,10
+E.JKT.JB.00005,カン止め,Bartek ,1,10
+E.JKT.JB.00006,マトメ１,Matome 1,1,10
+E.JKT.JB.00007,マトメ２,Matome 2,1,10
+E.JKT.JB.00008,マトメ３,Matome 3 ,1,10
+E.JKT.JB.00009,糸取り,Potong benang ,1,10
+E.JKT.JB.00010,ボディーAMFステッチ,AMF body  ,1,10
+E.JKT.JB.00011,糸入れ,Masuk benang ,1,10
+E.JKT.JB.00012,釦付け印,Tandai Pasang kancing,1,10
+E.JKT.JB.00013,ハンガーかける,Pasang hanger,1,10
+E.JKT.JB.00014,釦付け印,Pasang kancing,1,10
+E.JKT.JB.00015,釦付け糸残切,Buang benang kancing,1,10

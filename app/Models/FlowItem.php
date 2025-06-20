@@ -25,7 +25,7 @@ class FlowItem extends Model
     protected $casts = [
         'is_active' => 'boolean',
         'mesin' => 'array',
-        'operator' => 'json',
+        'operator' => 'array',
         'next_to' => 'array',
     ];
 

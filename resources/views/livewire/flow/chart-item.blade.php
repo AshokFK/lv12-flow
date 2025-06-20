@@ -45,26 +45,29 @@
             </div>
         </div>
         <div class="flex justify-between gap-2 mb-2">
+            <flux:button.group>
             <flux:button size="sm" icon="magnifying-glass-plus" id="zoomIn">Zoom In</flux:button>
-            <div class="flex align-self-center">
-                <input type="range" id="zoomSlider" min="10" max="300" value="100">
-                <span id="zoomIndicator">Zoom: 100%</span>
-            </div>
             <flux:button size="sm" icon="magnifying-glass-minus" id="zoomOut">Zoom Out</flux:button>
             <flux:button size="sm" icon="magnifying-glass" id="resetZoom">Reset Zoom</flux:button>
             <flux:button size="sm" icon="tv" id="fitScreen">Fit to Screen</flux:button>
-            <flux:button size="sm" icon="arrow-uturn-left" href="{{ route('list.item', $header) }}">
-                Kembali
-            </flux:button>
-            <flux:button size="sm" icon="inbox-arrow-down"
-                x-on:click="
-                const data = localStorage.getItem('appState');
-                console.log('simpan posisi', data);
-                $wire.savePosition(data);
-                ">
-                Simpan
-                Posisi
-            </flux:button>
+            </flux:button.group>
+            
+            <div class="flex items-center w-auto">
+                <input class="" type="range" id="zoomSlider" min="10" max="300" value="100">
+                <span class="text-xs" id="zoomIndicator">Zoom: 100%</span>
+            </div>
+
+            <div>
+                <flux:button size="sm" icon="arrow-uturn-left" href="{{ route('list.item', $header) }}">Kembali</flux:button>
+                <flux:button size="sm" icon="inbox-arrow-down"
+                    x-on:click="
+                    const data = localStorage.getItem('appState');
+                    $wire.savePosition(data);
+                    ">
+                    Simpan
+                    Posisi
+                </flux:button>
+            </div>
         </div>
     </div>
 

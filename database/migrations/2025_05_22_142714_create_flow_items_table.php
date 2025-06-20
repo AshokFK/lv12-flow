@@ -14,7 +14,9 @@ return new class extends Migration
     {
         Schema::create('flow_item', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(FlowHeader::class, 'header_id')->comment('id header flow');
+            $table->foreignIdFor(FlowHeader::class, 'header_id')
+                ->constrained()->onDelete('restrict')
+                ->comment('id header flow');
             $table->morphs('itemable');
             $table->string('next_to')->nullable()->comment('id next item untuk menunjukkan proses selanjutnya');
             $table->string('proses_type')->nullable()->comment('type proses standar atau custom');

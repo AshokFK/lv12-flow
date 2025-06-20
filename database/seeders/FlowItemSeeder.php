@@ -32,8 +32,6 @@ class FlowItemSeeder extends Seeder
                     'itemable_id' => trim($item['itemable_id']),
                     'next_to' => trim($item['next_to']),
                     'proses_type' => trim($item['proses_type']),
-                    'operator' => json_encode($item['operator']),
-                    'mesin' => json_encode($item['mesin']),
                     'left' => trim($item['left']) . "px",
                     'top' => trim($item['top']) . "px",
                 ]);
@@ -53,8 +51,6 @@ class FlowItemSeeder extends Seeder
                     'itemable_id' => trim($item['itemable_id']),
                     'next_to' => trim($item['next_to']),
                     'proses_type' => trim($item['proses_type']),
-                    'operator' => json_encode($item['operator']),
-                    'mesin' => json_encode($item['mesin']),
                     'left' => trim($item['left']) . "px",
                     'top' => trim($item['top']) . "px",
                 ]);
@@ -74,8 +70,6 @@ class FlowItemSeeder extends Seeder
                     'itemable_id' => trim($item['itemable_id']),
                     'next_to' => trim($item['next_to']),
                     'proses_type' => trim($item['proses_type']),
-                    'operator' => json_encode($item['operator']),
-                    'mesin' => json_encode($item['mesin']),
                     'left' => trim($item['left']) . "px",
                     'top' => trim($item['top']) . "px",
                 ]);
@@ -95,8 +89,6 @@ class FlowItemSeeder extends Seeder
                     'itemable_id' => trim($item['itemable_id']),
                     'next_to' => trim($item['next_to']),
                     'proses_type' => trim($item['proses_type']),
-                    'operator' => json_encode($item['operator']),
-                    'mesin' => json_encode($item['mesin']),
                     'left' => trim($item['left']) . "px",
                     'top' => trim($item['top']) . "px",
                 ]);
@@ -116,8 +108,6 @@ class FlowItemSeeder extends Seeder
                     'itemable_id' => trim($item['itemable_id']),
                     'next_to' => trim($item['next_to']),
                     'proses_type' => trim($item['proses_type']),
-                    'operator' => json_encode($item['operator']),
-                    'mesin' => json_encode($item['mesin']),
                     'left' => trim($item['left']) . "px",
                     'top' => trim($item['top']) . "px",
                 ]);
@@ -137,8 +127,6 @@ class FlowItemSeeder extends Seeder
                     'itemable_id' => trim($item['itemable_id']),
                     'next_to' => trim($item['next_to']),
                     'proses_type' => trim($item['proses_type']),
-                    'operator' => json_encode($item['operator']),
-                    'mesin' => json_encode($item['mesin']),
                     'left' => trim($item['left']) . "px",
                     'top' => trim($item['top']) . "px",
                 ]);
@@ -158,8 +146,6 @@ class FlowItemSeeder extends Seeder
                     'itemable_id' => trim($item['itemable_id']),
                     'next_to' => trim($item['next_to']),
                     'proses_type' => trim($item['proses_type']),
-                    'operator' => json_encode($item['operator']),
-                    'mesin' => json_encode($item['mesin']),
                     'left' => trim($item['left']) . "px",
                     'top' => trim($item['top']) . "px",
                 ]);
@@ -179,8 +165,25 @@ class FlowItemSeeder extends Seeder
                     'itemable_id' => trim($item['itemable_id']),
                     'next_to' => trim($item['next_to']),
                     'proses_type' => trim($item['proses_type']),
-                    'operator' => json_encode($item['operator']),
-                    'mesin' => json_encode($item['mesin']),
+                    'left' => trim($item['left']) . "px",
+                    'top' => trim($item['top']) . "px",
+                ]);
+            }
+        });
+
+        // import standar item MAT
+        $flowItems = Reader::createFromPath(database_path() . '/csv/item-standar-mat.csv', 'r');
+        $flowItems->setHeaderOffset(0); //set the CSV header offset
+
+        $this->command->outputComponents()->task('item-standar-mat', function () use ($flowItems) {
+            // Insert each item into the flow_item table
+            foreach ($flowItems as $item) {
+                DB::table('flow_item')->insert([
+                    'header_id' => trim($item['header_id']),
+                    'itemable_type' => trim($item['itemable_type']),
+                    'itemable_id' => trim($item['itemable_id']),
+                    'next_to' => trim($item['next_to']),
+                    'proses_type' => trim($item['proses_type']),
                     'left' => trim($item['left']) . "px",
                     'top' => trim($item['top']) . "px",
                 ]);

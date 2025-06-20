@@ -169,3 +169,13 @@ Custom login eksternal user
 - membuat guard `login`
 - menambahkan db config eksternal user
 - perbaikan form login user
+
+Menambahkan data header standar line
+- menambahkan header standar non-sewing
+- perbaikan urutan data lokasi
+
+Perbaikan master data proses dan item
+- menambahkan constrain item dengan header
+- update proses lokasi id
+- menambahkan master proses matome jas
+- skip import item, kolom operator dan mesin

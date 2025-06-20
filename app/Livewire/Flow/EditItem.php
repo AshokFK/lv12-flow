@@ -45,9 +45,9 @@ class EditItem extends Component
         $this->flowItemId = $item->id;
         $this->itemable_type = $item->itemable_type;
         $this->proses_type = $item->proses_type;
-        $this->mesin = $item->mesin;
 
         $this->operator = $item->operator ?? [];
+        $this->mesin = $item->mesin ?? [];
 
         $next = FlowItem::where('id', $item->next_to)->get()
             ->map(function ($item) {
@@ -62,7 +62,7 @@ class EditItem extends Component
 
         if ($item->itemable_type === 'proses') {
             $operatorData = Operator::whereIn('nik', $this->operator)->active()->get();
-            $mesinData = Mesin::whereIn('id', $item->mesin)->get();
+            $mesinData = Mesin::whereIn('id', $this->mesin)->get();
         }
 
         Flux::modal('edit-item')->show();
