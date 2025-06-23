@@ -19,7 +19,7 @@ class ListHeader extends Component
     #[Computed]
     public function listHeader()
     {
-        return FlowHeader::query()
+        return FlowHeader::query()->with(['items','lokasi'])
             ->when($this->searchTerm, function ($query) {
                 $query->where('kontrak', 'like', '%' . $this->searchTerm . '%')
                     ->orWhere('brand', 'like', '%' . $this->searchTerm . '%')

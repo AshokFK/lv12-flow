@@ -189,5 +189,43 @@ class FlowItemSeeder extends Seeder
                 ]);
             }
         });
+
+        // import standar item PRS
+        $flowItems = Reader::createFromPath(database_path() . '/csv/item-standar-prs.csv', 'r');
+        $flowItems->setHeaderOffset(0); //set the CSV header offset
+
+        $this->command->outputComponents()->task('item-standar-prs', function () use ($flowItems) {
+            // Insert each item into the flow_item table
+            foreach ($flowItems as $item) {
+                DB::table('flow_item')->insert([
+                    'header_id' => trim($item['header_id']),
+                    'itemable_type' => trim($item['itemable_type']),
+                    'itemable_id' => trim($item['itemable_id']),
+                    'next_to' => trim($item['next_to']),
+                    'proses_type' => trim($item['proses_type']),
+                    'left' => trim($item['left']) . "px",
+                    'top' => trim($item['top']) . "px",
+                ]);
+            }
+        });
+
+        // import standar item QA
+        $flowItems = Reader::createFromPath(database_path() . '/csv/item-standar-qa.csv', 'r');
+        $flowItems->setHeaderOffset(0); //set the CSV header offset
+
+        $this->command->outputComponents()->task('item-standar-qa', function () use ($flowItems) {
+            // Insert each item into the flow_item table
+            foreach ($flowItems as $item) {
+                DB::table('flow_item')->insert([
+                    'header_id' => trim($item['header_id']),
+                    'itemable_type' => trim($item['itemable_type']),
+                    'itemable_id' => trim($item['itemable_id']),
+                    'next_to' => trim($item['next_to']),
+                    'proses_type' => trim($item['proses_type']),
+                    'left' => trim($item['left']) . "px",
+                    'top' => trim($item['top']) . "px",
+                ]);
+            }
+        });
     }
 }
