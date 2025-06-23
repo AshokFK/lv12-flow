@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('pattern');
             $table->string('style');
             $table->date('tgl_berjalan');
-            $table->foreignIdFor(Lokasi::class);
+            $table->foreignIdFor(Lokasi::class)->constrained()->onDelete('restrict');
             $table->date('finished_at')->nullable();
             $table->string('wrapper_width')->nullable();
             $table->string('wrapper_height')->nullable();
@@ -27,6 +27,9 @@ return new class extends Migration
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->timestamps();
+
+            $table->unique(['kontrak', 'brand', 'pattern', 'style', 'tgl_berjalan', 'lokasi_id'], 'unique_flow_header');
+
         });
     }
 

@@ -3,13 +3,15 @@
 namespace App\Livewire\Proses;
 
 use Flux\Flux;
-use App\Models\Lokasi;
 use App\Models\Proses;
 use Livewire\Component;
+use App\Traits\FetchLokasi;
 use Livewire\Attributes\Validate;
 
 class CreateProses extends Component
 {
+    use FetchLokasi;
+    
     public $mastercode;
     public $nama;
     public $nama_jp;
@@ -46,11 +48,6 @@ class CreateProses extends Component
             'level.integer' => 'Level harus berupa angka',
             'level.in' => 'Level harus 1, 2, atau 3',
         ];
-    }
-
-    public function fetchLokasi($query = '')
-    {
-        return Lokasi::search(['nama', 'sub', 'deskripsi'], $query)->get(['id', 'nama', 'sub', 'deskripsi']);
     }
 
     public function save()

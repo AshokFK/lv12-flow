@@ -167,8 +167,12 @@
                             @forelse ($this->listHeader as $header)
                                 <tr class="hover:bg-gray-200">
                                     <td class="p-2 text-base font-medium whitespace-nowrap cursor-pointer hover:bg-gray-300" 
-                                    x-on:click="window.location.href = '{{ route('list.item', $header->id) }}'"
-                                    >{{ $header->kontrak }}</td>
+                                    x-on:click="window.location.href = '{{ route('list.item', $header->id) }}'">
+                                        {{ $header->kontrak }} 
+                                        <flux:tooltip content="Total item flow">
+                                            <flux:badge size="sm" color="lime">{{ $header->items->count() }}</flux:badge>
+                                        </flux:tooltip>
+                                    </td>
                                     <td class="p-2 text-base font-normal whitespace-nowrap">{{ $header->brand }}</td>
                                     <td class="p-2 text-base font-normal whitespace-nowrap">{{ $header->pattern }}</td>
                                     <td class="p-2 text-base font-normal whitespace-nowrap">{{ $header->style }}</td>
@@ -182,6 +186,9 @@
                                         <flux:button size="sm" icon="ellipsis-vertical" class="cursor-pointer" />
                                         <flux:navmenu>
                                             <flux:navmenu.item href="{{ route('chart.item', $header) }}" icon="share">Lihat Flow</flux:navmenu.item>
+                                            <flux:navmenu.item href="#" icon="clipboard-document-list" 
+                                                x-on:click="$dispatch('copy-flow', { 'header': {{ $header->id }} });
+                                                ">Copy Flow</flux:navmenu.item>
                                             <flux:navmenu.item href="{{ route('list.item', $header) }}" icon="queue-list">List item</flux:navmenu.item>
                                             <flux:menu.separator />
                                             <flux:navmenu.item href="#" x-on:click="$dispatch('edit-header', { 'id': {{ $header->id }} })"
@@ -216,6 +223,9 @@
 
     {{-- modal create header --}}
     <livewire:flow.create-header />
+
+    {{-- modal copy flow --}}
+    <livewire:flow.copy />
 
     {{-- modal edit header --}}
     <livewire:flow.edit-header />

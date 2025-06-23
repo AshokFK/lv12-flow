@@ -5,10 +5,13 @@ namespace App\Livewire\Flow;
 use Flux\Flux;
 use Livewire\Component;
 use App\Models\FlowHeader;
+use App\Traits\FetchLokasi;
 use Livewire\Attributes\On;
 
 class EditHeader extends Component
 {
+    use FetchLokasi;
+
     public $headerId;
     public $kontrak;
     public $brand;

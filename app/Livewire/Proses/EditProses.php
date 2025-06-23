@@ -3,14 +3,16 @@
 namespace App\Livewire\Proses;
 
 use Flux\Flux;
-use App\Models\Lokasi;
 use App\Models\Proses;
 use Livewire\Component;
+use App\Traits\FetchLokasi;
 use Livewire\Attributes\On;
 use Illuminate\Validation\Rule;
 
 class EditProses extends Component
 {
+    use FetchLokasi;
+    
     public $prosesId;
     public $mastercode;
     public $nama;
@@ -36,11 +38,6 @@ class EditProses extends Component
             
         Flux::modal('edit-proses')->show();
         $this->dispatch('init-selected', lokasi_selected: $proses->lokasi_id, lokasi_data: $lokasi_data);
-    }
-
-    public function fetchLokasi($query = '')
-    {
-        return Lokasi::search(['nama', 'sub', 'deskripsi'], $query)->get(['id', 'nama', 'sub', 'deskripsi']);
     }
 
     public function save()

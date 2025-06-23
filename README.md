@@ -179,3 +179,17 @@ Perbaikan master data proses dan item
 - update proses lokasi id
 - menambahkan master proses matome jas
 - skip import item, kolom operator dan mesin
+
+## duplikat header dan item
+
+membuat component duplikat item
+`php artisan livewire:make flow/copy`
+
+menambahkan validasi unique 
+pada kolom ['kontrak', 'brand', 'pattern', 'style', 'tgl_berjalan', 'lokasi_id']
+
+menambahkan trait lokasi
+`php artisan make:trait FetchLokasi`
+
+refactor fetchLokasi
+- dari public function menjadi menggunakan trait
