@@ -121,8 +121,8 @@
                                     <span class="font-medium capitalize">{{ $item->itemable_type }}</span>
                                     @if ($item->itemable_type === 'proses' || $item->itemable_type === 'komponen')
                                     {{-- jika itemable adalah proses, tampilkan badge proses type --}}
-                                    <flux:badge @class([ '!bg-lime-300'=> $item->proses_type === 'standar',
-                                        '!bg-amber-300' => $item->proses_type === 'custom',
+                                    <flux:badge @class([ '!bg-lime-500'=> $item->proses_type === 'standar',
+                                        '!bg-amber-500' => $item->proses_type === 'custom',
                                         ]) size="sm">
                                         {{ $item->proses_type }}
                                     </flux:badge>

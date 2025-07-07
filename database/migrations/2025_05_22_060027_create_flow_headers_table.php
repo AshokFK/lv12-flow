@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('flow_header', function (Blueprint $table) {
             $table->id();
-            $table->string('kontrak');
+            $table->string('kontrak', 7 );
             $table->string('brand');
             $table->string('pattern');
             $table->string('style');

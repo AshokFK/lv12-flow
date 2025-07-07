@@ -15,7 +15,7 @@ class CreateHeader extends Component
     #[Validate('required', message: 'Kontrak harus diisi')]
     #[Validate('string', message: 'Kontrak harus berupa string')]
     #[Validate('min:5', message: 'Kontrak terlalu pendek')]
-    #[Validate('max:100', message: 'Kontrak terlalu panjang')]
+    #[Validate('max:7', message: 'Kontrak terlalu panjang')]
     public $kontrak;
 
     #[Validate('required', message: 'Brand harus diisi')]

@@ -11,46 +11,48 @@ use Livewire\Attributes\Computed;
 class ChartItem extends Component
 {
     public FlowHeader $header;
+    public $items;
     public $positions;
 
-    #[Computed]
-    public function items()
-    {
-        return $this->header->items()->with('itemable')->get();
-    }
+    public $totalMasalah;
 
     public function savePosition($data)
     {
         $parsedData = json_decode($data);
-        // simpan header wrapper width dan height
-        $this->header->update([
-            'wrapper_width' => $parsedData->header->wrapper_width,
-            'wrapper_height' => $parsedData->header->wrapper_height,
-        ]);
-        // simpan posisi setiap item
-        foreach ($parsedData->positions as $item) {
-            $flowItem = $this->header->items()->find($item->id);
-            if ($flowItem) {
-                $flowItem->update([
-                    'left' => $item->left,
-                    'top' => $item->top,
-                ]);
+
+        try {
+            // simpan header wrapper width dan height
+            $this->header->update([
+                'wrapper_width' => $parsedData->header->wrapper_width,
+                'wrapper_height' => $parsedData->header->wrapper_height,
+            ]);
+            // simpan posisi setiap item
+            foreach ($parsedData->positions as $item) {
+                $flowItem = $this->header->items()->find($item->id);
+                if ($flowItem) {
+                    $flowItem->update([
+                        'left' => $item->left,
+                        'top' => $item->top,
+                    ]);
+                }
             }
+            $this->dispatch('swal-toast', icon: 'success', title: 'Berhasil', text: 'Berhasil menyimpan posisi flow.');
+        } catch (\Throwable $th) {
+            $this->dispatch('swal-toast', icon: 'error', title: 'Gagal', text: 'Terjadi kesalahan!.');
         }
-        // dispatch event to notify that the chart has been saved
-        $this->dispatch('saved-position');
+        
     }
 
     public function loadPosition()
     {
         // load posisi setiap item
-        $positions = $this->header->items()->get()->map(function ($item) {
-            return [
-                'id' => $item->id,
-                'left' => $item->left,
-                'top' => $item->top,
-            ];
-        });
+        $positions = $this->items->map(function ($item) {
+                return [
+                    'id' => $item->id,
+                    'left' => $item->left,
+                    'top' => $item->top,
+                ];
+            });
 
         // return positions and header wrapper dimensions
         return response()->json([
@@ -66,11 +68,14 @@ class ChartItem extends Component
     public function mount(FlowHeader $header)
     {
         $this->header = $header;
+        $this->items = $this->header->items()->with('itemable')->get();
+        // hitung semua masalah yang ada di dalam list item ini
+        $this->totalMasalah = $this->items->sum(function ($item) {
+            return $item->masalah->count();
+        });
         // Load initial positions and dimensions
         $this->positions = $this->loadPosition()->getContent();
-        $this->js("
-            localStorage.setItem('appState', JSON.stringify($this->positions));
-        ");
+        $this->js("localStorage.setItem('appState', JSON.stringify($this->positions));");
     }
 
     #[Layout('components.layouts.flow')]

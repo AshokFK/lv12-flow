@@ -7,6 +7,7 @@
 
         {{ $slot }}
 
+        <x-swal-toast />
         @fluxScripts
     </body>
 </html>

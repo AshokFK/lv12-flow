@@ -38,4 +38,9 @@ class FlowItem extends Model
         return $this->morphTo();
     }
 
+    public function masalah()
+    {
+        return $this->hasMany(Masalah::class);
+    }
+
 }

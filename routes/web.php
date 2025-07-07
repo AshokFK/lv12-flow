@@ -3,6 +3,7 @@
 use App\Livewire\Flow\ChartItem;
 use App\Livewire\Flow\ListHeader;
 use App\Livewire\Flow\ListItem;
+use App\Livewire\Masalah\ListMasalah;
 use App\Livewire\Lokasi\ListLokasi;
 use App\Livewire\Proses\ListProses;
 use App\Livewire\Qc\ListQc;
@@ -38,6 +39,7 @@ Route::middleware(['auth:login'])->group(function () {
         Route::get('/item/{header}', ListItem::class)->name('list.item');
         Route::get('/chart/{header}', ChartItem::class)->name('chart.item');
     });
+    Route::get('/masalah', ListMasalah::class)->name('list.masalah');
 
 });
 

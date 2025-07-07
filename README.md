@@ -197,3 +197,11 @@ refactor fetchLokasi
 Menambahakn detail item pada flowchart
 `php artisan livewire:make flow/detail-item`
 
+Menambahkan module masalah
+`php artisan make:model Masalah -m`
+`php artisan livewire:make masalah/list-masalah`
+`php artisan livewire:make masalah/create-masalah`
+`php artisan livewire:make masalah/edit-masalah`
+`php artisan livewire:make masalah/list-by-header`
+
+

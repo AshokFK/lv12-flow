@@ -44,7 +44,7 @@ class EditHeader extends Component
     public function save()
     {
         $this->validate([
-            'kontrak' => 'required|string|min:5|max:100',
+            'kontrak' => 'required|string|min:5|max:7',
             'brand' => 'required|string|min:5|max:100',
             'pattern' => 'required|string|min:5|max:100',
             'style' => 'required|string|min:5|max:100',

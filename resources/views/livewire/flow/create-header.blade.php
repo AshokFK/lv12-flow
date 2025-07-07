@@ -6,7 +6,7 @@
                 <flux:text class="mt-2">Isikan data yang diperlukan untuk menambah header baru.</flux:text>
             </div>
 
-            <flux:input wire:model="kontrak" label="Kontrak" placeholder="Nomor kontrak" />
+            <flux:input wire:model="kontrak" label="Kontrak" placeholder="Nomor kontrak" maxlength="7" minlength="7" />
             <flux:input wire:model="brand" label="Brand" placeholder="Nama brand" />
             <flux:input wire:model="pattern" label="Pattern" placeholder="Kode pattern" />
             <flux:input wire:model="style" label="Style" placeholder="Nomor style" />
