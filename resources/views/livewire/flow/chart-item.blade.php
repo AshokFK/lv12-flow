@@ -45,11 +45,12 @@
             </div>
         </div>
         <div class="flex justify-between gap-2 mb-2">
+            <!-- Kontrol Zoom -->
             <flux:button.group>
-            <flux:button size="sm" icon="magnifying-glass-plus" id="zoomIn">Zoom In</flux:button>
-            <flux:button size="sm" icon="magnifying-glass-minus" id="zoomOut">Zoom Out</flux:button>
-            <flux:button size="sm" icon="magnifying-glass" id="resetZoom">Reset Zoom</flux:button>
-            <flux:button size="sm" icon="tv" id="fitScreen">Fit to Screen</flux:button>
+                <flux:button size="sm" icon="magnifying-glass-plus" id="zoomIn">Zoom In</flux:button>
+                <flux:button size="sm" icon="magnifying-glass-minus" id="zoomOut">Zoom Out</flux:button>
+                <flux:button size="sm" icon="magnifying-glass" id="resetZoom">Reset Zoom</flux:button>
+                <flux:button size="sm" icon="tv" id="fitScreen">Fit to Screen</flux:button>
             </flux:button.group>
             
             <div class="flex items-center w-auto">
@@ -58,60 +59,50 @@
             </div>
 
             <div>
-                <flux:button size="sm" icon="arrow-uturn-left" href="{{ route('list.item', $header) }}">Kembali</flux:button>
-                <flux:button size="sm" icon="inbox-arrow-down"
+                <flux:button size="sm" icon="arrow-uturn-left" tooltip="Kembali ke halaman list header" href="{{ route('list.header') }}">Header list</flux:button>
+                <flux:button size="sm" icon="arrow-uturn-left" tooltip="Kembali ke halaman list item" href="{{ route('list.item', $header) }}">Item list</flux:button>
+                <flux:button size="sm" icon="exclamation-triangle" tooltip="Masalah pada flow ini" 
+                    class="cursor-pointer" x-on:click="$dispatch('list-by-header', { header: {{ $header }} })">
+                    Masalah @if($totalMasalah > 0)<flux:badge size="sm">{{ $totalMasalah }}</flux:badge>@endif</flux:button>
+                <flux:button size="sm" icon="inbox-arrow-down" class="cursor-pointer" tooltip="Simpan perubahan layout flowchart"
                     x-on:click="
                     const data = localStorage.getItem('appState');
                     $wire.savePosition(data);
-                    ">
-                    Simpan
-                    Posisi
+                    ">Simpan Posisi
                 </flux:button>
             </div>
         </div>
     </div>
 
-    <!-- Kontrol Zoom -->
-
-    <div id="wrapper" wire:ignore>
-        <svg id="connections"></svg>
-        @foreach ($this->items as $item)
-            <div class="item" id="item-{{ $item->id }}" data-id="{{ $item->id }}"
+    <div wire:ignore id="wrapper" class="relative min-w-full min-h-[500px] overflow-auto origin-[0_0] transition-transform duration-[0.2s] ease-[ease] border-2 border-dashed border-gray-300">
+        <svg id="connections" class="absolute w-full h-full pointer-events-none z-[-2] left-0 top-0"></svg>
+        @foreach ($items as $item)
+            <div class="item absolute border cursor-move select-none w-[25px] h-[25px] shadow-[0_2px_5px_rgba(0,0,0,0.1)] transition-[left] duration-[0.2s,top] delay-[0.2s] rounded-[50%] border-solid border-[#ccc]" id="item-{{ $item->id }}" data-id="{{ $item->id }}"
                 data-to="{{ json_encode($item->next_to) }}">
-                <div class="icon">
-                    <flux:icon.bolt />
-                </div>
-                <span @class([
-                    'komponen-tim' => $item->itemable?->type == 'tim',
-                    'komponen-bahan' => $item->itemable?->type == 'bahan',
-                    'proses-qc' => $item->itemable_type == 'qc',
-                    'nama-item',
+                <flux:icon.bolt class="icon absolute w-[24px] h-[24px] flex justify-center items-center -z-1 p-0.5 rounded-full" />
+                <span
+                x-on:click="$dispatch('detail-item', { item: {{ $item }} })"
+                @class([
+                    'font-bold uppercase bg-orange-400' => $item->itemable?->type == 'tim',
+                    'capitalize !bg-amber-200' => $item->itemable?->type == 'bahan',
+                    'bg-gray-500 text-neutral-100' => $item->itemable_type == 'qc',
+                    'absolute block whitespace-nowrap px-[5px] py-0.5 rounded border-[oklch(44.6%] border-[257.281)_1px_solid] left-[35px] cursor-pointer bg-cyan-300',
                 ])>{{ $item->itemable?->mastercode ?? $item->itemable?->nama }}</span>
             </div>
         @endforeach
         <div id="selectionBox"></div>
     </div>
 
-    <style>
-        #wrapper {
-            position: relative;
-            min-width: 100%;
-            min-height: 500px;
-            border: 2px dashed #ccc;
-            overflow: auto;
-            transform-origin: 0 0;
-            transition: transform 0.2s ease;
-        }
+    {{-- modal detail item --}}
+    <livewire:flow.detail-item />
 
-        #connections {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -2;
-        }
+    {{-- modal create masalah --}}
+    <livewire:masalah.create-masalah />
+
+    {{-- modal create masalah --}}
+    <livewire:masalah.list-by-header />
+
+    <style>
 
         #selectionBox {
             position: absolute;
@@ -122,102 +113,24 @@
             z-index: 10;
         }
 
-        .item {
-            position: absolute;
-            border: 1px solid #ccc;
-            cursor: move;
-            user-select: none;
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: left 0.2s, top 0.2s;
-        }
-
         .item.selected {
             background-color: rgba(179, 212, 252, 0.5);
-            border: 2px solid #007bff;
+            border: 1px solid #007bff;
         }
 
         .item.dragging {
             opacity: 0.5;
         }
 
-        .item .icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 25px;
-            height: 25px;
-            background-color: white;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: -1;
-            padding: 2px;
-        }
-
-        .item span {
-            position: absolute;
-            left: 35px;
-            display: block;
-            white-space: nowrap;
-            background: #ACC572;
-            padding: 2px 5px;
-            border-radius: 5px;
-            border: #A76545 1px solid;
-        }
-
         .item span::after {
             border: solid transparent;
             content: "";
             position: absolute;
-            bottom: 6px;
+            bottom: 10px;
             left: -10px;
             border-style: solid;
             border-width: 5px 10px 5px 0px;
-            border-color: transparent #A76545 transparent transparent;
-        }
-
-        .komponen-tim {
-            background: #FFA55D !important;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .komponen-bahan {
-            background: #FFDF88 !important;
-            text-transform: capitalize;
-        }
-
-        .proses-qc {
-            background-color: #626F47 !important;
-            color: #f5f5f5;
-        }
-
-        .controls {
-            margin-bottom: 10px;
-        }
-
-        .controls button {
-            margin-right: 5px;
-            padding: 5px 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .controls button:hover {
-            background-color: #0056b3;
-        }
-
-        .controls input[type="range"] {
-            margin-left: 10px;
-            width: 200px;
+            border-color: transparent oklch(44.6% 0.043 257.281) transparent transparent;
         }
     </style>
 

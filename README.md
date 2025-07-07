@@ -193,3 +193,7 @@ menambahkan trait lokasi
 
 refactor fetchLokasi
 - dari public function menjadi menggunakan trait
+
+Menambahakn detail item pada flowchart
+`php artisan livewire:make flow/detail-item`
+
