@@ -197,11 +197,33 @@ refactor fetchLokasi
 Menambahakn detail item pada flowchart
 `php artisan livewire:make flow/detail-item`
 
+## masalah dan evaluasi
+
 Menambahkan module masalah
 `php artisan make:model Masalah -m`
 `php artisan livewire:make masalah/list-masalah`
 `php artisan livewire:make masalah/create-masalah`
 `php artisan livewire:make masalah/edit-masalah`
 `php artisan livewire:make masalah/list-by-header`
+
+Menambahkan action evaluasi pada list masalah
+
+## role dan permission
+
+install laravel permission
+`composer require spatie/laravel-permission`
+
+publish migration dan config
+`php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"`
+
+create custom [Role, Permission] model
+
+membuat seeder role permission
+`php artisan make:seeder RolePermissionSeeder`
+
+membuat module role dan permission
+`php artisan livewire:make access/list-role-permission`
+`php artisan livewire:make access/create-role-permission`
+`php artisan livewire:make access/edit-role-permission`
 
 

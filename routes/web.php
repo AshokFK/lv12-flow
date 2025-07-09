@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Access\ListRolePermission;
 use App\Livewire\Flow\ChartItem;
 use App\Livewire\Flow\ListHeader;
 use App\Livewire\Flow\ListItem;
@@ -18,10 +19,10 @@ use App\Livewire\Komponen\ListKomponen;
 // })->name('home');
 
 Route::view('/', 'dashboard')
-    ->middleware(['auth:login'])
+    ->middleware(['auth'])
     ->name('dashboard');
 
-Route::middleware(['auth:login'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
 
     Route::get('settings/profile', Profile::class)->name('settings.profile');
@@ -40,7 +41,10 @@ Route::middleware(['auth:login'])->group(function () {
         Route::get('/chart/{header}', ChartItem::class)->name('chart.item');
     });
     Route::get('/masalah', ListMasalah::class)->name('list.masalah');
-
+    
+    Route::group(['prefix' => 'access'], function () {
+        Route::get('/role-permission', ListRolePermission::class)->name('list.role.permission');
+    });
 });
 
 require __DIR__.'/auth.php';

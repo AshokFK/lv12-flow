@@ -15,6 +15,7 @@
                 <flux:navlist.group :heading="__('Platform')" class="grid">
                     <flux:navlist.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>{{ __('Dashboard') }}</flux:navlist.item>
                     <flux:navlist.item icon="puzzle-piece" :href="route('list.header')" :current="request()->routeIs('list.header')" wire:navigate>{{ __('Flowchart') }}</flux:navlist.item>
+                    <flux:navlist.item icon="puzzle-piece" :href="route('list.masalah')" :current="request()->routeIs('list.masalah')" wire:navigate>{{ __('Masalah') }}</flux:navlist.item>
                 </flux:navlist.group>
                 <flux:navlist.group :heading="__('Master data')" class="grid">
                     <flux:navlist.item icon="puzzle-piece" :href="route('list.komponen')" :current="request()->routeIs('list.komponen')" wire:navigate>{{ __('Komponen') }}</flux:navlist.item>
@@ -22,18 +23,28 @@
                     <flux:navlist.item icon="puzzle-piece" :href="route('list.qc')" :current="request()->routeIs('list.qc')" wire:navigate>{{ __('QC') }}</flux:navlist.item>
                     <flux:navlist.item icon="puzzle-piece" :href="route('list.lokasi')" :current="request()->routeIs('list.lokasi')" wire:navigate>{{ __('Lokasi') }}</flux:navlist.item>
                 </flux:navlist.group>
+                <flux:navlist.group :heading="__('Access Managements')" class="grid">
+                    <flux:navlist.item icon="puzzle-piece" :href="route('list.role.permission')" :current="request()->routeIs('list.role.permission')" wire:navigate>{{ __('Roles & Permissions') }}</flux:navlist.item>
+                </flux:navlist.group>
             </flux:navlist>
 
             <flux:spacer />
 
             <flux:navlist variant="outline">
-                <flux:navlist.item icon="folder-git-2" href="https://github.com/laravel/livewire-starter-kit" target="_blank">
-                {{ __('Repository') }}
+                {{-- add button to toggle dark/light mode --}}
+                <flux:navlist.item icon="moon" x-on:click="$flux.appearance = $flux.appearance === 'dark' ? 'light' : 'dark'" class="cursor-pointer">
+                    <span x-text="$flux.appearance === 'dark' ? 'Light Mode' : 'Dark Mode'"></span>
                 </flux:navlist.item>
-
-                <flux:navlist.item icon="book-open-text" href="https://laravel.com/docs/starter-kits#livewire" target="_blank">
-                {{ __('Documentation') }}
-                </flux:navlist.item>
+                
+                @if(auth()->user()->roles->count() > 0)
+                <flux:menu.item icon="shield-check" title="login roles">
+                    @foreach(auth()->user()->roles as $role)
+                        <flux:badge class="mx-0.5 text-xs" size="sm" color="blue">
+                            {{ $role->name }}
+                        </flux:badge>
+                    @endforeach
+                </flux:menu.item>
+                @endif
             </flux:navlist>
 
             <!-- Desktop User Menu -->
@@ -59,6 +70,15 @@
                                 <div class="grid flex-1 text-start text-sm leading-tight">
                                     <span class="truncate font-semibold">{{ auth()->user()->name }}</span>
                                     <span class="truncate text-xs">{{ auth()->user()->email }}</span>
+                                    @if(auth()->user()->roles)
+                                    <span title="login roles">
+                                        @foreach(auth()->user()->roles as $role)
+                                            <flux:badge class="mx-0.5 text-xs" size="sm" color="blue">
+                                                {{ $role->name }}
+                                            </flux:badge>
+                                        @endforeach
+                                    </span>
+                                    @endif
                                 </div>
                             </div>
                         </div>
