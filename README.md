@@ -226,4 +226,7 @@ membuat module role dan permission
 `php artisan livewire:make access/create-role-permission`
 `php artisan livewire:make access/edit-role-permission`
 
+membuat list user dan assign role
+`php artisan livewire:make access/list-user`
+`php artisan livewire:make access/user-assign-role`
 

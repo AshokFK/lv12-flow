@@ -25,6 +25,7 @@
                 </flux:navlist.group>
                 <flux:navlist.group :heading="__('Access Managements')" class="grid">
                     <flux:navlist.item icon="puzzle-piece" :href="route('list.role.permission')" :current="request()->routeIs('list.role.permission')" wire:navigate>{{ __('Roles & Permissions') }}</flux:navlist.item>
+                    <flux:navlist.item icon="puzzle-piece" :href="route('list.user')" :current="request()->routeIs('list.user')" wire:navigate>{{ __('Users') }}</flux:navlist.item>
                 </flux:navlist.group>
             </flux:navlist>
 

@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Access\ListRolePermission;
+use App\Livewire\Access\ListUser;
 use App\Livewire\Flow\ChartItem;
 use App\Livewire\Flow\ListHeader;
 use App\Livewire\Flow\ListItem;
@@ -44,6 +45,7 @@ Route::middleware(['auth'])->group(function () {
     
     Route::group(['prefix' => 'access'], function () {
         Route::get('/role-permission', ListRolePermission::class)->name('list.role.permission');
+        Route::get('/user', ListUser::class)->name('list.user');
     });
 });
 

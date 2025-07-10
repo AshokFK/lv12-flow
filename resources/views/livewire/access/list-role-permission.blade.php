@@ -71,7 +71,7 @@
                                         @endforeach
                                         @if($rolePermissions->count() > $limitPermission)
                                             <flux:badge class="mx-0.5 text-xs" size="sm" color="blue">
-                                                + {{ $rolePermissions->count() - $limitPermission }} lainnya..
+                                                + {{ $rolePermissions->count() - $limitPermission }} lainnya...
                                             </flux:badge>
                                         @endif
                                     @endif

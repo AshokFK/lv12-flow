@@ -9,15 +9,24 @@
 
 /* Tom Select styles */
 .ts-control {
-  @apply !p-2.5 !rounded-lg;
+  @apply !p-2 !rounded-lg dark:bg-zinc-700! border-zinc-500!;
+}
+
+.ts-control input, 
+.ts-control input::placeholder {
+  @apply text-accent! m-2!;
+}
+
+.ts-control .item {
+  @apply rounded!;
 }
 
 .ts-dropdown {
-  @apply !mt-0 !rounded py-0;
+  @apply mt-0.5! !rounded py-0 dark:bg-zinc-600! dark:text-white! dark:border-zinc-500!;
 }
 
 .ts-dropdown .active {
-  @apply !bg-blue-100 rounded;
+  @apply !bg-blue-100 rounded m-0;
 }
 
 .ts-dropdown-content {
