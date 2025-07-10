@@ -6,6 +6,7 @@ use Flux\Flux;
 use App\Models\Role;
 use Livewire\Component;
 use App\Models\Permission;
+use Livewire\Attributes\On;
 use Livewire\Attributes\Validate;
 
 class CreateRolePermission extends Component
@@ -17,9 +18,23 @@ class CreateRolePermission extends Component
     public $permissions;
     public $listPermission;
 
-    public function mount()
+    #[On('create-role-permission')]
+    public function initCreate()
     {
-        $this->listPermission = Permission::all(['name']);
+        $this->listPermission = Permission::all()
+        ->groupBy('group')
+        ->map(function ($permissions, $group) {
+            return [
+                'group' => $group,
+                'permissions' => $permissions->map(function ($permission) {
+                    return [
+                        'id' => $permission->id,
+                        'name' => $permission->name,
+                    ];
+                })->toArray(),
+            ];
+        })->values()->toArray();
+        Flux::modal('create-role-permission')->show();
     }
 
     public function save()

@@ -22,13 +22,22 @@ class EditRolePermission extends Component
         $role = Role::findOrFail($id);
         $this->roleId = $role->id;
         $this->name = $role->name;
-        $this->listPermission = Permission::all(['name']);
+        
         $this->permissions = $role->permissions->pluck('name');
 
-        $this->dispatch('permission-selected', 
-            permission_selected: $this->permissions,
-            list_permission: $this->listPermission
-        );
+        $this->listPermission = Permission::all()
+        ->groupBy('group')
+        ->map(function ($permissions, $group) {
+            return [
+                'group' => $group,
+                'permissions' => $permissions->map(function ($permission) {
+                    return [
+                        'id' => $permission->id,
+                        'name' => $permission->name,
+                    ];
+                })->toArray(),
+            ];
+        })->values()->toArray();
 
         Flux::modal('edit-role-permission')->show();
     }

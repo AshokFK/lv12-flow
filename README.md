@@ -230,3 +230,9 @@ membuat list user dan assign role
 `php artisan livewire:make access/list-user`
 `php artisan livewire:make access/user-assign-role`
 
+membuat grouping permission
+`php artisan make:migration add_group_to_permissions`
+
+update list permission di create dan edit RolePermission
+
+

@@ -16,9 +16,7 @@
                     </div>
                 </div>
                 <div class="flex items-center ml-auto space-x-2 sm:space-x-3">
-                    <flux:modal.trigger name="create-role-permission">
-                        <flux:button size="sm" variant="outline" icon="plus" class="bg-">Tambah</flux:button>
-                    </flux:modal.trigger>
+                    <flux:button size="sm" variant="outline" icon="plus" class="" x-on:click="$dispatch('create-role-permission')">Tambah</flux:button>
                 </div>
             </div>
         </div>
