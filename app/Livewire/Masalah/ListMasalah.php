@@ -19,6 +19,7 @@ class ListMasalah extends Component
     #[Computed]
     public function listMasalah()
     {
+        $this->authorize('list masalah');
         return Masalah::search(['deskripsi', 'penanganan'], $this->searchTerm)
             ->with(['flowItem'])
             ->when($this->sortColumn, function ($query) {
@@ -36,6 +37,7 @@ class ListMasalah extends Component
     // action save masalah by spv
     public function saveSpv(Masalah $masalah)
     {
+        $this->authorize('save masalah');
         try {
             $masalah->update([
                 'saved_at' => Carbon::now()
@@ -51,6 +53,7 @@ class ListMasalah extends Component
     // action post masalah by chief
     public function postChief(Masalah $masalah)
     {
+        $this->authorize('post masalah');
          try {
             $masalah->update([
                 'posted_at' => Carbon::now()

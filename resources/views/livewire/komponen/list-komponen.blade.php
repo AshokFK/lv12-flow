@@ -16,9 +16,11 @@
                     </div>
                 </div>
                 <div class="flex items-center ml-auto space-x-2 sm:space-x-3">
-                    <flux:modal.trigger name="create-komponen">
-                        <flux:button size="sm" variant="outline" icon="plus" class="bg-">Tambah</flux:button>
-                    </flux:modal.trigger>
+                    @can('tambah komponen')
+                        <flux:modal.trigger name="create-komponen">
+                            <flux:button size="sm" variant="outline" icon="plus" class="bg-">Tambah</flux:button>
+                        </flux:modal.trigger>
+                    @endcan
                 </div>
             </div>
         </div>
@@ -96,10 +98,12 @@
                                     @endif
                                 </td>
                                 <td class="p-2 space-x-2 whitespace-nowrap text-right">
-                                    <flux:button size="sm" icon="pencil-square" iconVariant="mini" class="bg-blue-400! hover:bg-blue-500! text-white!" x-on:click="$dispatch('edit-komponen', { 'id': {{ $komponen->id }} })">
-                                        Edit</flux:button>
-                                    <flux:button x-on:click="$dispatch('delete-komponen', { 'id': {{ $komponen->id }} })" size="sm" variant="danger" icon="x-mark" iconVariant="mini">
-                                        Hapus</flux:button>
+                                    @can('edit komponen')
+                                        <flux:button size="sm" icon="pencil-square" iconVariant="mini" class="bg-blue-400! hover:bg-blue-500! text-white!" x-on:click="$dispatch('edit-komponen', { 'id': {{ $komponen->id }} })">Edit</flux:button>
+                                    @endcan
+                                    @can('hapus komponen')
+                                        <flux:button x-on:click="$dispatch('delete-komponen', { 'id': {{ $komponen->id }} })" size="sm" variant="danger" icon="x-mark" iconVariant="mini">Hapus</flux:button>
+                                    @endcan
                                 </td>
                             </tr>
                             @empty

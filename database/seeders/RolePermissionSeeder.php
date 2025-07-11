@@ -37,7 +37,7 @@ class RolePermissionSeeder extends Seeder
             'list item', 'tambah item', 'edit item', 'hapus item', 'view flow', 'update layout'
         ],
         'masalah' => [
-            'list masalah', 'tambah masalah', 'detail masalah', 'update masalah',
+            'list masalah', 'tambah masalah', 'detail masalah', 'edit masalah',
             'menambah penanganan masalah', 'menyelesaikan masalah', 'save masalah', 'post masalah'
         ],
         'komponen' => [

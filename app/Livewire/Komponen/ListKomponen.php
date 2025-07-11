@@ -19,6 +19,7 @@ class ListKomponen extends Component
     #[Computed]
     public function listKomponen()
     {
+        $this->authorize('list komponen');
         return Komponen::query()
             ->when($this->searchTerm, function ($query) {
                 $query->where('nama', 'like', '%' . $this->searchTerm . '%')
@@ -38,18 +39,21 @@ class ListKomponen extends Component
 
     public function edit($komponenId)
     {
+        $this->authorize('edit komponen');
         $this->dispatch('edit-komponen', $komponenId);
     }
 
     #[On('delete-komponen')]
     public function confirmDelete($id)
     {
+        $this->authorize('hapus komponen');
         $this->komponenId = $id;
         Flux::modal('delete-komponen')->show();
     }
 
     public function delete()
     {
+        $this->authorize('hapus komponen');
         $komponen = Komponen::findOrFail($this->komponenId);
 
         try {

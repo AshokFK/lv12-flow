@@ -12,7 +12,7 @@ use Illuminate\Validation\Rule;
 class EditProses extends Component
 {
     use FetchLokasi;
-    
+
     public $prosesId;
     public $mastercode;
     public $nama;
@@ -24,6 +24,8 @@ class EditProses extends Component
     #[On('edit-proses')]
     public function edit($id)
     {
+        $this->authorize('edit proses');
+
         $proses = Proses::findOrFail($id);
         $this->prosesId = $proses->id;
         $this->mastercode = $proses->mastercode;
@@ -33,15 +35,19 @@ class EditProses extends Component
         $this->level = $proses->level;
         $this->is_active = $proses->is_active;
 
-        $lokasi_data = $proses->lokasi->findOrFail($proses->lokasi_id)
-            ->get(['id', 'nama', 'sub', 'deskripsi']);
-            
+        $lokasi_data = [
+            'id' => $proses->lokasi->id ?? null,
+            'nama' => $proses->lokasi->nama ?? null,
+            'sub' => $proses->lokasi->sub ?? null,
+            'deskripsi' => $proses->lokasi->deskripsi ?? null,
+        ];
         Flux::modal('edit-proses')->show();
         $this->dispatch('init-selected', lokasi_selected: $proses->lokasi_id, lokasi_data: $lokasi_data);
     }
 
     public function save()
     {
+        $this->authorize('edit proses');
         $this->validate([
             'mastercode' => [
                 'required','string','size:14',

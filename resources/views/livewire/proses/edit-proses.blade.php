@@ -55,7 +55,8 @@
                         $wire.set('lokasi_id', value);
                     }
                 })" x-on:init-selected.window="
-                    $el.lokasi_id.setValue('');
+                    $el.lokasi_id.clear();
+                    $el.lokasi_id.clearOptions();
                     $el.lokasi_id.addOption($event.detail.lokasi_data);
                     $el.lokasi_id.setValue($event.detail.lokasi_selected);
                 "></x-tom-select>

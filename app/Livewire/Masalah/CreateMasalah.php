@@ -27,6 +27,7 @@ class CreateMasalah extends Component
     #[On('create-masalah')]
     public function create(FlowItem $item)
     {
+        $this->authorize('tambah masalah');
         $this->flowItemId = $item->id;
 
         $item_data = FlowItem::with(['itemable'])->find($item->id);
@@ -36,6 +37,7 @@ class CreateMasalah extends Component
 
     public function save()
     {
+        $this->authorize('tambah masalah');
         $this->validate();
 
         try {

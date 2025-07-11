@@ -16,9 +16,11 @@
                     </div>
                 </div>
                 <div class="flex items-center ml-auto space-x-2 sm:space-x-3">
+                @can('tambah qc')
                     <flux:modal.trigger name="create-qc">
                         <flux:button size="sm" variant="outline" icon="plus" class="bg-">Tambah</flux:button>
                     </flux:modal.trigger>
+                @endcan
                 </div>
             </div>
         </div>
@@ -79,10 +81,12 @@
                                     @endif
                                 </td>
                                 <td class="p-2 space-x-2 whitespace-nowrap text-right">
-                                    <flux:button size="sm" icon="pencil-square" iconVariant="mini" class="bg-blue-400! hover:bg-blue-500! text-white!" x-on:click="$dispatch('edit-qc', { 'id': {{ $qc->id }} })">
-                                        Edit</flux:button>
-                                    <flux:button x-on:click="$dispatch('delete-qc', { 'id': {{ $qc->id }} })" size="sm" variant="danger" icon="x-mark" iconVariant="mini">
-                                        Hapus</flux:button>
+                                @can('edit qc')
+                                    <flux:button size="sm" icon="pencil-square" iconVariant="mini" class="bg-blue-400! hover:bg-blue-500! text-white!" x-on:click="$dispatch('edit-qc', { 'id': {{ $qc->id }} })">Edit</flux:button>
+                                @endcan
+                                @can('delete qc')
+                                    <flux:button x-on:click="$dispatch('delete-qc', { 'id': {{ $qc->id }} })" size="sm" variant="danger" icon="x-mark" iconVariant="mini">Hapus</flux:button>
+                                @endcan
                                 </td>
                             </tr>
                             @empty

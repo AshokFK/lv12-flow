@@ -17,6 +17,7 @@ class EditQc extends Component
     #[On('edit-qc')]
     public function edit($id)
     {
+        $this->authorize('edit qc');
         $qc = Qc::findOrFail($id);
         $this->qcId = $qc->id;
         $this->nama = $qc->nama;
@@ -26,6 +27,7 @@ class EditQc extends Component
 
     public function save()
     {
+        $this->authorize('edit qc');
         $this->validate([ 
             'nama' => ['required', Rule::unique('qc')->ignore($this->qcId), 'string', 'min:5', 'max:100'],
             'is_active' => ['boolean'],

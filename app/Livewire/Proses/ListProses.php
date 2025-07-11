@@ -19,6 +19,7 @@ class ListProses extends Component
     #[Computed]
     public function listProses()
     {
+        $this->authorize('list proses');
         return Proses::query()
             ->when($this->searchTerm, function ($query) {
                 $query->where('mastercode', 'like', '%' . $this->searchTerm . '%')
@@ -38,18 +39,21 @@ class ListProses extends Component
 
     public function edit($prosesId)
     {
+        $this->authorize('edit proses');
         $this->dispatch('edit-proses', $prosesId);
     }
 
     #[On('delete-proses')]
     public function confirmDelete($id)
     {
+        $this->authorize('hapus proses');
         $this->prosesId = $id;
         Flux::modal('delete-proses')->show();
     }
 
     public function delete()
     {
+        $this->authorize('hapus proses');
         $proses = Proses::findOrFail($this->prosesId);
 
         try {

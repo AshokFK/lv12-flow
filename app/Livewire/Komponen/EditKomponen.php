@@ -19,6 +19,9 @@ class EditKomponen extends Component
     public function edit($id)
     {
         $komponen = Komponen::findOrFail($id);
+
+        $this->authorize('edit komponen');
+
         $this->komponenId = $komponen->id;
         $this->nama = $komponen->nama;
         $this->type = $komponen->type;
@@ -28,6 +31,8 @@ class EditKomponen extends Component
 
     public function save()
     {
+        $this->authorize('edit komponen');
+   
         $this->validate([ 
             'nama' => ['required', Rule::unique('komponen')->ignore($this->komponenId), 'string', 'min:5', 'max:100'],
             'type' => ['required', 'in:tim,bahan'],

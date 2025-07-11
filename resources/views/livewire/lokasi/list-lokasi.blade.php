@@ -16,9 +16,11 @@
                     </div>
                 </div>
                 <div class="flex items-center ml-auto space-x-2 sm:space-x-3">
+                @can('tambah lokasi')
                     <flux:modal.trigger name="create-lokasi">
                         <flux:button size="sm" variant="outline" icon="plus" class="bg-">Tambah</flux:button>
                     </flux:modal.trigger>
+                    @endcan
                 </div>
             </div>
         </div>
@@ -113,10 +115,12 @@
                                     @endif
                                 </td>
                                 <td class="p-2 space-x-2 whitespace-nowrap text-right">
-                                    <flux:button size="sm" icon="pencil-square" iconVariant="mini" class="bg-blue-400! hover:bg-blue-500! text-white!" x-on:click="$dispatch('edit-lokasi', { 'id': {{ $lokasi->id }} })">
-                                        Edit</flux:button>
-                                    <flux:button x-on:click="$dispatch('delete-lokasi', { 'id': {{ $lokasi->id }} })" size="sm" variant="danger" icon="x-mark" iconVariant="mini">
-                                        Hapus</flux:button>
+                                @can('edit lokasi')
+                                    <flux:button size="sm" icon="pencil-square" iconVariant="mini" class="bg-blue-400! hover:bg-blue-500! text-white!" x-on:click="$dispatch('edit-lokasi', { 'id': {{ $lokasi->id }} })">Edit</flux:button>
+                                @endcan
+                                @can('hapus lokasi')
+                                    <flux:button x-on:click="$dispatch('delete-lokasi', { 'id': {{ $lokasi->id }} })" size="sm" variant="danger" icon="x-mark" iconVariant="mini">Hapus</flux:button>
+                                @endcan
                                 </td>
                             </tr>
                             @empty

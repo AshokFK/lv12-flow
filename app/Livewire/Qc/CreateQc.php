@@ -18,6 +18,7 @@ class CreateQc extends Component
 
     public function save()
     {
+        $this->authorize('tambah qc');
         $this->validate();
         try {
             Qc::create([

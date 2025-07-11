@@ -22,6 +22,7 @@ class CreateKomponen extends Component
 
     public function save()
     {
+        $this->authorize('tambah komponen');
         $this->validate();
 
         try {

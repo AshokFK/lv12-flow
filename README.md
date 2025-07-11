@@ -235,4 +235,4 @@ membuat grouping permission
 
 update list permission di create dan edit RolePermission
 
-
+menambahkan authorize pada setiap action

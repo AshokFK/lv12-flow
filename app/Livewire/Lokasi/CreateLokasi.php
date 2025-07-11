@@ -35,6 +35,7 @@ class CreateLokasi extends Component
 
     public function save()
     {
+        $this->authorize('tambah lokasi');
         // cek validasi unique kolom nama dan sub
         $exists = Lokasi::where('nama', $this->nama)
             ->where('sub', $this->sub)

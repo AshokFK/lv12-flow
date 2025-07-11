@@ -20,6 +20,7 @@ class EditLokasi extends Component
     #[On('edit-lokasi')]
     public function edit($id)
     {
+        $this->authorize('edit lokasi');
         $lokasi = Lokasi::findOrFail($id);
         $this->lokasiId = $lokasi->id;
         $this->nama = $lokasi->nama;
@@ -40,6 +41,7 @@ class EditLokasi extends Component
     
     public function save()
     {
+        $this->authorize('edit lokasi');
         $this->validate([ 
             'nama' => ['required', 'string', 'size:3',
                 Rule::unique('lokasi')->where(function ($query) {

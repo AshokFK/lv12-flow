@@ -52,6 +52,7 @@ class CreateProses extends Component
 
     public function save()
     {
+        $this->authorize('tambah proses');
         $this->validate();
 
         try {

@@ -18,7 +18,7 @@
 }
 
 .ts-control .item {
-  @apply rounded!;
+  @apply rounded! dark:text-accent!;
 }
 
 .ts-dropdown {
@@ -35,4 +35,8 @@
 
 .ts-dropdown-content .optgroup>div {
   @apply !rounded;
+}
+
+.ts-wrapper.multi .ts-control > div {
+  @apply bg-accent-foreground! border! shadow-sm!;
 }

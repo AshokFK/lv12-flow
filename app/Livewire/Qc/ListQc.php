@@ -19,6 +19,7 @@ class ListQc extends Component
     #[Computed]
     public function listQc()
     {
+        $this->authorize('list qc');
         return Qc::query()
             ->when($this->searchTerm, function ($query) {
                 $query->where('nama', 'like', '%' . $this->searchTerm . '%');
@@ -37,18 +38,21 @@ class ListQc extends Component
 
     public function edit($qcId)
     {
+        $this->authorize('edit qc');
         $this->dispatch('edit-qc', $qcId);
     }
 
     #[On('delete-qc')]
     public function confirmDelete($id)
     {
+        $this->authorize('hapus qc');
         $this->qcId = $id;
         Flux::modal('delete-qc')->show();
     }
 
     public function delete()
     {
+        $this->authorize('hapus qc');
         $qc = Qc::findOrFail($this->qcId);
         try {
             $qc->delete();
